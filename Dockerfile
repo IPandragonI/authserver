@@ -1,9 +1,22 @@
 FROM eclipse-temurin:21-jdk
 
-ARG JAR_FILE=target/*.jar
+ENV VERSION="1.0.0"
 
-COPY ${JAR_FILE} app.jar
+RUN apt-get update && \
+    apt-get install -y maven && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+RUN mkdir -p /app
+
+WORKDIR /app
+
+COPY pom.xml /app
+
+COPY src /app/src
+
+RUN mvn clean package -DskipTests
 
 EXPOSE 8080
 
-ENTRYPOINT ["java", "-jar", "/app.jar"]
+CMD java -jar $(ls target/authserver-*.jar | head -n 1)
