@@ -10,9 +10,9 @@
 	</parent>
 	<groupId>esgi.fyc.sso</groupId>
 	<artifactId>authserver</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0</version>
 	<name>authserver</name>
-	<description>Demo project for Spring Boot</description>
+	<description>FYC project based on the creation of an SSO server</description>
 	<url/>
 	<licenses>
 		<license/>
