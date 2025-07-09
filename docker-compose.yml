@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+
+  fycso_database:
+    container_name: fycso_database
+    image: mariadb:10.5.12
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: fycso_db
+      MYSQL_USER: fycso_user
+      MYSQL_PASSWORD: fycso_password
+    volumes:
+      - ./mysql:/var/lib/mysql
+
+
+  fycso_pma:
+    container_name: fycso_pma
+    image: phpmyadmin:latest
+    restart: always
+    environment:
+      PMA_HOST: fycso_database
+      PMA_USER: fycso_user
+      PMA_PASSWORD: fycso_password
+    ports:
+      - "82:80"
+    depends_on:
+      - fycso_database
+
+  fycso_app:
+    container_name: fycso_app
+    restart: always
+    build: .
+    ports:
+      - "8081:8080"
+
+  fycso_nginx:
+    container_name: fycso_nginx
+    image: nginx:1.21
+    restart: always
+    ports:
+      - "81:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - fycso_app
