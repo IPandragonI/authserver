@@ -5,12 +5,13 @@ services:
   fycso_database:
     container_name: fycso_database
     image: mariadb:10.5.12
-    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root_password
       MYSQL_DATABASE: fycso_db
       MYSQL_USER: fycso_user
       MYSQL_PASSWORD: fycso_password
+    ports:
+      - "3305:3306"
     volumes:
       - ./mysql:/var/lib/mysql
 
@@ -18,11 +19,8 @@ services:
   fycso_pma:
     container_name: fycso_pma
     image: phpmyadmin:latest
-    restart: always
     environment:
       PMA_HOST: fycso_database
-      PMA_USER: fycso_user
-      PMA_PASSWORD: fycso_password
     ports:
       - "82:80"
     depends_on:
@@ -30,15 +28,15 @@ services:
 
   fycso_app:
     container_name: fycso_app
-    restart: always
     build: .
     ports:
       - "8081:8080"
+    depends_on:
+      - fycso_database
 
   fycso_nginx:
     container_name: fycso_nginx
     image: nginx:1.21
-    restart: always
     ports:
       - "81:80"
     volumes:
