@@ -17,6 +17,6 @@ COPY src /app/src
 
 RUN mvn clean package -DskipTests
 
-EXPOSE 8080
+EXPOSE 3000
 
-CMD java -jar $(ls target/authserver-*.jar | head -n 1)
+CMD mvn spring-boot:run
