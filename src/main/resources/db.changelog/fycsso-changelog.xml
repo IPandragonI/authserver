@@ -8,5 +8,6 @@
 <!--    Version 1.0     -->
     <include file="db.changelog/1.0/001.xml"/>
     <include file="db.changelog/1.0/002.xml"/>
+    <include file="db.changelog/1.0/003.xml"/>
 
 </databaseChangeLog>

@@ -33,12 +33,12 @@ public class UserService {
         User existingUser = userRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Utilisateur non trouvé avec l’ID : " + id));
 
+        existingUser.setUsername(updatedUser.getUsername());
         existingUser.setFirstname(updatedUser.getFirstname());
         existingUser.setLastname(updatedUser.getLastname());
-        existingUser.setUsername(updatedUser.getUsername());
-        existingUser.setPassword(updatedUser.getPassword());
-        existingUser.setEmail(updatedUser.getEmail());
         existingUser.setEnabled(updatedUser.isEnabled());
+        existingUser.setEmail(updatedUser.getEmail());
+        existingUser.setRealm(updatedUser.getRealm());
 
         return userRepository.save(existingUser);
     }

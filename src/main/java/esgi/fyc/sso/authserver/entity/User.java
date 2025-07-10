@@ -1,85 +1,112 @@
 package esgi.fyc.sso.authserver.entity;
 
-import esgi.fyc.sso.authserver.entity.businessObject.BusinessObject;
 import jakarta.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "users")
-public class User extends BusinessObject {
-
+public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private String id;
 
     @Column(nullable = false, unique = true, length = 100)
-    private String firstname;
-
-    @Column(nullable = false, unique = true, length = 100)
-    private String lastname;
-
-    @Column(nullable = false, unique = true, length = 50)
     private String username;
 
-    @Column(nullable = false)
-    private String password;
+    @Column(nullable = false, length = 60)
+    private String firstname;
 
-    @Column(unique = true, length = 100)
-    private String email;
+    @Column(nullable = false, length = 60)
+    private String lastname;
 
     @Column(nullable = false)
     private boolean enabled;
 
+    @Column(unique = true)
+    private String email;
+
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "realm_id")
+    private Realm realm;
+
+    @Column(name = "created_at", nullable = false, updatable = false)
+    private java.time.LocalDateTime createdAt;
+
     public User() {
-        super();
     }
 
-    public User(String firstname, String lastname, String username, String password, String email, boolean enabled) {
-        super(java.time.LocalDateTime.now(), java.time.LocalDateTime.now());
+    public User(String id, String username, String firstname, String lastname, boolean enabled, String email, Realm realm) {
+        this.id = id;
+        this.username = username;
         this.firstname = firstname;
         this.lastname = lastname;
-        this.username = username;
-        this.password = password;
-        this.email = email;
         this.enabled = enabled;
+        this.email = email;
+        this.realm = realm;
+        this.createdAt = java.time.LocalDateTime.now();
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
-    public String getFirstname() {
-        return firstname;
+
+    public void setId(String id) {
+        this.id = id;
     }
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
-    }
-    public String getLastname() {
-        return lastname;
-    }
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
-    }
+
     public String getUsername() {
         return username;
     }
+
     public void setUsername(String username) {
         this.username = username;
     }
-    public String getPassword() {
-        return password;
+
+    public String getFirstname() {
+        return firstname;
     }
-    public void setPassword(String password) {
-        this.password = password;
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
-    public String getEmail() {
-        return email;
+
+    public String getLastname() {
+        return lastname;
     }
-    public void setEmail(String email) {
-        this.email = email;
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
+
     public boolean isEnabled() {
         return enabled;
     }
+
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Realm getRealm() {
+        return realm;
+    }
+
+    public void setRealm(Realm realm) {
+        this.realm = realm;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
     }
 }
