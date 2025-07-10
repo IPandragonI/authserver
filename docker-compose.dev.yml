@@ -24,18 +24,6 @@ services:
     depends_on:
       - fycsso_database
 
-  fycsso_app:
-    container_name: fycsso_app
-    build: .
-    ports:
-      - "3000:8000"
-    volumes:
-      - ./src:/app/src
-      - ./pom.xml:/app/pom.xml
-    depends_on:
-      - fycsso_database
-    restart: on-failure
-
   fycsso_nginx:
     container_name: fycsso_nginx
     image: nginx:1.21
@@ -43,8 +31,6 @@ services:
       - "80:80"
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
-    depends_on:
-      - fycsso_app
 
 volumes:
   mysql:
