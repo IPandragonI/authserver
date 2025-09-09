@@ -18,5 +18,7 @@ nav:
   - Accueil: index.md
   - Séquence 0 :
       - Introduction: sequences/s0/index.md
-  - Séquences 1 :
+  - Séquence 1 :
       - Introduction: sequences/s1/index.md
+      - Test de positionnement: sequences/s1/positionnement/index.md
+      - Fondammentaux: sequences/s1/fondammentaux/index.md
