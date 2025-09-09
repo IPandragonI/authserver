@@ -22,3 +22,7 @@ nav:
       - Introduction: sequences/s1/index.md
       - Test de positionnement: sequences/s1/positionnement/index.md
       - Fondammentaux: sequences/s1/fondammentaux/index.md
+  - Séquence 2 :
+      - Introduction: sequences/s2/index.md
+      - Docker: sequences/s2/docker/index.md
+

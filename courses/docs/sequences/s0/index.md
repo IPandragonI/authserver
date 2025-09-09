@@ -1,9 +1,6 @@
 # 📘 Cours : Administration et sécurisation web avec Java, Spring Boot et SSO
 
-## Introduction
-Bienvenue dans ce cours d’**administration et sécurisation web** avec **Java, Spring Boot et SSO**.
-
-L’objectif de cette formation est de mettre en place une application oauth2 sécurisée.
+Bienvenue dans ce cours où l’objectif est de mettre en place une application oauth2 sécurisée, autrement dit un SSO (single sign-on).
 
 Vous serez accompagnés par :
 - [Mathys Farineau](https://github.com/IPandragonI)
