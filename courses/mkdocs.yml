@@ -18,3 +18,5 @@ nav:
   - Accueil: index.md
   - Séquence 0 :
       - Introduction: sequences/s0/index.md
+  - Séquences 1 :
+      - Introduction: sequences/s1/index.md
