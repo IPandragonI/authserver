@@ -3,11 +3,13 @@
 ## Introduction
 Bienvenue dans ce cours d’**administration et sécurisation web** avec **Java, Spring Boot et SSO**.
 
-L’objectif de cette formation est de vous rendre à l’aise avec le **développement backend en Java**, et de vous donner les bases solides pour comprendre la **sécurité** et l’**authentification moderne**.
+L’objectif de cette formation est de mettre en place une application oauth2 sécurisée.
 
 Vous serez accompagnés par :
 - [Mathys Farineau](https://github.com/IPandragonI)
+
 - [Alan Sapet](https://github.com/KazSoda)
+
 - [Léo Deroin](https://github.com/achedon12)
 
 ---
