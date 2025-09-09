@@ -1,0 +1,20 @@
+site_name: "Cours de Formation : Créer un SSO avec Java Spring Boot"
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: pink
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - navigation.tabs
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - toc.integrate
+nav:
+  - Accueil: index.md
+  - Séquence 0 :
+      - Introduction: sequences/s0/index.md
