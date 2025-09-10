@@ -1,4 +1,4 @@
-# 📘 SSO & Spring  : créez une authentification centralisée de A à Z
+# SSO & Spring  : créez une authentification centralisée de A à Z
 
 Bienvenue dans ce cours où l’objectif est de mettre en place une application oauth2 sécurisée, autrement dit un SSO (single sign-on).
 

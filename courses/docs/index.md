@@ -1,4 +1,4 @@
-# 📘 SSO & Spring  : créez une authentification centralisée de A à Z
+# SSO & Spring  : créez une authentification centralisée de A à Z
 
 ## [Séquence 0](sequences/s0/)
 Vidéo d’introduction présentant l’équipe,

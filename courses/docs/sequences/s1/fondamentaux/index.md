@@ -9,34 +9,22 @@ Ce rappel a pour but de s’assurer que tout le monde maîtrise la syntaxe, la l
 ## Objectifs
 
 À la fin de ce module, vous serez capable de :
+
 - Expliquer ce qu’est Java et son origine
 - Comprendre la syntaxe de base (variables, conditions, boucles)
 - Manipuler des classes, objets, attributs et méthodes
 
 ---
 
-## Introduction à Java
+## [Introduction à Java](introduction.md)
 
-Java est un langage de programmation orienté objet, créé en **1995** par *James Gosling* chez Sun Microsystems (aujourd’hui propriété d’Oracle).  
-Son slogan : **"Write once, run anywhere"** (Écris une fois, exécute partout).
-
-En effet, pour exécuter du Java, le code est d'abord compilé en bytecode, puis ensuite il est exécuté par la JVM (Java Virtual Machine) 
-
-
-### Pourquoi Java est important dans le web moderne ?
-- Utilisé dans **Spring / Spring Boot** pour les applications d’entreprise
-- Grande communauté, nombreux frameworks et bibliothèques
-- Énorme stabilité (banques, grandes entreprises, systèmes critiques)
+## [La Programmation Orientée Objet (POO)](poo.md)
 
 ---
 
-## 📝 Syntaxe de base en Java
+## 📚 Ressources nécessaires
+- **IDE** : IntelliJ IDEA (Community ou Ultimate)
+- **JDK** : version 21
+- **Documentation officielle** : [https://docs.oracle.com/en/java/](https://docs.oracle.com/en/java/)
 
-### Structure minimale d’un programme Java
-
-```java
-public class Main {
-    public static void main(String[] args) {
-        System.out.println("Hello, world!");
-    }
-}
+---
