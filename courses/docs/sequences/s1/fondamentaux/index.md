@@ -1,4 +1,4 @@
-# 📘 Rappels des fondamentaux en Java
+# Rappels des fondamentaux en Java
 
 Bienvenue dans cette première partie de la formation.  
 Avant de plonger dans la création d’un SSO avec Spring Boot, il est indispensable de réviser ensemble les bases de Java.  
@@ -22,7 +22,7 @@ Ce rappel a pour but de s’assurer que tout le monde maîtrise la syntaxe, la l
 
 ---
 
-## 📚 Ressources nécessaires
+## Ressources nécessaires
 - **IDE** : IntelliJ IDEA (Community ou Ultimate)
 - **JDK** : version 21 ou plus
 - **Documentation officielle** : [https://docs.oracle.com/en/java/](https://docs.oracle.com/en/java/)
