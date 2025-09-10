@@ -11,6 +11,16 @@ Vous serez accompagnés par :
 
 - [Léo Deroin](https://github.com/achedon12)
 
+
+--- 
+
+<iframe src="https://drive.google.com/file/d/11VSnO9CRcAn2IwHilthImAqVkZxt_HQq/view?usp=sharing"
+width="640"
+height="360"
+frameborder="0"
+allowfullscreen>
+</iframe>
+
 ---
 
 ## Objectifs du cours

@@ -1,6 +1,6 @@
 # SSO & Spring  : créez une authentification centralisée de A à Z
 
-## [Séquence 0](sequences/s0/)
+## [Séquence 0](sequences/s0/index.md)
 Vidéo d’introduction présentant l’équipe,
 le sujet du cours, le déroulé général et les objectifs pédagogiques
 

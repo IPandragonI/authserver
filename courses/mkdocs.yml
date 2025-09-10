@@ -18,9 +18,13 @@ nav:
   - Accueil: index.md
   - Séquence 0 :
       - Introduction: sequences/s0/index.md
-  - Séquence 1 :
+  - Séquence 1:
       - Test de positionnement: sequences/s1/positionnement/index.md
-      - Fondamentaux: sequences/s1/fondamentaux/index.md
+      - Fondamentaux:
+          - Accueil: sequences/s1/fondamentaux/index.md
+          - Introduction: sequences/s1/fondamentaux/introduction.md
+          - POO: sequences/s1/fondamentaux/poo.md
+
   - Séquence 2 :
       - Docker: sequences/s2/docker/index.md
 
