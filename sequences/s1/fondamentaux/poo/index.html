@@ -726,51 +726,36 @@ public class User {
 <li><code>removeBook(Book book)</code> -&gt; supprime un livre à la liste</li>
 <li><code>displayBooks()</code> -&gt; affiche tous les livres</li>
 <li><code>findBooksByAuthor(String authorName)</code> -&gt; affiche tous les livres d’un auteur donné</li>
-<li>Bonus : <code>displayBooksAfterYear(int year)</code> -&gt; affiche les livres publiés après une certaine année</li>
+<li>Bonus : <code>findBooksAfterYear(int year)</code> -&gt; affiche les livres publiés après une certaine année</li>
 </ul>
 </li>
-</ul>
-</li>
-<li>
-<p><strong>Créer quelques objets <code>Author</code> et <code>Book</code></strong></p>
-<ul>
-<li>Exemple :<ul>
-<li>Authors : <code>"J.K. Rowling" (UK)</code>, <code>"George Orwell" (UK)</code>, <code>"Haruki Murakami" (Japan)</code></li>
-<li>Books : <code>"Harry Potter"</code> (Rowling, 1997), <code>"1984"</code> (Orwell, 1949), <code>"Kafka on the Shore"</code> (Murakami, 2002)</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>Créer un objet <code>Library</code></strong></p>
-<ul>
-<li>Ajouter tous les livres créés</li>
-<li>Afficher tous les livres</li>
-<li>Afficher uniquement les livres d’un auteur précis</li>
-<li>Bonus : afficher les livres publiés après 2000</li>
 </ul>
 </li>
 </ol>
 <hr />
-<h4 id="exemple-attendu">Exemple attendu</h4>
+<h4 id="classe-main-attendu">Classe Main attendu</h4>
 <pre><code class="language-java">public class Main {
     public static void main(String[] args) {
         Author rowling = new Author(&quot;J.K. Rowling&quot;, &quot;UK&quot;);
         Author orwell = new Author(&quot;George Orwell&quot;, &quot;UK&quot;);
-        Author murakami = new Author(&quot;Haruki Murakami&quot;, &quot;Japan&quot;);
 
-        Book hp = new Book(&quot;Harry Potter&quot;, rowling, 1997);
+        Book hpOne = new Book(&quot;Harry Potter and the Philosopher's Stone&quot;, rowling, 1997);
+        Book hpTwo = new Book(&quot;Harry Potter and the Chamber of Secrets&quot;, rowling, 1998);
         Book nineteenEightyFour = new Book(&quot;1984&quot;, orwell, 1949);
-        Book kafka = new Book(&quot;Kafka on the Shore&quot;, murakami, 2002);
 
-        Library myLibrary = new Library(&quot;City Library&quot;);
-        myLibrary.addBook(hp);
+        Library myLibrary = new Library(&quot;My Super Library&quot;);
+
+        myLibrary.addBook(hpOne);
+        myLibrary.addBook(hpTwo);
         myLibrary.addBook(nineteenEightyFour);
-        myLibrary.addBook(kafka);
 
         myLibrary.displayBooks();
-        myLibrary.findBooksByAuthor(&quot;Haruki Murakami&quot;);
-        myLibrary.displayBooksAfterYear(2000); // Bonus
+
+        ArrayList&lt;Book&gt; booksFromJK = myLibrary.findBooksByAuthor(&quot;J.K. Rowling&quot;);
+        booksFromJK.forEach(book -&gt; System.out.println(book.displayInfos()));
+
+        ArrayList&lt;Book&gt; booksAfterX = myLibrary.findBooksAfterYear(2000);
+        booksAfterX.forEach(book -&gt; System.out.println(book.displayInfos()));
     }
 }
 </code></pre>
