@@ -617,6 +617,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#les-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les concepts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#exemple-de-classes-et-objets" class="md-nav__link">
     <span class="md-ellipsis">
       Exemple de classes et objets
@@ -642,11 +651,11 @@
         <li class="md-nav__item">
   <a href="#packages" class="md-nav__link">
     <span class="md-ellipsis">
-      📦 Packages
+      Packages
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="📦 Packages">
+    <nav class="md-nav" aria-label="Packages">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -810,9 +819,45 @@
   <h1>POO</h1>
 
 <h2 id="la-programmation-orientee-objet-poo">La Programmation Orientée Objet (POO)</h2>
-<p>Java est <strong>orienté objet</strong>, ce qui signifie qu’on structure le code avec des <strong>classes</strong> et des <strong>objets</strong> pour représenter des concepts réels.</p>
+<p>Java est un <strong>langage orienté objet</strong>. Cela signifie que l’on structure le code à l’aide de <strong>classes</strong> et d’<strong>objets</strong> (les instances de ces classes).<br />
+La POO permet de mieux organiser le code, de le rendre réutilisable, et de représenter des concepts réels.</p>
+<hr />
+<h3 id="les-concepts">Les concepts</h3>
+<ul>
+<li>
+<p><strong>Classe</strong><br />
+  Une classe est un <em>modèle</em> qui définit des propriétés (attributs) et des comportements (méthodes).<br />
+  Exemple : une classe <code>Car</code> représente l’idée générale d’une voiture.</p>
+</li>
+<li>
+<p><strong>Objet</strong><br />
+  Un objet est une <em>instance</em> concrète d’une classe.<br />
+  Exemple : <code>Car myCar = new Car(new Brand("Renault", "France"), 2020);</code> crée une voiture spécifique.</p>
+</li>
+<li>
+<p><strong>Attributs</strong><br />
+  Ce sont les <strong>variables</strong> qui appartiennent à une classe et décrivent ses caractéristiques.<br />
+  Exemple : une voiture a une <code>marque</code> et une <code>année</code>.</p>
+</li>
+<li>
+<p><strong>Constructeur</strong><br />
+  C’est une <strong>méthode spéciale</strong> qui permet d’initialiser un objet au moment de sa création.<br />
+  Exemple : <code>new Car(new Brand("Tesla", "USA"), 2023);</code> appelle le constructeur de <code>Car</code>.</p>
+</li>
+<li>
+<p><strong>Méthodes</strong><br />
+  Ce sont les <strong>actions</strong> qu’un objet peut effectuer. Elles décrivent le comportement.<br />
+  Exemple : <code>displayInfo()</code> permet d’afficher les informations d’une voiture.</p>
+</li>
+<li>
+<p><strong>Encapsulation</strong><br />
+  On utilise souvent le mot-clé <code>private</code> pour protéger les attributs, et on fournit des <strong>getters</strong> et <strong>setters</strong> pour y accéder ou les modifier en toute sécurité.</p>
+</li>
+</ul>
+<hr />
 <h3 id="exemple-de-classes-et-objets">Exemple de classes et objets</h3>
 <pre><code class="language-java">public class Brand {
+    // Attributes
     private String name;
     private String country;
 
@@ -847,6 +892,7 @@
 }
 
 public class Car {
+    // Attributes
     private Brand brand;
     private int year;
 
@@ -873,23 +919,26 @@ public class Car {
         this.year = year;
     }
 
+    // Method
     public void displayInfo() {
         System.out.println(&quot;Car: &quot; + brand.toString() + &quot;, Year: &quot; + year);
     }
 }
 </code></pre>
+<hr />
 <h3 id="utilisation-des-classes">Utilisation des classes</h3>
 <pre><code class="language-java">public class Main {
     public static void main(String[] args) {
-        Brand Renault = new Brand(&quot;Renault&quot;, &quot;FRANCE&quot;);
-        Car clio = new Car(Renault, 2020);
+        Brand renault = new Brand(&quot;Renault&quot;, &quot;France&quot;);
+        Car clio = new Car(renault, 2020);
 
-        clio.displayInfo(); // Affiche : Car: Renault (FRANCE), Year: 2020
+        clio.displayInfo(); 
+        // Output: Car: Renault (France), Year: 2020
     }
 }
 </code></pre>
 <hr />
-<h2 id="packages">📦 Packages</h2>
+<h2 id="packages">Packages</h2>
 <p>Un <strong>package</strong> permet d’organiser et ranger les classes dans un projet.
 La différence avec un dossier classique est que le package fait partie du nom complet de la classe, ainsi on évite les conflits de noms.</p>
 <pre><code class="language-java">package com.fyc.sso;
