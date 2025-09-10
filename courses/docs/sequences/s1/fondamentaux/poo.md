@@ -150,42 +150,35 @@ Dans cet exercice, vous allez créer un petit système pour gérer une **bibliot
         - `removeBook(Book book)` -> supprime un livre à la liste
         - `displayBooks()` -> affiche tous les livres
         - `findBooksByAuthor(String authorName)` -> affiche tous les livres d’un auteur donné
-        - Bonus : `displayBooksAfterYear(int year)` -> affiche les livres publiés après une certaine année
-
-4. **Créer quelques objets `Author` et `Book`**
-    - Exemple :
-        - Authors : `"J.K. Rowling" (UK)`, `"George Orwell" (UK)`, `"Haruki Murakami" (Japan)`
-        - Books : `"Harry Potter"` (Rowling, 1997), `"1984"` (Orwell, 1949), `"Kafka on the Shore"` (Murakami, 2002)
-
-5. **Créer un objet `Library`**
-    - Ajouter tous les livres créés
-    - Afficher tous les livres
-    - Afficher uniquement les livres d’un auteur précis
-    - Bonus : afficher les livres publiés après 2000
+        - Bonus : `findBooksAfterYear(int year)` -> affiche les livres publiés après une certaine année
 
 ---
 
-#### Exemple attendu
+#### Classe Main attendu
 
 ```java
 public class Main {
     public static void main(String[] args) {
         Author rowling = new Author("J.K. Rowling", "UK");
         Author orwell = new Author("George Orwell", "UK");
-        Author murakami = new Author("Haruki Murakami", "Japan");
 
-        Book hp = new Book("Harry Potter", rowling, 1997);
+        Book hpOne = new Book("Harry Potter and the Philosopher's Stone", rowling, 1997);
+        Book hpTwo = new Book("Harry Potter and the Chamber of Secrets", rowling, 1998);
         Book nineteenEightyFour = new Book("1984", orwell, 1949);
-        Book kafka = new Book("Kafka on the Shore", murakami, 2002);
 
-        Library myLibrary = new Library("City Library");
-        myLibrary.addBook(hp);
+        Library myLibrary = new Library("My Super Library");
+
+        myLibrary.addBook(hpOne);
+        myLibrary.addBook(hpTwo);
         myLibrary.addBook(nineteenEightyFour);
-        myLibrary.addBook(kafka);
 
         myLibrary.displayBooks();
-        myLibrary.findBooksByAuthor("Haruki Murakami");
-        myLibrary.displayBooksAfterYear(2000); // Bonus
+
+        ArrayList<Book> booksFromJK = myLibrary.findBooksByAuthor("J.K. Rowling");
+        booksFromJK.forEach(book -> System.out.println(book.displayInfos()));
+
+        ArrayList<Book> booksAfterX = myLibrary.findBooksAfterYear(2000);
+        booksAfterX.forEach(book -> System.out.println(book.displayInfos()));
     }
 }
 ```

@@ -24,7 +24,7 @@ Ce rappel a pour but de s’assurer que tout le monde maîtrise la syntaxe, la l
 
 ## 📚 Ressources nécessaires
 - **IDE** : IntelliJ IDEA (Community ou Ultimate)
-- **JDK** : version 21
+- **JDK** : version 21 ou plus
 - **Documentation officielle** : [https://docs.oracle.com/en/java/](https://docs.oracle.com/en/java/)
 
 ---
