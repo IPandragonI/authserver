@@ -1,10 +1,10 @@
 ## Introduction à Java
 
 Java est un **langage de programmation orienté objet**, créé en **1995** par *James Gosling* chez **Sun Microsystems** (aujourd’hui propriété d’Oracle).  
-Son slogan : **"Write once, run anywhere"** (Écris une fois, exécute partout).
+Son slogan est **"Write once, run anywhere"** (Écris une fois, exécute partout).
 
 
-Aujourd’hui, Java est massivement utilisé dans :
+Aujourd’hui, Java est surtout utilisé dans :
 
 - Les **applications d’entreprise** (banques, assurances, e-commerce…)
 - Le **développement web** (via Spring, Jakarta EE…)
@@ -13,17 +13,10 @@ Aujourd’hui, Java est massivement utilisé dans :
 
 Contrairement à des langages compilés directement en langage machine (comme le C ou le C++), Java passe par une étape intermédiaire :
 
-1. Le code source est **compilé en bytecode** (`.class`)
+1. Le code source est **compilé en bytecode**
 2. Ce bytecode est ensuite exécuté par la **JVM (Java Virtual Machine)**
 
-Ainsi programme écrit une fois peut tourner sur **Windows, Linux, macOS, Android…** sans modification.  
-C’est ce qui a fait la force du langage depuis ses débuts.
-
-### Caractéristiques principales
-- **Orienté objet** : tout est pensé autour de classes et d’objets
-- **Fortement typé** : chaque variable doit avoir un type précis
-- **Sécurisé** : la JVM empêche de nombreuses erreurs (accès mémoire non autorisé, etc.)
-- **Très utilisé** : une énorme communauté et de nombreux frameworks (comme **Spring Boot**)
+Ainsi programme écrit une fois peut tourner sur **Windows, Linux, macOS, Android…** sans modification.
 
 ---
 
