@@ -28,7 +28,7 @@ C’est ce qui a fait la force du langage depuis ses débuts.
 ---
 
 
-## 📝 Syntaxe de base en Java
+## Syntaxe de base en Java
 
 ### Structure minimale d’un programme Java
 
@@ -65,7 +65,7 @@ public static void main(String[] args)
 
 ---
 
-### 🔤 Variables et types
+### Variables et types
 
 Java est un langage **fortement typé et statiquement typé**, cela signifie que chaque variable doit avoir un **type défini à la compilation**, et ce type ne peut pas changer ensuite.
 
@@ -94,7 +94,7 @@ Exemple :
 - `String` -> représente une chaîne de caractères (ex : `"Bonjour"`)
 
 
-### 🔀 Conditions
+### Conditions
 
 ```java
 int age = 18;
@@ -136,7 +136,7 @@ System.out.println(statut);
 
 ---
 
-### 🔁 Boucles
+### Boucles
 
 La boucle `for` est utilisée lorsqu’on sait **à l’avance** combien de fois on veut répéter une action.
 
