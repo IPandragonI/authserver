@@ -1,4 +1,4 @@
-## Introduction à Java
+# Introduction à Java
 
 Java est un **langage de programmation orienté objet**, créé en **1995** par *James Gosling* chez **Sun Microsystems** (aujourd’hui propriété d’Oracle).  
 Son slogan est **"Write once, run anywhere"** (Écris une fois, exécute partout).

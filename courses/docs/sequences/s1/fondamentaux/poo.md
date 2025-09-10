@@ -1,11 +1,11 @@
-## La Programmation Orientée Objet (POO)
+# La Programmation Orientée Objet (POO)
 
 Java est un **langage orienté objet**. Cela signifie que l’on structure le code à l’aide de **classes** et d’**objets** (les instances de ces classes).  
 La POO permet de mieux organiser le code, de le rendre réutilisable, et de représenter des concepts réels.
 
 ---
 
-### Les concepts
+## Les concepts
 
 - **Classe**  
   Une classe est un *modèle* qui définit des propriétés (attributs) et des comportements (méthodes).  
@@ -32,7 +32,7 @@ La POO permet de mieux organiser le code, de le rendre réutilisable, et de repr
 
 ---
 
-### Exemple de classes et objets
+## Exemple de classes et objets
 
 ```java
 public class Brand {
@@ -107,7 +107,7 @@ public class Car {
 
 ---
 
-### Utilisation des classes
+## Utilisation des classes
 
 ```java
 public class Main {
@@ -150,13 +150,13 @@ public class User {
 
 ---
 
-### Exercice pratique (30 min) : Gestion d’une bibliothèque
+## Exercice pratique (30 min) : Gestion d’une bibliothèque
 
 Dans cet exercice, vous allez créer un petit système pour gérer une **bibliothèque**, en utilisant les concepts de **POO** : classes, objets, attributs et méthodes.
 
 ---
 
-#### Étapes
+### Étapes
 
 1. **Créer une classe `Author`**
     - Attributs :
@@ -190,7 +190,7 @@ Dans cet exercice, vous allez créer un petit système pour gérer une **bibliot
 
 ---
 
-#### Classe Main attendu
+### Classe Main attendu
 
 ```java
 public class Main {
@@ -221,7 +221,7 @@ public class Main {
 
 ---
 
-### Correction
+## Correction
 
 <iframe width="640" height="360" src="https://www.youtube.com/embed/RXog7QOF0yM" frameborder="0" allowfullscreen></iframe>
 
