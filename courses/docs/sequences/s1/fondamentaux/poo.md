@@ -21,7 +21,7 @@ La POO permet de mieux organiser le code, de le rendre réutilisable, et de repr
 
 - **Constructeur**  
   C’est une **méthode spéciale** qui permet d’initialiser un objet au moment de sa création.  
-  Exemple : `new Car(new Brand("Tesla", "USA"), 2023);` appelle le constructeur de `Car`.
+  Exemple : `new Car(new Brand("Renault", "France"), 2020);` appelle le constructeur de `Car`.
 
 - **Méthodes**  
   Ce sont les **actions** qu’un objet peut effectuer. Elles décrivent le comportement.  
