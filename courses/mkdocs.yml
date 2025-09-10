@@ -1,4 +1,4 @@
-site_name: "Cours de Formation : Créer un SSO avec Java Spring Boot"
+site_name: "📘 SSO & Spring  : créez une authentification centralisée de A à Z"
 theme:
   name: material
   palette:
@@ -19,10 +19,8 @@ nav:
   - Séquence 0 :
       - Introduction: sequences/s0/index.md
   - Séquence 1 :
-      - Introduction: sequences/s1/index.md
       - Test de positionnement: sequences/s1/positionnement/index.md
-      - Fondammentaux: sequences/s1/fondammentaux/index.md
+      - Fondamentaux: sequences/s1/fondamentaux/index.md
   - Séquence 2 :
-      - Introduction: sequences/s2/index.md
       - Docker: sequences/s2/docker/index.md
 
