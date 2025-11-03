@@ -24,9 +24,8 @@ nav:
           - Accueil: sequences/s1/fondamentaux/index.md
           - Introduction: sequences/s1/fondamentaux/introduction.md
           - POO: sequences/s1/fondamentaux/poo.md
-
   - Séquence 2 :
-      - Introduction: sequences/s2/fondamentaux/index.md
-      - Installation: sequences/s2/fondamentaux/installation.md
       - Docker: sequences/s2/docker/index.md
+  - Séquence 3 :
+      - MVC: sequences/s3/mvc/index.md
 

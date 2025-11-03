@@ -5,11 +5,27 @@ Vidéo d’introduction présentant l’équipe,
 le sujet du cours, le déroulé général et les objectifs pédagogiques
 
 ## [Séquence 1](sequences/s1/positionnement/index.md)
-QCM d’évaluation (test de positionnement) sur les bases de Java, Spring...
 
-Rappels des fondamentaux Java : syntaxe, classes, méthodes, types...
+[QCM d’évaluation](sequences/s1/positionnement/index.md) (test de positionnement) sur les bases de Java, Spring...
 
-## [Séquence 2](sequences/s2/fondamentaux/index.md)
-Installation et configuration de Docker
+[Rappels des fondamentaux Java](sequences/s1/fondamentaux/index.md) : syntaxe, classes, méthodes, types...
+
+## [Séquence 2](sequences/s2/docker/index.md)
+
+[Docker](sequences/s2/docker/index.md) : Installation et configuration de Docker
 
 Création d’un projet Spring Boot
+
+## [Séquence 3](sequences/s3/mvc/index.md)
+
+[Structuration du projet](sequences/s3/mvc/index.md) : MVC, packages, dépendances
+
+Mise en place de la base de données + Hibernate + Liquibase
+
+Création de la couche DAO & Service
+
+Mise en place de Spring Security
+
+Création du serveur d’authentification SSO (OAuth2)
+
+Mise en place de l'interface administrateur
