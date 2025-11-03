@@ -9,8 +9,10 @@
       
       
       
-        <link rel="prev" href="../fondamentaux/installation/">
+        <link rel="prev" href="../../s1/fondamentaux/poo/">
       
+      
+        <link rel="next" href="../../s3/mvc/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -70,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#docker" class="md-skip">
+        <a href="#introduction-a-docker" class="md-skip">
           Skip to content
         </a>
       
@@ -254,11 +256,31 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../fondamentaux/" class="md-tabs__link">
+        <a href="./" class="md-tabs__link">
           
   
   
   Séquence 2
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../s3/mvc/" class="md-tabs__link">
+          
+  
+  
+  Séquence 3
 
         </a>
       </li>
@@ -633,52 +655,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../fondamentaux/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Introduction
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../fondamentaux/installation/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Installation
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -690,6 +666,19 @@
       
         
       
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Docker
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -703,6 +692,150 @@
 
       </a>
       
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pourquoi-utiliser-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pourquoi utiliser Docker ?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-cles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts clés
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objectifs-de-la-sequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objectifs de la séquence
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prérequis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ressources-recommandees" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ressources recommandées
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Séquence 3
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Séquence 3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../s3/mvc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MVC
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -731,7 +864,53 @@
 
 
 
-<h1 id="docker">Docker</h1>
+<h1 id="introduction-a-docker">Introduction à Docker</h1>
+<p>Docker est une plateforme de conteneurisation qui permet d'encapsuler une application et ses dépendances dans un environnement portable et reproductible. Dans cette séquence, l'objectif est de comprendre les principes de base de Docker et d'apprendre à construire, exécuter et orchestrer des conteneurs pour des applications Java/Spring Boot.</p>
+<h2 id="installation"><a href="installation/">Installation</a></h2>
+<hr />
+<h2 id="pourquoi-utiliser-docker">Pourquoi utiliser Docker ?</h2>
+<ul>
+<li>Isolation des dépendances : chaque application s'exécute dans son propre conteneur.</li>
+<li>Portabilité : même comportement entre postes de développement, CI et production.</li>
+<li>Rapidité de déploiement : démarrage et mise à l'échelle simplifiés.</li>
+<li>Cohérence : même image = même comportement.</li>
+</ul>
+<hr />
+<h2 id="concepts-cles">Concepts clés</h2>
+<ul>
+<li>Image : snapshot immuable contenant l'application et son environnement.</li>
+<li>Conteneur : instance en cours d'exécution d'une image.</li>
+<li>Dockerfile : fichier déclaratif décrivant comment construire une image.</li>
+<li>Registry : dépôt d'images (ex. Docker Hub, registry privée).</li>
+<li>Volumes : stockage persistant pour les conteneurs.</li>
+<li>Réseaux : connectivité entre conteneurs et services.</li>
+</ul>
+<hr />
+<h2 id="objectifs-de-la-sequence">Objectifs de la séquence</h2>
+<p>À la fin de ce module, vous serez capable de :</p>
+<ul>
+<li>Expliquer les principaux concepts de Docker.</li>
+<li>Écrire un <code>Dockerfile</code> simple pour une application Spring Boot.</li>
+<li>Construire et tester une image Docker localement.</li>
+<li>Utiliser <code>docker compose</code> pour exécuter des services liés.</li>
+</ul>
+<hr />
+<h2 id="prerequis">Prérequis</h2>
+<ul>
+<li>Docker installé (Engine et Docker CLI). <blockquote>
+<p>Vérifier avec : <code>docker --version</code>.</p>
+</blockquote>
+</li>
+<li>Docker Compose pour orchestrer plusieurs services.</li>
+</ul>
+<hr />
+<h2 id="ressources-recommandees">Ressources recommandées</h2>
+<ul>
+<li>Documentation Docker : https://docs.docker.com</li>
+<li>Tutoriels officiels et exemples pour Java/Spring Boot</li>
+<li>Exemples pratiques fournis dans la suite de la séquence</li>
+</ul>
+<hr />
 
 
 
