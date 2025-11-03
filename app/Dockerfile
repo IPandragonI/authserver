@@ -1,22 +1,14 @@
+FROM maven:3.9.6-eclipse-temurin-21 AS build
+WORKDIR /workspace
+COPY pom.xml .
+COPY src ./src
+RUN mvn -B -DskipTests clean package
+
 FROM eclipse-temurin:21-jdk
-
-ENV VERSION="1.0.0"
-
-RUN apt-get update && \
-    apt-get install -y maven && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
-
-RUN mkdir -p /app
-
-WORKDIR /app
-
-COPY pom.xml /app
-
-COPY src /app/src
-
-RUN mvn clean package -DskipTests
-
+ARG JAR_FILE=/workspace/target/*.jar
+COPY --from=build ${JAR_FILE} /app.jar
+WORKDIR /
+ENV SERVER_PORT=3000
 EXPOSE 3000
-
-CMD mvn spring-boot:run
+ENV JAVA_OPTS=""
+ENTRYPOINT ["sh","-c","java $JAVA_OPTS -jar /app.jar"]

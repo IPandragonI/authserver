@@ -1,51 +1,36 @@
-services:
+name: authserver
 
-  fycsso_database:
-    container_name: fycsso_database
-    image: mariadb:10.5.12
+services:
+  db:
+    image: mariadb:11
+    env_file:
+      - .env
     environment:
-      MYSQL_ROOT_PASSWORD: root_password
-      MYSQL_DATABASE: fycsso_db
-      MYSQL_USER: fycsso_user
-      MYSQL_PASSWORD: fycsso_password
+      MARIADB_DATABASE: ${MARIADB_DATABASE}
+      MARIADB_USER: ${MARIADB_USER}
+      MARIADB_PASSWORD: ${MARIADB_PASSWORD}
+      MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD}
+    volumes:
+      - db_data:/var/lib/mysql
     ports:
       - "3306:3306"
-    volumes:
-      - mysql:/var/lib/mysql
 
-
-  fycsso_pma:
-    container_name: fycsso_pma
-    image: phpmyadmin:latest
+  app:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    ports:
+      - "${SERVER_PORT}:3000"
     environment:
-      PMA_HOST: fycsso_database
-    ports:
-      - "8080:80"
+      DATASOURCE_URL: ${DATASOURCE_URL}
+      DATASOURCE_USERNAME: ${DATASOURCE_USERNAME}
+      DATASOURCE_PASSWORD: ${DATASOURCE_PASSWORD}
+      LIQUIBASE_CHANGE_LOG: ${LIQUIBASE_CHANGE_LOG}
+      JAVA_OPTS: ${JAVA_OPTS}
     depends_on:
-      - fycsso_database
-
-  fycsso_app:
-    container_name: fycsso_app
-    build: .
-    ports:
-      - "3000:8000"
-    volumes:
-      - ./src:/app/src
-      - ./pom.xml:/app/pom.xml
-    depends_on:
-      - fycsso_database
-    restart: on-failure
-
-  fycsso_nginx:
-    container_name: fycsso_nginx
-    image: nginx:1.21
-    ports:
-      - "80:80"
-    volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf
-    depends_on:
-      - fycsso_app
+      - db
 
 volumes:
-  mysql:
-    driver: local
+  db_data:
