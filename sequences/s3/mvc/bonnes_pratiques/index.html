@@ -9,23 +9,23 @@
       
       
       
-        <link rel="prev" href="../../s2/docker/installation/">
+        <link rel="prev" href="../creation_archi/">
       
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
     
     
       
-        <title>MVC - SSO & Spring  : créez une authentification centralisée de A à Z</title>
+        <title>Bonnes pratiques - SSO & Spring  : créez une authentification centralisée de A à Z</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.84d31ad4.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.84d31ad4.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -44,7 +44,7 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#structuration-du-projet" class="md-skip">
+        <a href="#bonnes-pratiques" class="md-skip">
           Skip to content
         </a>
       
@@ -84,7 +84,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="SSO &amp; Spring  : créez une authentification centralisée de A à Z" class="md-header__button md-logo" aria-label="SSO & Spring  : créez une authentification centralisée de A à Z" data-md-component="logo">
+    <a href="../../../.." title="SSO &amp; Spring  : créez une authentification centralisée de A à Z" class="md-header__button md-logo" aria-label="SSO & Spring  : créez une authentification centralisée de A à Z" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              MVC
+              Bonnes pratiques
             
           </span>
         </div>
@@ -191,7 +191,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../../../.." class="md-tabs__link">
         
   
   
@@ -212,7 +212,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../s0/" class="md-tabs__link">
+        <a href="../../../s0/" class="md-tabs__link">
           
   
   
@@ -232,7 +232,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../s1/positionnement/" class="md-tabs__link">
+        <a href="../../../s1/positionnement/" class="md-tabs__link">
           
   
   
@@ -252,7 +252,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../s2/docker/" class="md-tabs__link">
+        <a href="../../../s2/docker/" class="md-tabs__link">
           
   
   
@@ -273,8 +273,17 @@
   
     
     
+      
+  
+  
+  
+    
+  
+  
+    
+    
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+        <a href="../rappels/" class="md-tabs__link">
           
   
   
@@ -282,6 +291,9 @@
 
         </a>
       </li>
+    
+  
+
     
   
 
@@ -310,7 +322,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="SSO &amp; Spring  : créez une authentification centralisée de A à Z" class="md-nav__button md-logo" aria-label="SSO & Spring  : créez une authentification centralisée de A à Z" data-md-component="logo">
+    <a href="../../../.." title="SSO &amp; Spring  : créez une authentification centralisée de A à Z" class="md-nav__button md-logo" aria-label="SSO & Spring  : créez une authentification centralisée de A à Z" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -328,7 +340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         
   
   
@@ -391,7 +403,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../s0/" class="md-nav__link">
+      <a href="../../../s0/" class="md-nav__link">
         
   
   
@@ -462,7 +474,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../s1/positionnement/" class="md-nav__link">
+      <a href="../../../s1/positionnement/" class="md-nav__link">
         
   
   
@@ -526,7 +538,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../s1/fondamentaux/" class="md-nav__link">
+      <a href="../../../s1/fondamentaux/" class="md-nav__link">
         
   
   
@@ -549,7 +561,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../s1/fondamentaux/introduction/" class="md-nav__link">
+      <a href="../../../s1/fondamentaux/introduction/" class="md-nav__link">
         
   
   
@@ -572,7 +584,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../s1/fondamentaux/poo/" class="md-nav__link">
+      <a href="../../../s1/fondamentaux/poo/" class="md-nav__link">
         
   
   
@@ -651,7 +663,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../s2/docker/" class="md-nav__link">
+      <a href="../../../s2/docker/" class="md-nav__link">
         
   
   
@@ -674,7 +686,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../s2/docker/installation/" class="md-nav__link">
+      <a href="../../../s2/docker/installation/" class="md-nav__link">
         
   
   
@@ -751,6 +763,95 @@
   
   
   
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Structuration du projet
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Structuration du projet
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rappels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Rappel et principes de l’architecture MVC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creation_archi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Création de l’architecture
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
     <li class="md-nav__item md-nav__item--active">
       
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
@@ -759,17 +860,75 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Bonnes pratiques
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    MVC
+    Bonnes pratiques
     
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#normes-de-codage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Normes de codage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sources
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -799,7 +958,43 @@
 
 
 
-<h1 id="structuration-du-projet">Structuration du projet</h1>
+<h1 id="bonnes-pratiques">Bonnes pratiques</h1>
+<h2 id="normes-de-codage">Normes de codage</h2>
+<ul>
+<li>
+<p>Suivez les conventions de nommage Java (CamelCase pour les classes, camelCase pour les variables et méthodes).</p>
+</li>
+<li>
+<p>Utilisez des packages pour organiser les classes par fonctionnalité (ex., <code>com.example.app.controller</code>, <code>com.example.app.service</code>, <code>com.example.app.model</code>).</p>
+</li>
+<li>
+<p>Commentez votre code de manière claire et concise seulement pour expliquer les parties complexes.</p>
+</li>
+<li>
+<p>Évitez les lignes de code trop longues (généralement limitées à 80-120 caractères).</p>
+</li>
+<li>
+<p>Utilisez des noms de variables et de méthodes significatifs et descriptifs.</p>
+</li>
+<li>
+<p>Évitez les commentaires redondants qui n’ajoutent pas de valeur.</p>
+</li>
+<li>
+<p>Utilisez des blocs <code>try-catch</code> pour gérer les exceptions de manière appropriée.</p>
+</li>
+<li>
+<p>Utilisez des annotations Spring Boot pour simplifier la configuration et la gestion des dépendances (ex., <code>@Autowired</code>, <code>@Service</code>, <code>@Repository</code>, <code>@RestController</code>).</p>
+</li>
+<li>
+<p>Utilisez des DTO (Data Transfer Objects) pour transférer les données entre les couches, afin de ne pas exposer directement les entités du modèle.</p>
+</li>
+</ul>
+<h2 id="sources">Sources</h2>
+<ul>
+<li><a href="https://spring.io/projects/spring-boot">Spring Boot Documentation</a></li>
+<li><a href="https://www.oracle.com/java/technologies/javase/codeconventions-150003.pdf">Java Code Conventions</a></li>
+<li><a href="https://restfulapi.net/best-practices/">Best Practices for Building RESTful APIs</a></li>
+</ul>
 
 
 
@@ -854,10 +1049,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.top", "search.suggest", "search.highlight", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.top", "search.suggest", "search.highlight", "toc.integrate"], "search": "../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>
