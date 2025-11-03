@@ -9,7 +9,7 @@ QCM d’évaluation (test de positionnement) sur les bases de Java, Spring...
 
 Rappels des fondamentaux Java : syntaxe, classes, méthodes, types...
 
-## [Séquence 2](sequences/s2/docker/index.md)
+## [Séquence 2](sequences/s2/fondamentaux/index.md)
 Installation et configuration de Docker
 
 Création d’un projet Spring Boot
