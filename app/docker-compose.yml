@@ -1,6 +1,7 @@
 name: authserver
 
 services:
+
   db:
     image: mariadb:11
     env_file:
@@ -29,6 +30,17 @@ services:
       DATASOURCE_PASSWORD: ${DATASOURCE_PASSWORD}
       LIQUIBASE_CHANGE_LOG: ${LIQUIBASE_CHANGE_LOG}
       JAVA_OPTS: ${JAVA_OPTS}
+    depends_on:
+      - db
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+    ports:
+      - "8080:80"
     depends_on:
       - db
 
