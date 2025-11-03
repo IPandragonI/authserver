@@ -16,9 +16,9 @@ le sujet du cours, le déroulé général et les objectifs pédagogiques
 
 Création d’un projet Spring Boot
 
-## [Séquence 3](sequences/s3/mvc/index.md)
+## [Séquence 3](sequences/s3/mvc/rappels.md)
 
-[Structuration du projet](sequences/s3/mvc/index.md) : MVC, packages, dépendances
+[Structuration du projet](sequences/s3/mvc/rappels.md) : MVC, packages, dépendances
 
 Mise en place de la base de données + Hibernate + Liquibase
 

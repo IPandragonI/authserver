@@ -28,5 +28,8 @@ nav:
       - Docker: sequences/s2/docker/index.md
       - Installation de docker: sequences/s2/docker/installation.md
   - Séquence 3 :
-      - MVC: sequences/s3/mvc/index.md
+      - Structuration du projet:
+          - Rappel et principes de l’architecture MVC: sequences/s3/mvc/rappels.md
+          - Création de l’architecture: sequences/s3/mvc/creation_archi.md
+          - Bonnes pratiques: sequences/s3/mvc/bonnes_pratiques.md
 
