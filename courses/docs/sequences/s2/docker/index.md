@@ -2,8 +2,6 @@
 
 Docker est une plateforme de conteneurisation qui permet d'encapsuler une application et ses dépendances dans un environnement portable et reproductible. Dans cette séquence, l'objectif est de comprendre les principes de base de Docker et d'apprendre à construire, exécuter et orchestrer des conteneurs pour des applications Java/Spring Boot.
 
-## [Installation](installation.md)
-
 ---
 
 ## Pourquoi utiliser Docker ?

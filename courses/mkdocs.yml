@@ -26,6 +26,7 @@ nav:
           - POO: sequences/s1/fondamentaux/poo.md
   - Séquence 2 :
       - Docker: sequences/s2/docker/index.md
+      - Installation de docker: sequences/s2/docker/installation.md
   - Séquence 3 :
       - MVC: sequences/s3/mvc/index.md
 
