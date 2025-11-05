@@ -10,6 +10,8 @@ extra_javascript:
   - assets/javascripts/links-target.js
 
 theme:
+  icon:
+    repo: fontawesome/brands/github
   name: material
   palette:
     - scheme: default
