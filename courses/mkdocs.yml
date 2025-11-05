@@ -22,6 +22,9 @@ theme:
     - navigation.tabs
     - navigation.top
     - navigation.footer
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tabs
     - search.suggest
     - search.highlight
     - toc.integrate
