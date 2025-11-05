@@ -14,7 +14,7 @@ Le **MVC (Model-View-Controller)** est un modèle architectural qui vise à sép
 Le **Model** contient les entités (objets représentant les données, souvent mappées à une table de base de données), 
 ainsi que la logique métier (les règles fonctionnelles propres à l’application) et la persistance des données.
 
-#### Exemple :
+**Exemple :**
 L’entité `User`, liée à la table `users` dans la base de données. 
 
 Le service `UserService`, qui contient les traitements liés aux utilisateurs. 
@@ -27,7 +27,7 @@ Le repository `UserRepository`, qui gère les opérations CRUD (*Create, Read, U
 La **View** est chargée de présenter les données au client (sous forme HTML, JSON, XML, etc.).  
 Dans une application Spring Boot REST, la vue n’est pas une page HTML, mais plutôt les réponses JSON renvoyées au client (par exemple une application front-end en React ou Angular).
 
-#### Exemple :
+**Exemple :**
 Une requête HTTP GET vers `/api/users/1` renvoie une réponse JSON contenant :
 
 ```json
@@ -44,7 +44,7 @@ Une requête HTTP GET vers `/api/users/1` renvoie une réponse JSON contenant :
 Le **Controller** est l'intermédiaire entre le client et le serveur. Il reçoit les requêtes HTTP, appelle les services du modèle pour traiter les données, 
 et retourne les réponses appropriées (souvent sous forme JSON dans une API REST).
 
-#### Exemple :
+**Exemple :**
 Le `UserController` qui gère les requêtes liées aux utilisateurs, comme la récupération, la création, la mise à jour et la suppression d’utilisateurs.
 
 `GET /api/users/{id}` → Récupérer un utilisateur par son ID.
