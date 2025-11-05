@@ -21,6 +21,7 @@ theme:
   features:
     - navigation.tabs
     - navigation.top
+    - navigation.footer
     - search.suggest
     - search.highlight
     - toc.integrate
@@ -48,3 +49,6 @@ nav:
           - Introduction à Liquibase: sequences/s3/hibernate_liquibase/liquibase.md
           - Intégration dans le projet: sequences/s3/hibernate_liquibase/integration.md
 
+extra:
+  generator: false
+copyright: Copyright © 2025 Léo Deroin | Mathys Farineau | Alan Sapet
