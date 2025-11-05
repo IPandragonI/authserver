@@ -47,3 +47,7 @@ Voici un exemple simple en XML :
 - Utiliser des `changeSet` petits et spécifiques pour faciliter la gestion des modifications.
 - Documenter chaque `changeSet` avec des commentaires pour expliquer son but.
 
+## Sources
+
+- [Documentation officielle de Liquibase](https://www.liquibase.org/documentation/index.html)
+- [Guide d'utilisation de Liquibase avec Spring Boot](https://www.baeldung.com/spring-boot-liquibase)
