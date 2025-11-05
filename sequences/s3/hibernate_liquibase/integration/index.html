@@ -1133,6 +1133,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#evolutions-du-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Évolutions du code
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1264,6 +1273,14 @@ Optional&lt;Role&gt; findByName(String name);
 }
 </code></pre>
 <p>Ainsi, Hibernate gère la persistance des entités définies en Java, tandis que Liquibase s'occupe de la gestion des versions du schéma de la base de données.</p>
+<hr />
+<h2 id="evolutions-du-code">Évolutions du code</h2>
+<p>A la fin de ce chapitre, vous devriez avoir ces modifications dans votre projet :</p>
+<ul>
+<li><a href="https://github.com/IPandragonI/authserver/blob/main/app/src/main/resources/application.properties"><code>application.properties</code></a></li>
+<li><a href="https://github.com/IPandragonI/authserver/blob/main/app/src/main/resources/db.changelog/fycsso-changelog.xml"><code>fycsso-changelog.xml</code></a></li>
+<li><a href="https://github.com/IPandragonI/authserver/blob/main/app/src/main/resources/db.changelog/1.0/001.xml"><code>001.xml</code></a></li>
+</ul>
 
 
 
