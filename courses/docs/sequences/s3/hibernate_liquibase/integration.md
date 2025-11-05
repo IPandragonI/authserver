@@ -20,6 +20,7 @@ spring.jpa.show-sql=true
   mettre à jour le schéma en fonction des entités.
 - `spring.jpa.show-sql` : Affiche les requêtes SQL générées par Hibernate dans la console pour le débogage.
 
+
 ## Structure des changelogs Liquibase
 
 Liquibase repose sur un fichier maître, ici fycsso-changelog.xml, qui inclut toutes les versions de schéma du projet.
@@ -119,3 +120,13 @@ Optional<Role> findByName(String name);
 ```
 
 Ainsi, Hibernate gère la persistance des entités définies en Java, tandis que Liquibase s'occupe de la gestion des versions du schéma de la base de données.
+
+---
+
+## Évolutions du code
+
+A la fin de ce chapitre, vous devriez avoir ces modifications dans votre projet :
+
+- [`application.properties`](https://github.com/IPandragonI/authserver/blob/main/app/src/main/resources/application.properties)
+- [`fycsso-changelog.xml`](https://github.com/IPandragonI/authserver/blob/main/app/src/main/resources/db.changelog/fycsso-changelog.xml)
+- [`001.xml`](https://github.com/IPandragonI/authserver/blob/main/app/src/main/resources/db.changelog/1.0/001.xml)
