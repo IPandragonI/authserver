@@ -1,0 +1,44 @@
+# Créer les services
+
+## Vidéo explicative
+(à ajouter)
+
+## 1. Créer les services
+
+1. Créer les services pour chaque repository de l'application. Pensez à créer les différentes méthodes que nous pourrons utiliser pour manipuler les données de chaque table de la base de données.
+2. Si vous avez des difficultés pour créer ces services, consultez le dépôt Github fourni.
+3. Une fois vos services créés, vous devriez avoir l'arborescence suivante :
+
+```
+src/main/java/esgi.fyc.sso.authserver/
+│
+└── repository
+│   └── AuditLogRepository
+│   └── CompanyRepository
+│   └── EmailVerificationTokenRepository
+│   └── PasswordResetTokenRepository
+│   └── PlanRepository
+│   └── RealmRepository
+│   └── RoleRepository
+│   └── UserRepository
+│   └── UserRealmRepository
+│   └── UserRealmIdRepository
+│   └── UserRoleRepository
+│   └── UserRoleIdRepository
+│   └── UserSessionRepository
+└── service
+│   └── AuditLogService
+│   └── CompanyService
+│   └── EmailVerificationTokenService
+│   └── PasswordResetTokenService
+│   └── PlanService
+│   └── RealmService
+│   └── RoleService
+│   └── UserService
+│   └── UserRealmService
+│   └── UserRealmIdService
+│   └── UserRoleService
+│   └── UserRoleIdService
+│   └── UserSessionService
+...
+```
