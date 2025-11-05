@@ -73,6 +73,12 @@ Exemple rapide de `DATASOURCE_URL` : `jdbc:mariadb://db:3306/<DATABASE>?useSSL=f
 
 ---
 
+## Vidéo explicative
+
+<iframe width="640" height="360" src="https://www.youtube.com/embed/BP1MIyxLTIA" frameborder="0" allowfullscreen></iframe>
+
+---
+
 ## Ressources (fichiers à récupérer dans le projet)
 
 - [`Dockerfile`](https://github.com/IPandragonI/authserver/blob/main/app/Dockerfile)
