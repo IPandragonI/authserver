@@ -20,7 +20,7 @@ Création d’un projet Spring Boot
 
 [Structuration du projet](sequences/s3/mvc/rappels.md) : MVC, packages, dépendances
 
-Mise en place de la base de données + Hibernate + Liquibase
+[Introduction à Hibernate & Liquibase](sequences/s3/hibernate_liquibase/hibernate.md)
 
 Création de la couche DAO & Service
 
