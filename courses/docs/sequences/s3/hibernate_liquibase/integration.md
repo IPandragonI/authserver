@@ -77,7 +77,7 @@ Ici, on inclut un script SQL externe pour créer les tables initiales.
 
 Voici le schéma SQL correspondant :
 
-![schema.sql](../../../../img/mvc.jpg)
+<img src="../../../../img/mvc.jpg" alt="Schéma MVC" style="max-width:600px;"/>
 
 ---
 
