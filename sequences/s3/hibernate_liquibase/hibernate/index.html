@@ -9,21 +9,25 @@
       
       
       
+        <link rel="prev" href="../../mvc/bonnes_pratiques/">
       
       
-      <link rel="icon" href="/assets/images/favicon.png">
+        <link rel="next" href="../liquibase/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
     
     
       
-        <title>SSO & Spring  : créez une authentification centralisée de A à Z</title>
+        <title>Introduction à Hibernate - SSO & Spring  : créez une authentification centralisée de A à Z</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.84d31ad4.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.84d31ad4.min.css">
       
         
-        <link rel="stylesheet" href="/assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -42,7 +46,7 @@
       
     
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -67,6 +71,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#introduction-a-hibernate" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -77,7 +86,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/." title="SSO &amp; Spring  : créez une authentification centralisée de A à Z" class="md-header__button md-logo" aria-label="SSO & Spring  : créez une authentification centralisée de A à Z" data-md-component="logo">
+    <a href="../../../.." title="SSO &amp; Spring  : créez une authentification centralisée de A à Z" class="md-header__button md-logo" aria-label="SSO & Spring  : créez une authentification centralisée de A à Z" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -97,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Introduction à Hibernate
             
           </span>
         </div>
@@ -184,7 +193,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/." class="md-tabs__link">
+      <a href="../../../.." class="md-tabs__link">
         
   
   
@@ -205,7 +214,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/sequences/s0/" class="md-tabs__link">
+        <a href="../../../s0/" class="md-tabs__link">
           
   
   
@@ -225,7 +234,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/sequences/s1/positionnement/" class="md-tabs__link">
+        <a href="../../../s1/positionnement/" class="md-tabs__link">
           
   
   
@@ -245,7 +254,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/sequences/s2/docker/" class="md-tabs__link">
+        <a href="../../../s2/docker/" class="md-tabs__link">
           
   
   
@@ -261,6 +270,8 @@
   
   
   
+    
+  
   
     
     
@@ -268,11 +279,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="/sequences/s3/mvc/rappels/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../mvc/rappels/" class="md-tabs__link">
           
   
   
@@ -311,7 +324,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="SSO &amp; Spring  : créez une authentification centralisée de A à Z" class="md-nav__button md-logo" aria-label="SSO & Spring  : créez une authentification centralisée de A à Z" data-md-component="logo">
+    <a href="../../../.." title="SSO &amp; Spring  : créez une authentification centralisée de A à Z" class="md-nav__button md-logo" aria-label="SSO & Spring  : créez une authentification centralisée de A à Z" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -329,7 +342,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         
   
   
@@ -392,7 +405,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/sequences/s0/" class="md-nav__link">
+      <a href="../../../s0/" class="md-nav__link">
         
   
   
@@ -463,7 +476,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/sequences/s1/positionnement/" class="md-nav__link">
+      <a href="../../../s1/positionnement/" class="md-nav__link">
         
   
   
@@ -527,7 +540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/sequences/s1/fondamentaux/" class="md-nav__link">
+      <a href="../../../s1/fondamentaux/" class="md-nav__link">
         
   
   
@@ -550,7 +563,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/sequences/s1/fondamentaux/introduction/" class="md-nav__link">
+      <a href="../../../s1/fondamentaux/introduction/" class="md-nav__link">
         
   
   
@@ -573,7 +586,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/sequences/s1/fondamentaux/poo/" class="md-nav__link">
+      <a href="../../../s1/fondamentaux/poo/" class="md-nav__link">
         
   
   
@@ -652,7 +665,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/sequences/s2/docker/" class="md-nav__link">
+      <a href="../../../s2/docker/" class="md-nav__link">
         
   
   
@@ -675,7 +688,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/sequences/s2/docker/installation/" class="md-nav__link">
+      <a href="../../../s2/docker/installation/" class="md-nav__link">
         
   
   
@@ -739,7 +752,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/sequences/s2/init_projet/creation_projet/" class="md-nav__link">
+      <a href="../../../s2/init_projet/creation_projet/" class="md-nav__link">
         
   
   
@@ -762,7 +775,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/sequences/s2/init_projet/dockerisation/" class="md-nav__link">
+      <a href="../../../s2/init_projet/dockerisation/" class="md-nav__link">
         
   
   
@@ -797,24 +810,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   
@@ -827,7 +845,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Séquence 3
@@ -882,7 +900,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/sequences/s3/mvc/rappels/" class="md-nav__link">
+      <a href="../../mvc/rappels/" class="md-nav__link">
         
   
   
@@ -905,7 +923,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/sequences/s3/mvc/creation_archi/" class="md-nav__link">
+      <a href="../../mvc/creation_archi/" class="md-nav__link">
         
   
   
@@ -928,7 +946,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/sequences/s3/mvc/bonnes_pratiques/" class="md-nav__link">
+      <a href="../../mvc/bonnes_pratiques/" class="md-nav__link">
         
   
   
@@ -956,6 +974,8 @@
                 
   
   
+    
+  
   
   
     
@@ -966,11 +986,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" checked>
         
           
           <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
@@ -986,7 +1006,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5_2">
             <span class="md-nav__icon md-icon"></span>
             Hibernate & Liquibase
@@ -997,10 +1017,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/sequences/s3/hibernate_liquibase/hibernate/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Introduction à Hibernate
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1011,6 +1053,107 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#quest-ce-quhibernate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Qu’est-ce qu’Hibernate ?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pourquoi-utiliser-hibernate-dans-ce-projet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pourquoi utiliser Hibernate dans ce projet ?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemple-dutilisation-dhibernate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemple d’utilisation d’Hibernate
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hibernate-et-jpa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hibernate et JPA
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#annotations-principales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Annotations principales
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operations-principales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Opérations principales
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operateurs-disponibles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Opérateurs disponibles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sources
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1023,7 +1166,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/sequences/s3/hibernate_liquibase/liquibase/" class="md-nav__link">
+      <a href="../liquibase/" class="md-nav__link">
         
   
   
@@ -1046,7 +1189,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/sequences/s3/hibernate_liquibase/integration/" class="md-nav__link">
+      <a href="../integration/" class="md-nav__link">
         
   
   
@@ -1089,8 +1232,138 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+
+<h1 id="introduction-a-hibernate">Introduction à Hibernate</h1>
+<h2 id="quest-ce-quhibernate">Qu’est-ce qu’Hibernate ?</h2>
+<p>Hibernate est un ORM (Object-Relational Mapping), c’est-à-dire un outil qui permet de faire le lien entre les objets Java et les tables d’une base de données relationnelle.</p>
+<p>En gros, il permet de manipuler des objets Java sans écrire directement de SQL.
+C’est Hibernate qui se charge de traduire les opérations Java (création, lecture, mise à jour, suppression) en requêtes SQL.</p>
+<h2 id="pourquoi-utiliser-hibernate-dans-ce-projet">Pourquoi utiliser Hibernate dans ce projet ?</h2>
+<p>Hibernate est l'un des ORM les plus populaires et largement utilisés dans l'écosystème Java.
+Utiliser un ORM permet de gagner du temps et d'automatiser la gestion des interactions avec la base de données.</p>
+<h2 id="exemple-dutilisation-dhibernate">Exemple d’utilisation d’Hibernate</h2>
+<p>Définissons une entité <code>User</code> qui sera mappée à une table <code>users</code> dans la base de données.
+Tout d'abord, nous créons la classe <code>User</code> avec les annotations Hibernate nécessaires :</p>
+<pre><code class="language-java">@Entity
+public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String username;
+}
+</code></pre>
+<p>Ici, on retrouve l'annotation <code>@Entity</code> qui indique qu’il s’agit d’une entité persistante.</p>
+<p>L’annotation <code>@Id</code> indique que le champ <code>id</code> est la clé primaire de l’entité, et <code>@GeneratedValue</code> spécifie que sa valeur sera générée automatiquement par la base de données.</p>
+<p>De fait, cette entity représente en base une table SQL :</p>
+<pre><code class="language-sql">CREATE TABLE users (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(255)
+);
+</code></pre>
+<h2 id="hibernate-et-jpa">Hibernate et JPA</h2>
+<p>JPA (Java Persistence API) est une spécification Java EE.
+Hibernate est une implémentation de cette spécification.</p>
+<p>JPA définit comment gérer la persistance.</p>
+<p>Hibernate fournit le code concret pour le faire.</p>
+<h2 id="annotations-principales">Annotations principales</h2>
+<ul>
+<li><code>@Entity</code> : Indique qu’une classe est une entité persistante.</li>
+<li><code>@Table(name = "table_name")</code> : Spécifie le nom de la table en base de données.</li>
+<li><code>@Id</code> : Indique le champ qui est la clé primaire.</li>
+<li><code>@GeneratedValue(strategy = GenerationType.IDENTITY)</code> : Spécifie que la valeur de la clé primaire est générée automatiquement.</li>
+<li><code>@Column(name = "column_name")</code> : Spécifie le nom de la colonne en base de données.</li>
+<li><code>@OneToMany</code>, <code>@ManyToOne</code>, <code>@ManyToMany</code> : Définissent les relations entre les entités.</li>
+</ul>
+<h2 id="operations-principales">Opérations principales</h2>
+<ul>
+<li><code>findAll()</code> : Récupérer toutes les entités d’un type donné.</li>
+<li><code>findById(id)</code> : Récupérer une entité par son ID.</li>
+<li><code>save(entity)</code> : Enregistrer une nouvelle entité ou mettre à jour une entité existante.</li>
+<li><code>delete(entity)</code> : Supprimer une entité.</li>
+<li><code>deleteById(id)</code> : Supprimer une entité par son ID.</li>
+<li><code>deleteAll()</code> : Supprimer toutes les entités d’un type donné.</li>
+<li><code>count()</code> : Compter le nombre d’entités d’un type donné.</li>
+<li><code>existsById(id)</code> : Vérifier si une entité existe par son ID.</li>
+<li><code>query()</code> : Exécuter des requêtes personnalisées.</li>
+</ul>
+<h2 id="operateurs-disponibles">Opérateurs disponibles</h2>
+<table>
+<thead>
+<tr>
+<th>Opérateur</th>
+<th>Exemple</th>
+<th>SQL généré</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>And</code></td>
+<td><code>findByUsernameAndEmail(String username, String email)</code></td>
+<td><code>SELECT * FROM users WHERE username = ? AND email = ?</code></td>
+</tr>
+<tr>
+<td><code>Or</code></td>
+<td><code>findByUsernameOrEmail(String username, String email)</code></td>
+<td><code>SELECT * FROM users WHERE username = ? OR email = ?</code></td>
+</tr>
+<tr>
+<td><code>Between</code></td>
+<td><code>findByAgeBetween(int start, int end)</code></td>
+<td><code>SELECT * FROM users WHERE age BETWEEN ? AND ?</code></td>
+</tr>
+<tr>
+<td><code>LessThan</code></td>
+<td><code>findByAgeLessThan(int age)</code></td>
+<td><code>SELECT * FROM users WHERE age &lt; ?</code></td>
+</tr>
+<tr>
+<td><code>GreaterThan</code></td>
+<td><code>findByAgeGreaterThan(int age)</code></td>
+<td><code>SELECT * FROM users WHERE age &gt; ?</code></td>
+</tr>
+<tr>
+<td><code>Like</code></td>
+<td><code>findByUsernameLike(String pattern)</code></td>
+<td><code>SELECT * FROM users WHERE username LIKE ?</code></td>
+</tr>
+<tr>
+<td><code>In</code></td>
+<td><code>findByRoleIn(List&lt;String&gt; roles)</code></td>
+<td><code>SELECT * FROM users WHERE role IN (?)</code></td>
+</tr>
+<tr>
+<td><code>OrderBy</code></td>
+<td><code>findByOrderByUsernameAsc()</code></td>
+<td><code>SELECT * FROM users ORDER BY username ASC</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="conclusion">Conclusion</h2>
+<p>Hibernate est un outil puissant pour gérer la persistance des données dans une application Java.
+Il simplifie grandement les interactions avec la base de données en permettant de travailler avec des objets Java plutôt qu’avec du SQL brut.
+Dans ce projet, nous utiliserons Hibernate pour gérer les entités et les opérations CRUD sur la base de données.</p>
+<h2 id="sources">Sources</h2>
+<ul>
+<li><a href="https://hibernate.org/orm/documentation/">Documentation officielle Hibernate</a></li>
+<li><a href="https://www.baeldung.com/the-persistence-layer-with-spring-data-jpa">Guide JPA de Baeldung</a></li>
+<li><a href="https://spring.io/projects/spring-data-jpa">Spring Data JPA</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -1132,10 +1405,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "/", "features": ["navigation.tabs", "navigation.top", "search.suggest", "search.highlight", "toc.integrate"], "search": "/assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.top", "search.suggest", "search.highlight", "toc.integrate"], "search": "../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="/assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>
