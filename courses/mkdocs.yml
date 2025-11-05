@@ -27,6 +27,9 @@ nav:
   - Séquence 2 :
       - Docker: sequences/s2/docker/index.md
       - Installation de docker: sequences/s2/docker/installation.md
+      - Initialisation du projet:
+          - Création du projet Spring Boot avec Spring Initializr: sequences/s2/init_projet/creation_projet.md
+          - Dockerisation de l’application: sequences/s2/init_projet/dockerisation.md
   - Séquence 3 :
       - Structuration du projet:
           - Rappel et principes de l’architecture MVC: sequences/s3/mvc/rappels.md
