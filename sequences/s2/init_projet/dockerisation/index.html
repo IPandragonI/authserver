@@ -71,6 +71,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#dockerisation-du-projet-spring-boot" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -781,6 +786,21 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Dockerisation de l’application
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -793,6 +813,112 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#role-des-fichiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rôle des fichiers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rôle des fichiers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dockerfile" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dockerfile
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-composeyml-productionstack-complet" class="md-nav__link">
+    <span class="md-ellipsis">
+      docker-compose.yml (production/stack complet)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-composedevyml-dev" class="md-nav__link">
+    <span class="md-ellipsis">
+      docker-compose.dev.yml (dev)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dockerignore" class="md-nav__link">
+    <span class="md-ellipsis">
+      .dockerignore
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables-importantes-dans-env" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variables importantes (dans .env)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commandes-utiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commandes utiles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#points-de-vigilance-depannage-rapide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Points de vigilance / dépannage rapide
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ressources-fichiers-a-recuperer-dans-le-projet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ressources (fichiers à récupérer dans le projet)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -996,9 +1122,88 @@
 
 
 
-  <h1>Dockerisation de l’application</h1>
-
-
+<h1 id="dockerisation-du-projet-spring-boot">Dockerisation du projet Spring Boot</h1>
+<p>Dans cette partie, vous apprendrez à dockeriser une application Spring Boot avec une base de données MariaDB, en utilisant Docker Compose pour orchestrer les services.
+Vous verrez comment configurer les fichiers Docker, gérer les variables d'environnement et lancer l'application en mode développement et production.</p>
+<hr />
+<h2 id="role-des-fichiers">Rôle des fichiers</h2>
+<h3 id="dockerfile"><code>Dockerfile</code></h3>
+<ul>
+<li>Multi-stage build : utilise une image Maven pour compiler le projet et produire le jar, puis une image JDK légère pour exécuter l'application.</li>
+<li>Avantage : image finale plus légère, compilation isolée.</li>
+<li>Points importants : ARG/ENV pour le JAR, <code>ENTRYPOINT</code> passe <code>JAVA_OPTS</code>.</li>
+</ul>
+<h3 id="docker-composeyml-productionstack-complet"><code>docker-compose.yml</code> (production/stack complet)</h3>
+<ul>
+<li>Définit trois services : <code>db</code> (MariaDB), <code>app</code> (image buildée depuis <code>Dockerfile</code>) et <code>phpmyadmin</code>.</li>
+<li>Utilise <code>env_file: - .env</code> pour centraliser les secrets/config.</li>
+<li>Monte un volume <code>db_data</code> pour la persistance des données.</li>
+<li><code>app</code> dépend de <code>db</code> avec <code>depends_on</code>.</li>
+<li>Mappe le port application via la variable <code>SERVER_PORT</code> et expose <code>3306</code> pour la DB.</li>
+</ul>
+<h3 id="docker-composedevyml-dev"><code>docker-compose.dev.yml</code> (dev)</h3>
+<ul>
+<li>Contient uniquement <code>db</code> (MariaDB) pour que l'application soit lancée depuis l'IDE mais connectée à une base dockerisée.</li>
+<li>Utiliser en dev quand on veut debug depuis IntelliJ et garder la DB isolée.</li>
+</ul>
+<h3 id="dockerignore"><code>.dockerignore</code></h3>
+<ul>
+<li>Exclut les fichiers inutiles du contexte de build Docker (ex : <code>target/</code>, <code>.git/</code>, etc.) pour accélérer la construction de l'image.</li>
+</ul>
+<hr />
+<h2 id="variables-importantes-dans-env">Variables importantes (dans <code>.env</code>)</h2>
+<ul>
+<li><code>MARIADB_DATABASE</code>, <code>MARIADB_USER</code>, <code>MARIADB_PASSWORD</code>, <code>MARIADB_ROOT_PASSWORD</code></li>
+<li><code>DATASOURCE_URL</code>, <code>DATASOURCE_USERNAME</code>, <code>DATASOURCE_PASSWORD</code> (pour Spring Boot)</li>
+<li><code>LIQUIBASE_CHANGE_LOG</code> (si Liquibase utilisé)</li>
+<li><code>SERVER_PORT</code> (port exposé par l'application)</li>
+<li><code>JAVA_OPTS</code> (options JVM au runtime)</li>
+</ul>
+<p>Exemple rapide de <code>DATASOURCE_URL</code> : <code>jdbc:mariadb://db:3306/&lt;DATABASE&gt;?useSSL=false</code></p>
+<hr />
+<h2 id="commandes-utiles">Commandes utiles</h2>
+<ul>
+<li>
+<p>Lancer la DB en dev (app depuis l'IDE) :<br />
+<code>docker compose -f docker-compose.dev.yml up -d</code></p>
+</li>
+<li>
+<p>Lancer le stack complet (build + run) :<br />
+<code>docker compose -f docker-compose.yml up --build</code></p>
+</li>
+<li>
+<p>Logs :<br />
+<code>docker compose -f docker-compose.yml logs -f app</code></p>
+</li>
+<li>
+<p>Arrêter et supprimer volumes :<br />
+<code>docker compose -f docker-compose.yml down -v</code></p>
+</li>
+<li>
+<p>Inspecter conteneur DB :<br />
+<code>docker compose -f docker-compose.yml exec db sh</code><br />
+  (ou utiliser <code>mysql</code> client selon image)</p>
+</li>
+</ul>
+<hr />
+<h2 id="points-de-vigilance-depannage-rapide">Points de vigilance / dépannage rapide</h2>
+<ul>
+<li>Si <code>docker</code> nécessite <code>sudo</code>, ajouter l'utilisateur au groupe <code>docker</code> ou utiliser <code>sudo</code>.</li>
+<li>Si port 3306 déjà utilisé, adapter le mapping local dans <code>docker-compose</code> ou arrêter le service local MySQL.</li>
+<li>Pour supprimer data corrompue : <code>docker volume rm &lt;project&gt;_db_data</code> (attention perte de données).</li>
+<li>Erreurs de build : vérifier que <code>pom.xml</code> et <code>src/</code> sont copiés correctement dans le <code>Dockerfile</code>.</li>
+</ul>
+<hr />
+<h2 id="ressources-fichiers-a-recuperer-dans-le-projet">Ressources (fichiers à récupérer dans le projet)</h2>
+<ul>
+<li><a href="https://github.com/IPandragonI/authserver/blob/main/app/Dockerfile"><code>Dockerfile</code></a></li>
+<li><a href="https://github.com/IPandragonI/authserver/blob/main/app/docker-compose.dev.yml"><code>docker-compose.yml</code></a></li>
+<li><a href="https://github.com/IPandragonI/authserver/blob/main/app/docker-compose.yml"><code>docker-compose.dev.yml</code></a></li>
+<li><a href="https://github.com/IPandragonI/authserver/blob/main/app/.env"><code>.env</code> (exemple à créer/modifier avant démarrage)</a></li>
+<li><a href="https://github.com/IPandragonI/authserver/blob/main/app/.dockerignore"><code>.dockerignore</code></a></li>
+</ul>
+<p>Copier ces fichiers depuis le dépôt local ou les ouvrir dans l'IDE pour modification.</p>
+<hr />
 
 
 
