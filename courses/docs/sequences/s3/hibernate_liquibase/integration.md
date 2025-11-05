@@ -86,7 +86,7 @@ Voici le schéma SQL correspondant :
 
 Chaque table SQL correspond à une entité Java dans le dossier :
 
-`src/main/java/com/fyc/sso/business/`
+`model/`
 
 
 Exemple :
@@ -107,7 +107,7 @@ public class Role {
 
 Chaque entité a son repository dédié dans :
 
-`src/main/java/com/fyc/sso/repository`
+`/repository`
 
 
 Exemple :
