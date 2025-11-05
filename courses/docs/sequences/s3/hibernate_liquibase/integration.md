@@ -75,6 +75,10 @@ Ainsi, chaque version du schéma (1.0, 1.1, etc.) a ses propres fichiers *.xml r
 
 Ici, on inclut un script SQL externe pour créer les tables initiales.
 
+Voici le schéma SQL correspondant :
+
+![schema.sql](../../../../img/mvc.jpg)
+
 ---
 
 ## Intégration avec Hibernate
