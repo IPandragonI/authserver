@@ -71,4 +71,3 @@ tout serait centralisé dans un même bloc de code comme par exemple :
 ## Sources
 
 - [Modèle MVC - Wikipedia](https://fr.wikipedia.org/wiki/Mod%C3%A8le-vue-contr%C3%B4leur)
-- [Spring MVC - Documentation officielle Spring](https://spring.io/guides/gs/rest-service/)
