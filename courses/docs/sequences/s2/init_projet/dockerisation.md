@@ -79,7 +79,7 @@ Exemple rapide de `DATASOURCE_URL` : `jdbc:mariadb://db:3306/<DATABASE>?useSSL=f
 
 ---
 
-## Ressources (fichiers à récupérer dans le projet)
+## Évolutions du code (fichiers à récupérer dans le projet)
 
 - [`Dockerfile`](https://github.com/IPandragonI/authserver/blob/main/app/Dockerfile)
 - [`docker-compose.yml`](https://github.com/IPandragonI/authserver/blob/main/app/docker-compose.dev.yml)
@@ -88,5 +88,3 @@ Exemple rapide de `DATASOURCE_URL` : `jdbc:mariadb://db:3306/<DATABASE>?useSSL=f
 - [`.dockerignore`](https://github.com/IPandragonI/authserver/blob/main/app/.dockerignore)
 
 Copier ces fichiers depuis le dépôt local ou les ouvrir dans l'IDE pour modification.
-
----
