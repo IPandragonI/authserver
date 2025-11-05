@@ -1,5 +1,5 @@
 site_name: "SSO & Spring  : créez une authentification centralisée de A à Z"
-repo_url: https://ipandragoni.github.io/authserver/
+repo_url: https://github.com/IPandragonI/authserver
 repo_name: GitHub
 site_description: "Apprenez à créer un serveur d'authentification centralisé avec SSO et Spring Boot."
 site_author: "Léo Deroin | Mathys Farineau | Alan Sapet"
