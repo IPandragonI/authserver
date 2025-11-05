@@ -1,9 +1,13 @@
 site_name: "SSO & Spring  : créez une authentification centralisée de A à Z"
-repo_url: https://github.com/IPandragonI/authserver
-repo_name: GitHub
 site_description: "Apprenez à créer un serveur d'authentification centralisé avec SSO et Spring Boot."
 site_author: "Léo Deroin | Mathys Farineau | Alan Sapet"
 site_url: https://ipandragoni.github.io/authserver/
+
+repo_url: https://github.com/IPandragonI/authserver
+repo_name: GitHub
+
+extra_javascript:
+  - assets/javascripts/links-target.js
 
 theme:
   name: material
@@ -22,25 +26,25 @@ theme:
     - toc.integrate
 nav:
   - Accueil: index.md
-  - Séquence 0 :
+  - Séquence 0:
       - Introduction: sequences/s0/index.md
   - Séquence 1:
       - Test de positionnement: sequences/s1/positionnement/index.md
       - Fondamentaux:
           - Introduction: sequences/s1/fondamentaux/java.md
           - POO: sequences/s1/fondamentaux/poo.md
-  - Séquence 2 :
+  - Séquence 2:
       - Docker: sequences/s2/docker/index.md
       - Installation de docker: sequences/s2/docker/installation.md
       - Initialisation du projet:
           - Création du projet Spring Boot avec Spring Initializr: sequences/s2/init_projet/creation_projet.md
           - Dockerisation de l’application: sequences/s2/init_projet/dockerisation.md
-  - Séquence 3 :
+  - Séquence 3:
       - Structuration du projet:
           - Rappel et principes de l’architecture MVC: sequences/s3/mvc/rappels.md
           - Création de l’architecture: sequences/s3/mvc/creation_archi.md
       - Hibernate & Liquibase:
-            - Introduction à Hibernate: sequences/s3/hibernate_liquibase/hibernate.md
-            - Introduction à Liquibase: sequences/s3/hibernate_liquibase/liquibase.md
-            - Intégration dans le projet: sequences/s3/hibernate_liquibase/integration.md
+          - Introduction à Hibernate: sequences/s3/hibernate_liquibase/hibernate.md
+          - Introduction à Liquibase: sequences/s3/hibernate_liquibase/liquibase.md
+          - Intégration dans le projet: sequences/s3/hibernate_liquibase/integration.md
 
