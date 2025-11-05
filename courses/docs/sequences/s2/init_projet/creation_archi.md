@@ -1,4 +1,4 @@
-# Création de l’architecture MVC
+# Création de l’architecture
 
 ## Arborescence du projet
 
@@ -19,6 +19,7 @@ app/
 │   │       └── db.changelog/
 │   │         └── app-changelog.xml
 │   │       ├── static/
+│   │       ├── template/
 │   │       └── application.properties
 └── pom.xml
 ```
