@@ -975,21 +975,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Model">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#exemple" class="md-nav__link">
-    <span class="md-ellipsis">
-      Exemple :
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
           <li class="md-nav__item">
@@ -999,21 +984,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="View">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#exemple_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Exemple :
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
           <li class="md-nav__item">
@@ -1022,21 +992,6 @@
       Controller
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Controller">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#exemple_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      Exemple :
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1259,16 +1214,16 @@
 <h3 id="model">Model</h3>
 <p>Le <strong>Model</strong> contient les entités (objets représentant les données, souvent mappées à une table de base de données), 
 ainsi que la logique métier (les règles fonctionnelles propres à l’application) et la persistance des données.</p>
-<h4 id="exemple">Exemple :</h4>
-<p>L’entité <code>User</code>, liée à la table <code>users</code> dans la base de données. </p>
+<p><strong>Exemple :</strong>
+L’entité <code>User</code>, liée à la table <code>users</code> dans la base de données. </p>
 <p>Le service <code>UserService</code>, qui contient les traitements liés aux utilisateurs. </p>
 <p>Le repository <code>UserRepository</code>, qui gère les opérations CRUD (<em>Create, Read, Update, Delete</em>) sur les utilisateurs.</p>
 <hr />
 <h3 id="view">View</h3>
 <p>La <strong>View</strong> est chargée de présenter les données au client (sous forme HTML, JSON, XML, etc.).<br />
 Dans une application Spring Boot REST, la vue n’est pas une page HTML, mais plutôt les réponses JSON renvoyées au client (par exemple une application front-end en React ou Angular).</p>
-<h4 id="exemple_1">Exemple :</h4>
-<p>Une requête HTTP GET vers <code>/api/users/1</code> renvoie une réponse JSON contenant :</p>
+<p><strong>Exemple :</strong>
+Une requête HTTP GET vers <code>/api/users/1</code> renvoie une réponse JSON contenant :</p>
 <pre><code class="language-json">{
   &quot;id&quot;: 1,
   &quot;username&quot;: &quot;dupond&quot;,
@@ -1279,8 +1234,8 @@ Dans une application Spring Boot REST, la vue n’est pas une page HTML, mais pl
 <h3 id="controller">Controller</h3>
 <p>Le <strong>Controller</strong> est l'intermédiaire entre le client et le serveur. Il reçoit les requêtes HTTP, appelle les services du modèle pour traiter les données, 
 et retourne les réponses appropriées (souvent sous forme JSON dans une API REST).</p>
-<h4 id="exemple_2">Exemple :</h4>
-<p>Le <code>UserController</code> qui gère les requêtes liées aux utilisateurs, comme la récupération, la création, la mise à jour et la suppression d’utilisateurs.</p>
+<p><strong>Exemple :</strong>
+Le <code>UserController</code> qui gère les requêtes liées aux utilisateurs, comme la récupération, la création, la mise à jour et la suppression d’utilisateurs.</p>
 <p><code>GET /api/users/{id}</code> → Récupérer un utilisateur par son ID.</p>
 <p><code>POST /api/users</code> → Créer un nouvel utilisateur.</p>
 <p><code>PUT /api/users/{id}</code> → Mettre à jour un utilisateur existant.</p>
