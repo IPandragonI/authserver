@@ -50,3 +50,12 @@ Docker est une plateforme de conteneurisation qui permet d'encapsuler une applic
 - Exemples pratiques fournis dans la suite de la séquence
 
 ---
+
+## Exercices pratiques
+
+1. Installer Docker et vérifier son bon fonctionnement.
+2. Créer un projet avec 2 services (phpmyadmin + mariadb) en utilisant Docker Compose.
+
+## Correction
+
+> TODO: faire un lien vers la correction une fois qu'elle est rédigée. (video a faire)
