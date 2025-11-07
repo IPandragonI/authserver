@@ -16,7 +16,13 @@ public class SpringSecurityConfig {
         http
                 .csrf(AbstractHttpConfigurer::disable) // Disable CSRF protection for simplicity
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/", "/api/**").permitAll()
+                        .requestMatchers(
+                                "/",
+                                "/api/**",
+                                "/swagger-ui.html",
+                                "/swagger-ui/**",
+                                "/v3/api-docs/**"
+                        ).permitAll()
                         .anyRequest().authenticated()
                 );
 
