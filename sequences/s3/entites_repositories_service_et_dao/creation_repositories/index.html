@@ -1096,21 +1096,10 @@
 </ol>
 <pre><code>src/main/java/esgi.fyc.sso.authserver/
 │
-├── model
-│   └── AuditLog
-│   └── Company
-│   └── EmailVerificationToken
-│   └── PasswordResetToken
-│   └── Plan
-│   └── Realm
-│   └── Role
-│   └── User
-│   └── UserRealm
-│   └── UserRealmId
-│   └── UserRole
-│   └── UserRoleId
-│   └── UserSession
-│
+└── controller
+|   └── ...
+│└── model
+|   └── ...
 └── repository
 │   └── AuditLogRepository
 │   └── CompanyRepository
@@ -1125,6 +1114,8 @@
 │   └── UserRoleRepository
 │   └── UserRoleIdRepository
 │   └── UserSessionRepository
+└── service
+|   └── ...
 ...
 </code></pre>
 
