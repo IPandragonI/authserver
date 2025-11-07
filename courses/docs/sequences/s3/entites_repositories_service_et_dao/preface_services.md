@@ -37,10 +37,10 @@ exemple :
         return testEntity;
     }
 
-    // Get test by name
+    // Get test by id
     public Optional<Test> getTestById(Id test) {
         return testRepository.findByTest(test)
     }
 ```
-Dans l'étape suivante, nous allons donc pouvoir créer les différents services liés à nos remositories.
+Dans l'étape suivante, nous allons donc pouvoir créer les différents services liés à nos repositories.
 

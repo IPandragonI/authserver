@@ -21,6 +21,8 @@ Rappel du schéma de base de données :
 ```
 src/main/java/esgi.fyc.sso.authserver/
 │
+└── controller
+|   └── ...
 ├── model
 │   └── AuditLog
 │   └── Company
@@ -35,5 +37,9 @@ src/main/java/esgi.fyc.sso.authserver/
 │   └── UserRole
 │   └── UserRoleId
 │   └── UserSession
+└── repository
+|   └── ...
+└── service
+|   └── ...
 ...
 ```

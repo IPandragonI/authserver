@@ -12,21 +12,10 @@
 ```
 src/main/java/esgi.fyc.sso.authserver/
 │
-├── model
-│   └── AuditLog
-│   └── Company
-│   └── EmailVerificationToken
-│   └── PasswordResetToken
-│   └── Plan
-│   └── Realm
-│   └── Role
-│   └── User
-│   └── UserRealm
-│   └── UserRealmId
-│   └── UserRole
-│   └── UserRoleId
-│   └── UserSession
-│
+└── controller
+|   └── ...
+│└── model
+|   └── ...
 └── repository
 │   └── AuditLogRepository
 │   └── CompanyRepository
@@ -41,5 +30,7 @@ src/main/java/esgi.fyc.sso.authserver/
 │   └── UserRoleRepository
 │   └── UserRoleIdRepository
 │   └── UserSessionRepository
+└── service
+|   └── ...
 ...
 ```

@@ -12,20 +12,12 @@
 ```
 src/main/java/esgi.fyc.sso.authserver/
 │
+└── controller
+|   └── ...
+└── model
+|   └── ...
 └── repository
-│   └── AuditLogRepository
-│   └── CompanyRepository
-│   └── EmailVerificationTokenRepository
-│   └── PasswordResetTokenRepository
-│   └── PlanRepository
-│   └── RealmRepository
-│   └── RoleRepository
-│   └── UserRepository
-│   └── UserRealmRepository
-│   └── UserRealmIdRepository
-│   └── UserRoleRepository
-│   └── UserRoleIdRepository
-│   └── UserSessionRepository
+|   └── ...
 └── service
 │   └── AuditLogService
 │   └── CompanyService
@@ -42,3 +34,4 @@ src/main/java/esgi.fyc.sso.authserver/
 │   └── UserSessionService
 ...
 ```
+Nous pouvons ensuite passer à la création des DAO.
