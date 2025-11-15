@@ -2,82 +2,94 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://ipandragoni.github.io/authserver/</loc>
-         <lastmod>2025-11-07</lastmod>
+         <lastmod>2025-11-15</lastmod>
     </url>
     <url>
          <loc>https://ipandragoni.github.io/authserver/sequences/s0/</loc>
-         <lastmod>2025-11-07</lastmod>
+         <lastmod>2025-11-15</lastmod>
     </url>
     <url>
          <loc>https://ipandragoni.github.io/authserver/sequences/s1/fondamentaux/java/</loc>
-         <lastmod>2025-11-07</lastmod>
+         <lastmod>2025-11-15</lastmod>
     </url>
     <url>
          <loc>https://ipandragoni.github.io/authserver/sequences/s1/fondamentaux/poo/</loc>
-         <lastmod>2025-11-07</lastmod>
+         <lastmod>2025-11-15</lastmod>
     </url>
     <url>
          <loc>https://ipandragoni.github.io/authserver/sequences/s1/positionnement/</loc>
-         <lastmod>2025-11-07</lastmod>
+         <lastmod>2025-11-15</lastmod>
     </url>
     <url>
          <loc>https://ipandragoni.github.io/authserver/sequences/s2/docker/</loc>
-         <lastmod>2025-11-07</lastmod>
+         <lastmod>2025-11-15</lastmod>
     </url>
     <url>
          <loc>https://ipandragoni.github.io/authserver/sequences/s2/docker/installation/</loc>
-         <lastmod>2025-11-07</lastmod>
+         <lastmod>2025-11-15</lastmod>
     </url>
     <url>
          <loc>https://ipandragoni.github.io/authserver/sequences/s2/init_projet/creation_archi/</loc>
-         <lastmod>2025-11-07</lastmod>
+         <lastmod>2025-11-15</lastmod>
     </url>
     <url>
          <loc>https://ipandragoni.github.io/authserver/sequences/s2/init_projet/creation_projet/</loc>
-         <lastmod>2025-11-07</lastmod>
+         <lastmod>2025-11-15</lastmod>
     </url>
     <url>
          <loc>https://ipandragoni.github.io/authserver/sequences/s2/init_projet/dockerisation/</loc>
-         <lastmod>2025-11-07</lastmod>
+         <lastmod>2025-11-15</lastmod>
     </url>
     <url>
          <loc>https://ipandragoni.github.io/authserver/sequences/s3/entites_repositories_service_et_dao/creation_entites/</loc>
-         <lastmod>2025-11-07</lastmod>
+         <lastmod>2025-11-15</lastmod>
     </url>
     <url>
          <loc>https://ipandragoni.github.io/authserver/sequences/s3/entites_repositories_service_et_dao/creation_repositories/</loc>
-         <lastmod>2025-11-07</lastmod>
+         <lastmod>2025-11-15</lastmod>
     </url>
     <url>
          <loc>https://ipandragoni.github.io/authserver/sequences/s3/entites_repositories_service_et_dao/creation_service/</loc>
-         <lastmod>2025-11-07</lastmod>
+         <lastmod>2025-11-15</lastmod>
     </url>
     <url>
          <loc>https://ipandragoni.github.io/authserver/sequences/s3/entites_repositories_service_et_dao/preface_entites/</loc>
-         <lastmod>2025-11-07</lastmod>
+         <lastmod>2025-11-15</lastmod>
     </url>
     <url>
          <loc>https://ipandragoni.github.io/authserver/sequences/s3/entites_repositories_service_et_dao/preface_repositories/</loc>
-         <lastmod>2025-11-07</lastmod>
+         <lastmod>2025-11-15</lastmod>
     </url>
     <url>
          <loc>https://ipandragoni.github.io/authserver/sequences/s3/entites_repositories_service_et_dao/preface_services/</loc>
-         <lastmod>2025-11-07</lastmod>
+         <lastmod>2025-11-15</lastmod>
     </url>
     <url>
          <loc>https://ipandragoni.github.io/authserver/sequences/s3/hibernate_liquibase/hibernate/</loc>
-         <lastmod>2025-11-07</lastmod>
+         <lastmod>2025-11-15</lastmod>
     </url>
     <url>
          <loc>https://ipandragoni.github.io/authserver/sequences/s3/hibernate_liquibase/integration/</loc>
-         <lastmod>2025-11-07</lastmod>
+         <lastmod>2025-11-15</lastmod>
     </url>
     <url>
          <loc>https://ipandragoni.github.io/authserver/sequences/s3/hibernate_liquibase/liquibase/</loc>
-         <lastmod>2025-11-07</lastmod>
+         <lastmod>2025-11-15</lastmod>
     </url>
     <url>
          <loc>https://ipandragoni.github.io/authserver/sequences/s3/mvc/rappels/</loc>
-         <lastmod>2025-11-07</lastmod>
+         <lastmod>2025-11-15</lastmod>
+    </url>
+    <url>
+         <loc>https://ipandragoni.github.io/authserver/sequences/s4/clients/</loc>
+         <lastmod>2025-11-15</lastmod>
+    </url>
+    <url>
+         <loc>https://ipandragoni.github.io/authserver/sequences/s4/clients/js/</loc>
+         <lastmod>2025-11-15</lastmod>
+    </url>
+    <url>
+         <loc>https://ipandragoni.github.io/authserver/sequences/s4/clients/react/</loc>
+         <lastmod>2025-11-15</lastmod>
     </url>
 </urlset>
