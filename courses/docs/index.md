@@ -29,3 +29,11 @@ Mise en place de Spring Security
 Création du serveur d’authentification SSO (OAuth2)
 
 Mise en place de l'interface administrateur
+
+## [Séquence 4](sequences/s4/clients/index.md)
+
+[Client JavaScript](sequences/s4/clients/js.md) : Création d’un client web JS consommant le SSO
+
+[Client React](sequences/s4/clients/react.md) : Création d’un client web React consommant le SSO
+
+Conclusion et perspectives

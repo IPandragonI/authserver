@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <title>Client JS - Test SSO</title>
+</head>
+
+<body style="font-family: sans-serif; padding: 20px;">
+<h1>Client SSO - JS Natif</h1>
+
+<button id="login-btn">Login avec FYC SSO</button>
+
+<h2 id="status"></h2>
+<pre id="userinfo"></pre>
+
+<script>
+    const client_id = "js-client";
+    const redirect_uri = "http://localhost:5500/index.html";
+    const authorization_endpoint = "http://localhost:8080/oauth/authorize";
+    const token_endpoint = "http://localhost:8080/oauth/token";
+    const userinfo_endpoint = "http://localhost:8080/oauth/userinfo";
+
+    document.getElementById("login-btn").onclick = () => {
+        window.location = `${authorization_endpoint}?response_type=code` +
+            `&client_id=${client_id}` +
+            `&redirect_uri=${encodeURIComponent(redirect_uri)}` +
+            `&scope=openid%20profile%20email`;
+    };
+
+    async function exchangeCodeForToken(code) {
+        const res = await fetch(token_endpoint, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+            },
+            body: new URLSearchParams({
+                grant_type: "authorization_code",
+                code,
+                redirect_uri,
+                client_id,
+            }),
+        });
+
+        return res.json();
+    }
+
+    async function getUserInfo(token) {
+        const res = await fetch(userinfo_endpoint, {
+            headers: { Authorization: `Bearer ${token}` },
+        });
+        return res.json();
+    }
+
+    (async function () {
+        const params = new URLSearchParams(window.location.search);
+        const code = params.get("code");
+
+        if (code) {
+            document.getElementById("status").textContent = "Échange du code...";
+
+            const tokenData = await exchangeCodeForToken(code);
+
+            if (tokenData.access_token) {
+                document.getElementById("status").textContent = "Connecté !";
+
+                const user = await getUserInfo(tokenData.access_token);
+                document.getElementById("userinfo").textContent = JSON.stringify(user, null, 2);
+            } else {
+                document.getElementById("status").textContent = "Erreur lors de l'échange du code";
+            }
+        }
+    })();
+</script>
+</body>
+</html>
