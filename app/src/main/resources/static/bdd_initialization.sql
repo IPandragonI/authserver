@@ -3,6 +3,8 @@ CREATE TABLE IF NOT EXISTS role
     id          INT AUTO_INCREMENT,
     name        VARCHAR(255),
     description TEXT,
+    created_at  DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at  DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     PRIMARY KEY (id)
 );
 
@@ -15,6 +17,8 @@ CREATE TABLE IF NOT EXISTS plan
     max_users   INT  DEFAULT 0,
     max_realms  INT  DEFAULT 0,
     features    TEXT DEFAULT NULL,
+    created_at  DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at  DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     PRIMARY KEY (id)
 );
 
@@ -42,6 +46,8 @@ CREATE TABLE IF NOT EXISTS company
     siret                VARCHAR(14),
     vat                  VARCHAR(20),
     plan_id              INT NOT NULL,
+    created_at  DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at  DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     PRIMARY KEY (id),
     UNIQUE (email),
     FOREIGN KEY (plan_id) REFERENCES plan (id)
@@ -52,18 +58,17 @@ CREATE TABLE IF NOT EXISTS user
     id          INT AUTO_INCREMENT,
     username    VARCHAR(255) NOT NULL,
     email       VARCHAR(255),
-    enabled     BOOLEAN      NOT NULL,
-    firstname   VARCHAR(255) NOT NULL,
-    lastname    VARCHAR(255) NOT NULL,
+    firstname   VARCHAR(255),
+    lastname    VARCHAR(255),
     password    VARCHAR(255) NOT NULL,
     verified_at DATETIME,
-    company_id  INT          NOT NULL,
-    role_id     INT          NOT NULL,
+    company_id  INT,
+    created_at  DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at  DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     PRIMARY KEY (id),
     UNIQUE (username),
     UNIQUE (email),
-    FOREIGN KEY (company_id) REFERENCES company (id),
-    FOREIGN KEY (role_id) REFERENCES role (id)
+    FOREIGN KEY (company_id) REFERENCES company (id)
 );
 
 CREATE TABLE IF NOT EXISTS realm
@@ -83,6 +88,8 @@ CREATE TABLE IF NOT EXISTS user_realm
     user_id     INT,
     added_at    DATETIME,
     last_access DATETIME,
+    created_at  DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at  DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     PRIMARY KEY (realm_id, user_id),
     FOREIGN KEY (realm_id) REFERENCES realm (id),
     FOREIGN KEY (user_id) REFERENCES user (id)
@@ -93,8 +100,9 @@ CREATE TABLE IF NOT EXISTS user_role
     role_id     INT,
     user_id     INT,
     assigned_at DATETIME,
+    created_at  DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at  DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     PRIMARY KEY (role_id, user_id),
-    UNIQUE (user_id),
     FOREIGN KEY (role_id) REFERENCES role (id),
     FOREIGN KEY (user_id) REFERENCES user (id)
 );
@@ -110,33 +118,11 @@ CREATE TABLE IF NOT EXISTS user_session
     ua            TEXT,
     expires_at    DATETIME     NOT NULL,
     revoked       BOOLEAN,
+    created_at  DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at  DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     PRIMARY KEY (id),
     FOREIGN KEY (user_id) REFERENCES user (id),
     FOREIGN KEY (realm_id) REFERENCES realm (id)
-);
-
-CREATE TABLE IF NOT EXISTS email_verification_token
-(
-    id         INT AUTO_INCREMENT,
-    token      VARCHAR(255) NOT NULL,
-    expires_at DATETIME     NOT NULL,
-    used       BOOLEAN,
-    user_id    INT,
-    PRIMARY KEY (id),
-    UNIQUE (token),
-    FOREIGN KEY (user_id) REFERENCES user (id)
-);
-
-CREATE TABLE IF NOT EXISTS password_reset_token
-(
-    id         INT AUTO_INCREMENT,
-    token      VARCHAR(255) NOT NULL,
-    expires_at DATETIME     NOT NULL,
-    used       BOOLEAN,
-    user_id    INT,
-    PRIMARY KEY (id),
-    UNIQUE (token),
-    FOREIGN KEY (user_id) REFERENCES user (id)
 );
 
 CREATE TABLE IF NOT EXISTS audit_log

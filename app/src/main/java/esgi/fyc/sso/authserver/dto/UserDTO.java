@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.v3.oas.annotations.media.Schema;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import static com.fasterxml.jackson.annotation.JsonProperty.Access.WRITE_ONLY;
 
@@ -13,33 +14,31 @@ public class UserDTO {
     private Integer id;
     private String username;
     private String email;
-    private Boolean enabled;
     private String firstname;
     private String lastname;
     @JsonProperty(access = WRITE_ONLY)
     private String password;
     private LocalDateTime verifiedAt;
     private Integer companyId;
-    private Integer roleId;
+    private List<Integer> rolesIds;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
     public UserDTO() {
     }
 
-    public UserDTO(Integer id, String username, String email, Boolean enabled, String firstname, String lastname,
-                   String password, LocalDateTime verifiedAt, Integer companyId, Integer roleId,
+    public UserDTO(Integer id, String username, String email, String firstname, String lastname,
+                   String password, LocalDateTime verifiedAt, Integer companyId, List<Integer> rolesIds,
                    LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id = id;
         this.username = username;
         this.email = email;
-        this.enabled = enabled;
         this.firstname = firstname;
         this.lastname = lastname;
         this.password = password;
         this.verifiedAt = verifiedAt;
         this.companyId = companyId;
-        this.roleId = roleId;
+        this.rolesIds = rolesIds;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
     }
@@ -67,14 +66,6 @@ public class UserDTO {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public Boolean getEnabled() {
-        return enabled;
-    }
-
-    public void setEnabled(Boolean enabled) {
-        this.enabled = enabled;
     }
 
     public String getFirstname() {
@@ -117,12 +108,12 @@ public class UserDTO {
         this.companyId = companyId;
     }
 
-    public Integer getRoleId() {
-        return roleId;
+    public List<Integer> getRolesIds() {
+        return rolesIds;
     }
 
-    public void setRoleId(Integer roleId) {
-        this.roleId = roleId;
+    public void setRolesIds(List<Integer> rolesIds) {
+        this.rolesIds = rolesIds;
     }
 
     public LocalDateTime getCreatedAt() {

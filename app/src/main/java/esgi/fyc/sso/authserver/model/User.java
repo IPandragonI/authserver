@@ -2,6 +2,7 @@ package esgi.fyc.sso.authserver.model;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "user")
@@ -17,13 +18,10 @@ public class User {
     @Column(name = "email", unique = true)
     private String email;
 
-    @Column(name = "enabled", nullable = false)
-    private Boolean enabled;
-
-    @Column(name = "firstname", nullable = false)
+    @Column(name = "firstname")
     private String firstname;
 
-    @Column(name = "lastname", nullable = false)
+    @Column(name = "lastname")
     private String lastname;
 
     @Column(name = "password", nullable = false)
@@ -33,14 +31,14 @@ public class User {
     private LocalDateTime verifiedAt;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "company_id", nullable = false)
+    @JoinColumn(name = "company_id")
     private Company company;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "role_id", nullable = true)
-    private Role role;
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+    private List<Role> roles;
 
-    @Column(name="created_at", nullable=false,updatable=false)
+    @Column(name="created_at", nullable=false, updatable=false)
     private LocalDateTime createdAt;
 
     @Column(name="updated_at")
@@ -50,17 +48,16 @@ public class User {
     public User() {
     }
 
-    public User(String username, String email, Boolean enabled, String firstname, String lastname,
-                String password, LocalDateTime verifiedAt, Company company, Role role) {
+    public User(String username, String email, String firstname, String lastname,
+                String password, LocalDateTime verifiedAt, Company company, List<Role> roles) {
         this.username = username;
         this.email = email;
-        this.enabled = enabled;
         this.firstname = firstname;
         this.lastname = lastname;
         this.password = password;
         this.verifiedAt = verifiedAt;
         this.company = company;
-        this.role = role;
+        this.roles = roles;
     }
 
     // Getters et Setters
@@ -86,14 +83,6 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public Boolean getEnabled() {
-        return enabled;
-    }
-
-    public void setEnabled(Boolean enabled) {
-        this.enabled = enabled;
     }
 
     public String getFirstname() {
@@ -136,12 +125,12 @@ public class User {
         this.company = company;
     }
 
-    public Role getRole() {
-        return role;
+    public List<Role> getRoles() {
+        return roles;
     }
 
-    public void setRole(Role role) {
-        this.role = role;
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
     }
 
     public LocalDateTime getCreatedAt() {

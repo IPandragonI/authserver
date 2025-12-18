@@ -29,7 +29,6 @@ public class UserMapper {
         dto.setId(user.getId());
         dto.setUsername(user.getUsername());
         dto.setEmail(user.getEmail());
-        dto.setEnabled(user.getEnabled());
         dto.setFirstname(user.getFirstname());
         dto.setLastname(user.getLastname());
         dto.setPassword(user.getPassword());
@@ -40,8 +39,8 @@ public class UserMapper {
         if (user.getCompany() != null) {
             dto.setCompanyId(user.getCompany().getId());
         }
-        if (user.getRole() != null) {
-            dto.setRoleId(user.getRole().getId());
+        if (user.getRoles() != null) {
+            dto.setRolesIds(user.getRoles().stream().map(Role::getId).toList());
         }
 
         return dto;
@@ -55,7 +54,6 @@ public class UserMapper {
         user.setId(dto.getId());
         user.setUsername(dto.getUsername());
         user.setEmail(dto.getEmail());
-        user.setEnabled(dto.getEnabled());
         user.setFirstname(dto.getFirstname());
         user.setLastname(dto.getLastname());
         user.setPassword(dto.getPassword());
@@ -68,9 +66,9 @@ public class UserMapper {
             user.setCompany(company.orElse(null));
         }
 
-        if (dto.getRoleId() != null) {
-            Optional<Role> role = roleRepository.findById(dto.getRoleId());
-            user.setRole(role.orElse(null));
+        if (dto.getRolesIds() != null) {
+            var roles = roleRepository.findAllById(dto.getRolesIds());
+            user.setRoles(roles);
         }
 
         return user;

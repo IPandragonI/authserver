@@ -4,15 +4,21 @@ import esgi.fyc.sso.authserver.dto.UserDTO;
 import esgi.fyc.sso.authserver.mapper.UserMapper;
 import esgi.fyc.sso.authserver.model.User;
 import esgi.fyc.sso.authserver.repository.UserRepository;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
-public class UserService {
+public class UserService implements UserDetailsService {
 
     private final UserRepository userRepository;
     private final UserMapper userMapper;
@@ -70,7 +76,6 @@ public class UserService {
             User user = existingUserOpt.get();
             user.setUsername(userDTO.getUsername());
             user.setEmail(userDTO.getEmail());
-            user.setEnabled(userDTO.getEnabled());
             user.setFirstname(userDTO.getFirstname());
             user.setLastname(userDTO.getLastname());
             user.setPassword(userDTO.getPassword());
@@ -97,5 +102,26 @@ public class UserService {
             System.err.println("Failed to delete user with ID " + id + ": " + e.getMessage());
             return false;
         }
+    }
+
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        User user = userRepository.findByUsername(username)
+                .orElseThrow(() -> new UsernameNotFoundException("User not found: " + username));
+
+        return org.springframework.security.core.userdetails.User
+                .withUsername(user.getUsername())
+                .password(user.getPassword())
+                .authorities(getAuthorities(user))
+                .accountExpired(false)
+                .accountLocked(false)
+                .credentialsExpired(false)
+                .disabled(false)
+                .build();
+    }
+
+    private Collection<? extends GrantedAuthority> getAuthorities(User user) {
+        return user.getRoles().stream()
+                .map(role -> new SimpleGrantedAuthority("ROLE_" + role.getName()))
+                .collect(Collectors.toList());
     }
 }
