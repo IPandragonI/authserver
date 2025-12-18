@@ -12,31 +12,31 @@
         <meta name="author" content="Léo Deroin | Mathys Farineau | Alan Sapet">
       
       
-        <link rel="canonical" href="https://ipandragoni.github.io/authserver/sequences/s4/clients/">
+        <link rel="canonical" href="https://ipandragoni.github.io/authserver/sequences/s3/security/configuration/">
       
       
-        <link rel="prev" href="../../s3/security/configuration/">
+        <link rel="prev" href="../jwt/">
       
       
-        <link rel="next" href="js/">
+        <link rel="next" href="../../../s4/clients/">
       
       
         
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>Introduction - SSO & Spring  : créez une authentification centralisée de A à Z</title>
+        <title>Configuration de Spring Security - SSO & Spring  : créez une authentification centralisée de A à Z</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -55,7 +55,7 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#connexion-dun-client-au-sso" class="md-skip">
+        <a href="#configuration-de-spring-security" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +94,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="SSO &amp; Spring  : créez une authentification centralisée de A à Z" class="md-header__button md-logo" aria-label="SSO & Spring  : créez une authentification centralisée de A à Z" data-md-component="logo">
+    <a href="../../../.." title="SSO &amp; Spring  : créez une authentification centralisée de A à Z" class="md-header__button md-logo" aria-label="SSO & Spring  : créez une authentification centralisée de A à Z" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Introduction
+              Configuration de Spring Security
             
           </span>
         </div>
@@ -213,7 +213,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../../../.." class="md-tabs__link">
         
   
   
@@ -234,7 +234,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../s0/" class="md-tabs__link">
+        <a href="../../../s0/" class="md-tabs__link">
           
   
   
@@ -254,7 +254,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../s1/positionnement/" class="md-tabs__link">
+        <a href="../../../s1/positionnement/" class="md-tabs__link">
           
   
   
@@ -274,7 +274,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../s2/docker/installation/" class="md-tabs__link">
+        <a href="../../../s2/docker/installation/" class="md-tabs__link">
           
   
   
@@ -282,36 +282,6 @@
 
         </a>
       </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../s3/mvc/rappels/" class="md-tabs__link">
-          
-  
-  
-  Séquence 3
-
-        </a>
-      </li>
-    
-  
-
     
   
 
@@ -335,7 +305,37 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+        <a href="../../mvc/rappels/" class="md-tabs__link">
+          
+  
+  
+  Séquence 3
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../s4/clients/" class="md-tabs__link">
           
   
   
@@ -374,7 +374,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="SSO &amp; Spring  : créez une authentification centralisée de A à Z" class="md-nav__button md-logo" aria-label="SSO & Spring  : créez une authentification centralisée de A à Z" data-md-component="logo">
+    <a href="../../../.." title="SSO &amp; Spring  : créez une authentification centralisée de A à Z" class="md-nav__button md-logo" aria-label="SSO & Spring  : créez une authentification centralisée de A à Z" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -404,7 +404,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         
   
   
@@ -481,7 +481,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../s0/" class="md-nav__link">
+      <a href="../../../s0/" class="md-nav__link">
         
   
   
@@ -566,7 +566,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../s1/positionnement/" class="md-nav__link">
+      <a href="../../../s1/positionnement/" class="md-nav__link">
         
   
   
@@ -644,7 +644,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../s1/fondamentaux/java/" class="md-nav__link">
+      <a href="../../../s1/fondamentaux/java/" class="md-nav__link">
         
   
   
@@ -672,7 +672,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../s1/fondamentaux/poo/" class="md-nav__link">
+      <a href="../../../s1/fondamentaux/poo/" class="md-nav__link">
         
   
   
@@ -765,7 +765,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../s2/docker/installation/" class="md-nav__link">
+      <a href="../../../s2/docker/installation/" class="md-nav__link">
         
   
   
@@ -793,7 +793,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../s2/docker/" class="md-nav__link">
+      <a href="../../../s2/docker/" class="md-nav__link">
         
   
   
@@ -871,7 +871,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../s2/init_projet/creation_projet/" class="md-nav__link">
+      <a href="../../../s2/init_projet/creation_projet/" class="md-nav__link">
         
   
   
@@ -899,7 +899,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../s2/init_projet/creation_archi/" class="md-nav__link">
+      <a href="../../../s2/init_projet/creation_archi/" class="md-nav__link">
         
   
   
@@ -927,7 +927,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../s2/init_projet/dockerisation/" class="md-nav__link">
+      <a href="../../../s2/init_projet/dockerisation/" class="md-nav__link">
         
   
   
@@ -967,24 +967,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   
@@ -1002,7 +1007,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1070,7 +1075,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../s3/mvc/rappels/" class="md-nav__link">
+      <a href="../../mvc/rappels/" class="md-nav__link">
         
   
   
@@ -1156,7 +1161,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../s3/hibernate_liquibase/hibernate/" class="md-nav__link">
+      <a href="../../hibernate_liquibase/hibernate/" class="md-nav__link">
         
   
   
@@ -1184,7 +1189,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../s3/hibernate_liquibase/liquibase/" class="md-nav__link">
+      <a href="../../hibernate_liquibase/liquibase/" class="md-nav__link">
         
   
   
@@ -1212,7 +1217,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../s3/hibernate_liquibase/integration/" class="md-nav__link">
+      <a href="../../hibernate_liquibase/integration/" class="md-nav__link">
         
   
   
@@ -1245,6 +1250,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1255,11 +1262,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" checked>
         
           
           <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
@@ -1280,7 +1287,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1298,7 +1305,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../s3/security/jwt/" class="md-nav__link">
+      <a href="../jwt/" class="md-nav__link">
         
   
   
@@ -1323,10 +1330,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../s3/security/configuration/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration de Spring Security
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1342,6 +1376,110 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#etat-du-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        État du code
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestion-de-la-securite-avec-spring-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestion de la sécurité avec Spring Security
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestion de la sécurité avec Spring Security">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuration-de-spring-security_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration de Spring Security
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration de Spring Security">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#springsecurityconfigjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SpringSecurityConfig.java
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filtre-dauthentification-jwt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Filtre d'authentification JWT
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Filtre d&#39;authentification JWT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jwtauthenticationfilterjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JwtAuthenticationFilter.java
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1366,29 +1504,24 @@
       
   
   
-    
   
   
-  
     
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
             
   
   
@@ -1406,7 +1539,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1421,8 +1554,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1433,11 +1564,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
         
           
           <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
@@ -1458,7 +1589,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1473,19 +1604,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../s4/clients/" class="md-nav__link">
         
   
   
@@ -1501,7 +1623,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1514,7 +1635,7 @@
   
   
     <li class="md-nav__item">
-      <a href="js/" class="md-nav__link">
+      <a href="../../../s4/clients/js/" class="md-nav__link">
         
   
   
@@ -1542,7 +1663,7 @@
   
   
     <li class="md-nav__item">
-      <a href="react/" class="md-nav__link">
+      <a href="../../../s4/clients/react/" class="md-nav__link">
         
   
   
@@ -1598,21 +1719,197 @@
   
 
 
-<h1 id="connexion-dun-client-au-sso">Connexion d’un client au SSO</h1>
-<p>Cette section va expliquer les étapes nécessaires pour qu’un client (application web) puisse s’authentifier auprès du serveur SSO que nous avons mis en place précédemment.</p>
-<h1 id="1-informations-necessaires-cote-client">1. Informations nécessaires côté client</h1>
-<p>Quand un utilisateur clique sur “Se connecter”, l’application cliente ne gère jamais le login elle-même.
-Elle doit rediriger l’utilisateur vers le serveur SSO grâce à une URL contenant des paramètres obligatoires :</p>
+<h1 id="configuration-de-spring-security">Configuration de Spring Security</h1>
+<h2 id="etat-du-code">État du code</h2>
+<p>Arborescence</p>
+<pre><code>src/main/
+├── java
+│   └── com.authserver
+|       └── config
+|          └── JwtAuthenticationFilter.java
+│       └── controller
+│       └── dto
+│       └── mapper
+│       └── model
+│       └── repository
+│       └── service
+|    └── resources
+│       └── db.changelog
+|           └── 1.0
+│               └── 001.xml
+│           └── fycsso-changelog.xml
+|       └── static
+|          └── bdd_initialization.sql
+│       └── templates
+│       └── application.properties
+</code></pre>
+<h2 id="gestion-de-la-securite-avec-spring-security">Gestion de la sécurité avec Spring Security</h2>
+<p>Nous avons pu voir précédemment comment configurer une base de données avec Hibernate et Liquibase, puis comment structurer notre application selon le modèle MVC avec la mise en place des entités, des repositories, des services et des contrôleurs.</p>
+<p>Maintenant, nous allons aborder la configuration de la sécurité de notre application en utilisant Spring Security.</p>
+<h3 id="configuration-de-spring-security_1">Configuration de Spring Security</h3>
+<p>Afin de sécuriser notre application, nous allons créer une classe de configuration dédiée à Spring Security.</p>
+<p>À la même hauteur que le dossier <code>controller</code>, créez un nouveau dossier <code>config</code> et à l'intérieur, créez une classe <code>SpringSecurityConfig.java</code> :</p>
+<p>Notre application repose sur une authentification stateless via JWT, autrement dit, il n'y a aucune session côté serveur. 
+Ainsi, chaque requête doit fournir un token valide.</p>
+<p>Voici l’implémentation complète de notre classe de configuration :</p>
+<h4 id="springsecurityconfigjava">SpringSecurityConfig.java</h4>
+<pre><code class="language-java">@Configuration
+@EnableWebSecurity
+public class SpringSecurityConfig {
+
+    @Autowired
+    private JwtAuthenticationFilter jwtAuthenticationFilter;
+
+    @Autowired
+    private UserDetailsService userDetailsService;
+
+    @Autowired
+    private CorsConfigurationSource corsConfigurationSource;
+
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        http
+                .csrf(AbstractHttpConfigurer::disable)
+                .cors(cors -&gt; cors.configurationSource(corsConfigurationSource))
+                .authorizeHttpRequests(auth -&gt; auth
+                        .requestMatchers(
+                                &quot;/&quot;,
+                                &quot;/api/auth/**&quot;,
+                                &quot;/swagger-ui.html&quot;,
+                                &quot;/swagger-ui/**&quot;,
+                                &quot;/v3/api-docs/**&quot;,
+                                &quot;/error&quot;
+                        ).permitAll()
+                        .anyRequest().authenticated()
+                )
+                .sessionManagement(session -&gt; session
+                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                )
+                .authenticationProvider(authenticationProvider())
+                .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
+
+        return http.build();
+    }
+
+    @Bean
+    public AuthenticationProvider authenticationProvider() {
+        DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
+        authProvider.setUserDetailsService(userDetailsService);
+        authProvider.setPasswordEncoder(passwordEncoder());
+        return authProvider;
+    }
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+
+    @Bean
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
+        return config.getAuthenticationManager();
+    }
+}
+</code></pre>
+<p>Maintenant, passons en revue les différentes parties de cette configuration.</p>
+<p><code>@Configuration</code> : Indique que cette classe contient des configurations Spring.</p>
+<p><code>@EnableWebSecurity</code> : Active la sécurité web dans l'application.</p>
+<p><code>JwtAuthenticationFilter</code> : Filtre personnalisé pour gérer l'authentification via JWT.</p>
+<p><code>UserDetailsService</code> : Service pour charger les détails de l'utilisateur.</p>
+<p><code>CorsConfigurationSource</code> : Source de configuration CORS pour gérer les requêtes cross-origin.</p>
+<hr />
+<p><strong>Méthode <code>filterChain</code></strong> :</p>
+<pre><code class="language-java">csrf(AbstractHttpConfigurer::disable)
+</code></pre>
 <ul>
-<li>client_id : l’identifiant du client </li>
-<li>redirect_uri : l’URL vers laquelle ton SSO renverra l’utilisateur après validation</li>
-<li>authorization_endpoint : l’URL du serveur SSO pour l’autorisation</li>
-<li>token_endpoint : l’URL du serveur SSO pour obtenir le token d’accès</li>
-<li>response_type=code : car on utilise un code d’autorisation</li>
+<li>Désactive la protection CSRF car nous utilisons des tokens JWT.</li>
 </ul>
-<p>éventuellement scope si tu veux gérer des permissions</p>
-<p>Exemple d’URL :</p>
-<p>https://sso.example.com/authorize?client_id=mon-client&amp;redirect_uri=https://monapp.example.com/callback&amp;response_type=code</p>
+<pre><code class="language-java">cors(cors -&gt; cors.configurationSource(corsConfigurationSource))
+</code></pre>
+<ul>
+<li>Configure CORS avec la source de configuration injectée.</li>
+</ul>
+<pre><code class="language-java">authorizeHttpRequests(auth -&gt; auth
+        .requestMatchers(
+                &quot;/&quot;,
+                &quot;/api/auth/**&quot;,
+                &quot;/swagger-ui.html&quot;,
+                &quot;/swagger-ui/**&quot;,
+                &quot;/v3/api-docs/**&quot;,
+                &quot;/error&quot;
+        ).permitAll()
+        .anyRequest().authenticated()
+)
+</code></pre>
+<ul>
+<li>Définit les règles d'autorisation des requêtes HTTP :<ul>
+<li>Permet l'accès libre aux endpoints d'authentification, à la documentation Swagger et à la page d'erreur.</li>
+<li>Exige une authentification pour toutes les autres requêtes.</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-java">sessionManagement(session -&gt; session
+        .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+)
+</code></pre>
+<ul>
+<li>Configure la gestion des sessions pour être stateless.</li>
+</ul>
+<pre><code class="language-java">.authenticationProvider(authenticationProvider())
+</code></pre>
+<ul>
+<li>Définit le fournisseur d'authentification.</li>
+</ul>
+<pre><code class="language-java">.addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
+</code></pre>
+<ul>
+<li>Ajoute le filtre JWT avant le filtre d'authentification standard de Spring Security.</li>
+</ul>
+<h3 id="filtre-dauthentification-jwt">Filtre d'authentification JWT</h3>
+<p>Le <code>JwtAuthenticationFilter</code> intercepte les requêtes entrantes, extrait le token JWT, le valide et configure le contexte de sécurité si le token est valide.</p>
+<h4 id="jwtauthenticationfilterjava">JwtAuthenticationFilter.java</h4>
+<pre><code class="language-java">@Component
+public class JwtAuthenticationFilter extends OncePerRequestFilter {
+
+    @Autowired
+    private JwtService jwtService;
+
+    @Autowired
+    private UserDetailsService userDetailsService;
+
+    @Override
+    protected void doFilterInternal(HttpServletRequest request,
+                                    HttpServletResponse response,
+                                    FilterChain filterChain) throws ServletException, IOException {
+
+        final String authHeader = request.getHeader(&quot;Authorization&quot;);
+        final String jwt;
+        final String username;
+
+        if (authHeader == null || !authHeader.startsWith(&quot;Bearer &quot;)) {
+            filterChain.doFilter(request, response);
+            return;
+        }
+
+        jwt = authHeader.substring(7);
+        username = jwtService.extractUsername(jwt);
+
+        if (username != null &amp;&amp; SecurityContextHolder.getContext().getAuthentication() == null) {
+            UserDetails userDetails = this.userDetailsService.loadUserByUsername(username);
+
+            if (jwtService.validateToken(jwt, userDetails)) {
+                UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(
+                        userDetails,
+                        null,
+                        userDetails.getAuthorities()
+                );
+                authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+                SecurityContextHolder.getContext().setAuthentication(authToken);
+            }
+        }
+        filterChain.doFilter(request, response);
+    }
+}
+</code></pre>
 
 
 
@@ -1648,7 +1945,7 @@ Elle doit rediriger l’utilisateur vers le serveur SSO grâce à une URL conten
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../s3/security/configuration/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Configuration de Spring Security">
+          <a href="../jwt/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Configuration des tokens JWT">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1658,20 +1955,20 @@ Elle doit rediriger l’utilisateur vers le serveur SSO grâce à une URL conten
                 Previous
               </span>
               <div class="md-ellipsis">
-                Configuration de Spring Security
+                Configuration des tokens JWT
               </div>
             </div>
           </a>
         
         
           
-          <a href="js/" class="md-footer__link md-footer__link--next" aria-label="Next: Client Js simple">
+          <a href="../../../s4/clients/" class="md-footer__link md-footer__link--next" aria-label="Next: Introduction">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Client Js simple
+                Introduction
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1709,12 +2006,12 @@ Elle doit rediriger l’utilisateur vers le serveur SSO grâce à une URL conten
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.footer", "navigation.instant", "navigation.instant.progress", "navigation.tabs", "search.suggest", "search.highlight", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "navigation.top", "navigation.footer", "navigation.instant", "navigation.instant.progress", "navigation.tabs", "search.suggest", "search.highlight", "toc.integrate"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
-        <script src="../../../assets/javascripts/links-target.js"></script>
+        <script src="../../../../assets/javascripts/links-target.js"></script>
       
     
   </body>
