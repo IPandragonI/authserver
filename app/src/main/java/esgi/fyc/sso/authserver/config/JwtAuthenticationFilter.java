@@ -1,4 +1,4 @@
-package esgi.fyc.sso.authserver.filter;
+package esgi.fyc.sso.authserver.config;
 
 import esgi.fyc.sso.authserver.service.JwtService;
 import jakarta.servlet.FilterChain;
