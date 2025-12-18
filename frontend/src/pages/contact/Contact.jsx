@@ -170,7 +170,6 @@ const Contact = () => {
 
     return (
         <div className="min-h-screen bg-base-100">
-            {/* Hero Section */}
             <div className="hero bg-gradient-to-r from-primary/10 to-secondary/10 py-16">
                 <div className="hero-content text-center">
                     <div className="max-w-4xl">
@@ -182,7 +181,6 @@ const Contact = () => {
                             Whether you need technical support, sales information, or just want to chat.
                         </p>
 
-                        {/* Quick Contact Bar */}
                         <div className="flex flex-wrap justify-center gap-6 mb-8">
                             <a href={`tel:${contactInfo.phone.primary}`} className="btn btn-outline">
                                 <FaPhone />
@@ -205,9 +203,7 @@ const Contact = () => {
                 </div>
             </div>
 
-            {/* Main Content */}
             <div className="container mx-auto px-4 py-12">
-                {/* Tabs Navigation */}
                 <div className="tabs tabs-boxed justify-center mb-12">
                     <button
                         className={`tab tab-lg ${activeTab === 'contact' ? 'tab-active' : ''}`}
@@ -233,9 +229,7 @@ const Contact = () => {
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    {/* Left Column - Contact Info */}
                     <div className="space-y-8">
-                        {/* Contact Cards */}
                         <div className="card bg-base-100 border border-base-300">
                             <div className="card-body">
                                 <div className="flex items-center gap-3 mb-6">
@@ -331,7 +325,6 @@ const Contact = () => {
                             </div>
                         </div>
 
-                        {/* Emergency Contact */}
                         <div className="card bg-error/10 border border-error/20">
                             <div className="card-body">
                                 <div className="flex items-center gap-3 mb-4">
@@ -361,7 +354,6 @@ const Contact = () => {
                         </div>
                     </div>
 
-                    {/* Middle Column - Contact Form */}
                     <div className="lg:col-span-2">
                         {activeTab === 'contact' && (
                             <div className="card bg-base-100 border border-base-300">
@@ -406,7 +398,6 @@ const Contact = () => {
                                             </p>
 
                                             <form onSubmit={handleSubmit} className="space-y-6">
-                                                {/* Department Selection */}
                                                 <div>
                                                     <label className="label">
                                                         <span className="label-text font-medium">Department</span>
@@ -426,7 +417,6 @@ const Contact = () => {
                                                     </div>
                                                 </div>
 
-                                                {/* Personal Information */}
                                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                                     <div className="form-control">
                                                         <label className="label">
@@ -531,7 +521,6 @@ const Contact = () => {
                                                     </div>
                                                 </div>
 
-                                                {/* Topic Selection */}
                                                 <div>
                                                     <label className="label">
                                                         <span className="label-text">Common Topics</span>
@@ -581,7 +570,6 @@ const Contact = () => {
                                                     ></textarea>
                                                 </div>
 
-                                                {/* Attachments */}
                                                 <div className="form-control">
                                                     <label className="label">
                                                         <span className="label-text">Attachments</span>
@@ -598,7 +586,6 @@ const Contact = () => {
                                                     </div>
                                                 </div>
 
-                                                {/* Consent and Options */}
                                                 <div className="space-y-4">
                                                     <label className="label cursor-pointer justify-start gap-3">
                                                         <input
@@ -791,7 +778,6 @@ const Contact = () => {
                     </div>
                 </div>
 
-                {/* Social Media & Additional Info */}
                 <div className="mt-16">
                     <div className="text-center mb-8">
                         <h2 className="text-3xl font-bold mb-4">Connect With Us</h2>

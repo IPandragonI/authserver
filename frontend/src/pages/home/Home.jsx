@@ -101,7 +101,6 @@ const Home = () => {
 
     return (
         <div className="min-h-screen">
-            {/* Hero Section */}
             <div className="hero bg-gradient-to-br from-primary/10 via-base-100 to-secondary/10">
                 <div className="hero-content text-center py-20">
                     <div className="max-w-4xl">
@@ -131,7 +130,6 @@ const Home = () => {
                             </Link>
                         </div>
 
-                        {/* Stats */}
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
                             <div className="text-center">
                                 <div className="text-3xl font-bold text-primary">99.9%</div>
@@ -154,7 +152,6 @@ const Home = () => {
                 </div>
             </div>
 
-            {/* Features Section */}
             <div className="py-20 bg-base-100">
                 <div className="container mx-auto px-4">
                     <div className="text-center mb-16">
@@ -228,7 +225,6 @@ const Home = () => {
                         </div>
                     </div>
 
-                    {/* Additional Features Grid */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                         <div className="card bg-base-100 border border-base-300 hover:shadow-lg transition-shadow">
                             <div className="card-body items-center text-center">
@@ -270,7 +266,6 @@ const Home = () => {
                 </div>
             </div>
 
-            {/* Testimonials */}
             <div className="py-20 bg-base-200">
                 <div className="container mx-auto px-4">
                     <div className="text-center mb-16">
@@ -306,7 +301,6 @@ const Home = () => {
                         ))}
                     </div>
 
-                    {/* Trust Badges */}
                     <div className="flex flex-wrap justify-center items-center gap-12 opacity-70">
                         <FaAward className="text-4xl" />
                         <FaMedal className="text-4xl" />
@@ -317,7 +311,6 @@ const Home = () => {
                 </div>
             </div>
 
-            {/* CTA Section */}
             <div className="py-20 bg-gradient-to-r from-primary to-secondary text-primary-content">
                 <div className="container mx-auto px-4 text-center">
                     <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Identity Management?</h2>
@@ -340,7 +333,6 @@ const Home = () => {
                 </div>
             </div>
 
-            {/* Footer Links */}
             <div className="py-12 bg-base-100 border-t border-base-300">
                 <div className="container mx-auto px-4">
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
