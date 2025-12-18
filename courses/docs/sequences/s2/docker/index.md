@@ -58,4 +58,8 @@ Docker est une plateforme de conteneurisation qui permet d'encapsuler une applic
 
 ## Correction
 
-> TODO: faire un lien vers la correction une fois qu'elle est rédigée. (video a faire)
+--- 
+
+<iframe width="640" height="360" src="https://www.youtube.com/watch?v=BP1MIyxLTIA" frameborder="0" allowfullscreen></iframe>
+
+---
