@@ -1,22 +1,34 @@
-import {useState} from 'react';
-import {Outlet} from 'react-router-dom';
+import {useEffect, useState} from 'react';
+import {Outlet, useLocation, useNavigate} from 'react-router-dom';
 import Sidebar from './Sidebar';
 import Header from './Header';
+import {useAuth} from "../../AuthProvider.jsx";
 
 const Layout = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+    const {isAuthenticated, token, logout} = useAuth();
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    useEffect(() => {
+        const onAuthPath = location.pathname.startsWith('/auth');
+        if ((!isAuthenticated || !token) && !onAuthPath) {
+            logout();
+            navigate('/auth/login', {replace: true});
+        }
+    }, [isAuthenticated, token, location.pathname, logout, navigate]);
 
     return (
         <div className="flex min-h-screen bg-base-200">
             <div className={`
-                ${isSidebarOpen ? 'fixed inset-0 z-40' : 'hidden'} 
-                md:static md:block md:z-auto
-            `}>
+                      ${isSidebarOpen ? 'fixed inset-0 z-40' : 'hidden'}
+                      md:static md:block md:z-auto
+                    `}>
                 <div className={`
-                  ${isSidebarOpen ? 'fixed inset-y-0 left-0 z-50' : 'relative'}
-                  transform ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} 
-                  transition-transform md:translate-x-0 md:relative
-                `}>
+                        ${isSidebarOpen ? 'fixed inset-y-0 left-0 z-50' : 'relative'}
+                        transform ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}
+                        transition-transform md:translate-x-0 md:relative
+                      `}>
                     <Sidebar onClose={() => setIsSidebarOpen(false)}/>
                 </div>
                 {isSidebarOpen && (

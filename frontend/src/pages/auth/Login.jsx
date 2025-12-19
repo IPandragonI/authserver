@@ -4,9 +4,11 @@ import {FaEye, FaEyeSlash} from 'react-icons/fa';
 import api from "../../api/index.js";
 import Urls from "../../api/Urls.js";
 import {toast} from "react-toastify";
+import {useAuth} from "../../AuthProvider.jsx";
 
-const LoginSimple = () => {
+const Login = () => {
     const navigate = useNavigate();
+    const {setAuthData} = useAuth();
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -32,12 +34,7 @@ const LoginSimple = () => {
             });
 
             if (response && response.status >= 200 && response.status < 300) {
-                const localStorage = window.localStorage;
-                localStorage.setItem('token', response.data.token);
-                localStorage.setItem('refreshToken', response.data.refreshToken);
-                localStorage.setItem('roles', JSON.stringify(response.data.roles));
-                localStorage.setItem('username', response.data.username);
-                localStorage.setItem('email', response.data.email);
+                setAuthData(response.data);
                 toast.success('Login successful!');
                 navigate('/admin/dashboard');
             } else {
@@ -124,4 +121,4 @@ const LoginSimple = () => {
     );
 };
 
-export default LoginSimple;
+export default Login;

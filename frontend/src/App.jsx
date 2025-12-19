@@ -1,4 +1,4 @@
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import Layout from './components/layout/Layout';
 import Dashboard from './pages/dashboard/Dashboard';
 import Users from './pages/users/Users';
@@ -23,7 +23,7 @@ const App = () => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<Home/>} />
+                <Route path="/" element={<Home/>}/>
                 <Route path="/admin" element={<Layout/>}>
                     <Route index element={<Dashboard/>}/>
                     <Route path="dashboard" element={<Dashboard/>}/>

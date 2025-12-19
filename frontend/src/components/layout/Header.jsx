@@ -21,6 +21,7 @@ import {
     FaUserFriends
 } from 'react-icons/fa';
 import {useNavigate} from 'react-router-dom';
+import {useAuth} from "../../AuthProvider.jsx";
 
 
 const Header = ({toggleSidebar, isSidebarOpen, currentPage = 'Dashboard', pageStats = {}}) => {
@@ -28,6 +29,7 @@ const Header = ({toggleSidebar, isSidebarOpen, currentPage = 'Dashboard', pageSt
         return window.matchMedia('(prefers-color-scheme: dark)').matches;
     });
     const navigate = useNavigate();
+    const { logout } = useAuth();
 
     const [searchQuery, setSearchQuery] = useState('');
     const [notifications, setNotifications] = useState([
@@ -470,10 +472,17 @@ const Header = ({toggleSidebar, isSidebarOpen, currentPage = 'Dashboard', pageSt
                                         </li>
                                         <li className="divider my-2"></li>
                                         <li>
-                                            <a href="/logout" className="py-3 text-error hover:text-error">
-                                                <FaSignOutAlt/>
+                                            <button
+                                                onClick={(e) => {
+                                                    e.preventDefault();
+                                                    logout();
+                                                    navigate('/auth/login');
+                                                }}
+                                                className="w-full text-left text-error"
+                                            >
+                                                <FaSignOutAlt className="opacity-70"/>
                                                 Logout
-                                            </a>
+                                            </button>
                                         </li>
                                     </ul>
                                 </div>
