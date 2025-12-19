@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import {
     FaSearch,
     FaPlus,
@@ -25,178 +25,11 @@ import {
     FaCheck,
     FaTimes
 } from 'react-icons/fa';
+import api from "../../api/index.js";
+import Urls from "../../api/Urls.js";
 
 const Plans = () => {
-    const [plans, setPlans] = useState([
-        {
-            id: 1,
-            name: 'Free',
-            code: 'FREE',
-            description: 'Basic SSO for small teams',
-            price: 0,
-            billingCycle: 'forever',
-            features: {
-                users: 10,
-                realms: 1,
-                ssoEnabled: true,
-                mfaEnabled: false,
-                apiCalls: 1000,
-                support: 'community',
-                customDomains: false,
-                auditLogs: false,
-                sla: false
-            },
-            status: 'active',
-            popularity: 'low',
-            color: 'neutral',
-            createdAt: '2023-01-01',
-            subscribers: 1250
-        },
-        {
-            id: 2,
-            name: 'Starter',
-            code: 'STARTER',
-            description: 'Perfect for growing startups',
-            price: 49,
-            billingCycle: 'monthly',
-            features: {
-                users: 50,
-                realms: 3,
-                ssoEnabled: true,
-                mfaEnabled: true,
-                apiCalls: 10000,
-                support: 'email',
-                customDomains: true,
-                auditLogs: '30 days',
-                sla: false
-            },
-            status: 'active',
-            popularity: 'high',
-            color: 'info',
-            createdAt: '2023-01-01',
-            subscribers: 845
-        },
-        {
-            id: 3,
-            name: 'Professional',
-            code: 'PRO',
-            description: 'For established businesses',
-            price: 199,
-            billingCycle: 'monthly',
-            features: {
-                users: 200,
-                realms: 10,
-                ssoEnabled: true,
-                mfaEnabled: true,
-                apiCalls: 50000,
-                support: 'priority',
-                customDomains: true,
-                auditLogs: '90 days',
-                sla: '99.5%'
-            },
-            status: 'active',
-            popularity: 'medium',
-            color: 'primary',
-            createdAt: '2023-01-01',
-            subscribers: 420
-        },
-        {
-            id: 4,
-            name: 'Enterprise',
-            code: 'ENTERPRISE',
-            description: 'Advanced features for large organizations',
-            price: 499,
-            billingCycle: 'monthly',
-            features: {
-                users: 1000,
-                realms: 'unlimited',
-                ssoEnabled: true,
-                mfaEnabled: true,
-                apiCalls: 250000,
-                support: '24/7 phone',
-                customDomains: true,
-                auditLogs: '1 year',
-                sla: '99.9%'
-            },
-            status: 'active',
-            popularity: 'medium',
-            color: 'secondary',
-            createdAt: '2023-01-01',
-            subscribers: 156
-        },
-        {
-            id: 5,
-            name: 'Enterprise Plus',
-            code: 'ENTERPRISE_PLUS',
-            description: 'Custom solutions for enterprises',
-            price: 999,
-            billingCycle: 'monthly',
-            features: {
-                users: 'unlimited',
-                realms: 'unlimited',
-                ssoEnabled: true,
-                mfaEnabled: true,
-                apiCalls: 'unlimited',
-                support: 'dedicated',
-                customDomains: true,
-                auditLogs: 'unlimited',
-                sla: '99.99%'
-            },
-            status: 'active',
-            popularity: 'low',
-            color: 'accent',
-            createdAt: '2023-06-15',
-            subscribers: 42
-        },
-        {
-            id: 6,
-            name: 'Legacy',
-            code: 'LEGACY',
-            description: 'Old pricing plan',
-            price: 149,
-            billingCycle: 'monthly',
-            features: {
-                users: 100,
-                realms: 5,
-                ssoEnabled: true,
-                mfaEnabled: false,
-                apiCalls: 25000,
-                support: 'email',
-                customDomains: false,
-                auditLogs: '30 days',
-                sla: false
-            },
-            status: 'archived',
-            popularity: 'low',
-            color: 'neutral',
-            createdAt: '2022-06-01',
-            subscribers: 85
-        },
-        {
-            id: 7,
-            name: 'Educational',
-            code: 'EDU',
-            description: 'Special pricing for educational institutions',
-            price: 29,
-            billingCycle: 'monthly',
-            features: {
-                users: 500,
-                realms: 5,
-                ssoEnabled: true,
-                mfaEnabled: true,
-                apiCalls: 25000,
-                support: 'email',
-                customDomains: true,
-                auditLogs: '90 days',
-                sla: '99%'
-            },
-            status: 'active',
-            popularity: 'medium',
-            color: 'warning',
-            createdAt: '2023-09-01',
-            subscribers: 210
-        }
-    ]);
+    const [plans, setPlans] = useState([]);
 
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedStatus, setSelectedStatus] = useState('all');
@@ -207,6 +40,40 @@ const Plans = () => {
     const [showPricingModal, setShowPricingModal] = useState(false);
     const [selectedPlan, setSelectedPlan] = useState(null);
     const [activeTab, setActiveTab] = useState('all');
+
+    useEffect(() => {
+        fetchPlans();
+    }, []);
+
+    const fetchPlans = async () => {
+        const response = await api.get(Urls.plan.list)
+
+        setPlans(response.data.map(plan => ({
+          id: plan.id,
+            name: plan.name,
+            code: plan.name.toUpperCase().replace(/\s+/g, '_'),
+            description: plan.description,
+            price: plan.price,
+            billingCycle: 'monthly',
+            features: {
+                users: plan.maxUsers,
+                realms: plan.maxRealms,
+                ssoEnabled: true,
+                mfaEnabled: false,
+                apiCalls: 1000,
+                support: 'community',
+                customDomains: false,
+                auditLogs: false,
+                sla: false
+            },
+            status: 'active',
+            popularity: 'low',
+            color: plan.name === 'Free' ? 'neutral' : plan.name === 'Pro' ? 'primary' : 'info',
+            createdAt: plan.createdAt,
+            subscribers: Math.floor(Math.random() * 1000)
+        })));
+
+    }
 
     const totalRevenue = plans.reduce((sum, plan) => {
         if (plan.status === 'active' && plan.price > 0) {
