@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import {useEffect, useState} from 'react';
 import {
     FaSearch,
     FaPlus,
@@ -29,157 +29,11 @@ import {
     FaClipboardList
 } from 'react-icons/fa';
 import { format } from 'date-fns';
+import api from "../../api/index.js";
+import Urls from "../../api/Urls.js";
 
 const Roles = () => {
-    const [roles, setRoles] = useState([
-        {
-            id: 1,
-            name: 'Super Admin',
-            code: 'SUPER_ADMIN',
-            description: 'Full system access with all privileges',
-            type: 'system',
-            permissions: {
-                users: ['create', 'read', 'update', 'delete', 'manage_all'],
-                realms: ['create', 'read', 'update', 'delete', 'manage_all'],
-                roles: ['create', 'read', 'update', 'delete', 'assign'],
-                companies: ['create', 'read', 'update', 'delete', 'manage_all'],
-                logs: ['read', 'export', 'delete_all'],
-                settings: ['read', 'update', 'system_config']
-            },
-            isDefault: false,
-            isProtected: true,
-            userCount: 3,
-            lastModified: '2024-01-15T10:30:00',
-            createdBy: 'system',
-            color: 'error'
-        },
-        {
-            id: 2,
-            name: 'Realm Administrator',
-            code: 'REALM_ADMIN',
-            description: 'Manage users and settings within assigned realms',
-            type: 'realm',
-            permissions: {
-                users: ['create', 'read', 'update', 'delete'],
-                realms: ['read', 'update'],
-                roles: ['read', 'assign'],
-                companies: ['read'],
-                logs: ['read'],
-                settings: ['read']
-            },
-            isDefault: true,
-            isProtected: false,
-            userCount: 24,
-            lastModified: '2024-01-14T15:45:00',
-            createdBy: 'admin@system.com',
-            color: 'primary'
-        },
-        {
-            id: 3,
-            name: 'Security Auditor',
-            code: 'SECURITY_AUDITOR',
-            description: 'View logs and audit system activities',
-            type: 'audit',
-            permissions: {
-                users: ['read'],
-                realms: ['read'],
-                roles: ['read'],
-                companies: ['read'],
-                logs: ['read', 'export'],
-                settings: ['read']
-            },
-            isDefault: false,
-            isProtected: false,
-            userCount: 8,
-            lastModified: '2024-01-13T09:15:00',
-            createdBy: 'security@admin.com',
-            color: 'warning'
-        },
-        {
-            id: 4,
-            name: 'User Manager',
-            code: 'USER_MANAGER',
-            description: 'Create and manage user accounts',
-            type: 'user',
-            permissions: {
-                users: ['create', 'read', 'update'],
-                realms: ['read'],
-                roles: ['read'],
-                companies: ['read'],
-                logs: ['read'],
-                settings: []
-            },
-            isDefault: true,
-            isProtected: false,
-            userCount: 45,
-            lastModified: '2024-01-12T14:20:00',
-            createdBy: 'admin@system.com',
-            color: 'info'
-        },
-        {
-            id: 5,
-            name: 'Read Only',
-            code: 'READ_ONLY',
-            description: 'View-only access to system information',
-            type: 'viewer',
-            permissions: {
-                users: ['read'],
-                realms: ['read'],
-                roles: ['read'],
-                companies: ['read'],
-                logs: ['read'],
-                settings: []
-            },
-            isDefault: true,
-            isProtected: false,
-            userCount: 125,
-            lastModified: '2024-01-11T11:10:00',
-            createdBy: 'admin@system.com',
-            color: 'neutral'
-        },
-        {
-            id: 6,
-            name: 'API Developer',
-            code: 'API_DEVELOPER',
-            description: 'Access to API endpoints and documentation',
-            type: 'developer',
-            permissions: {
-                users: ['read'],
-                realms: ['read'],
-                roles: ['read'],
-                companies: ['read'],
-                logs: ['read'],
-                settings: ['api_config']
-            },
-            isDefault: false,
-            isProtected: false,
-            userCount: 12,
-            lastModified: '2024-01-10T16:30:00',
-            createdBy: 'dev@system.com',
-            color: 'secondary'
-        },
-        {
-            id: 7,
-            name: 'Billing Manager',
-            code: 'BILLING_MANAGER',
-            description: 'Manage subscriptions and billing information',
-            type: 'billing',
-            permissions: {
-                users: ['read'],
-                realms: ['read'],
-                roles: ['read'],
-                companies: ['read', 'update'],
-                logs: ['read'],
-                settings: ['billing']
-            },
-            isDefault: false,
-            isProtected: false,
-            userCount: 6,
-            lastModified: '2024-01-09T13:45:00',
-            createdBy: 'finance@admin.com',
-            color: 'accent'
-        }
-    ]);
+    const [roles, setRoles] = useState([]);
 
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedType, setSelectedType] = useState('all');
@@ -192,10 +46,30 @@ const Roles = () => {
     const [viewMode, setViewMode] = useState('list'); // 'grid' or 'list'
     const [editingPermissions, setEditingPermissions] = useState(null);
 
-    // Types de rôles uniques
+    useEffect(() => {
+        fetchRoles()
+    }, []);
+
+    const fetchRoles = async () => {
+        const response = await api.get(Urls.role.list)
+        setRoles(response.data.map((role) => ({
+            id: role.id,
+            name: role.name,
+            code: role.name.toUpperCase().replace(/\s+/g, '_'),
+            description: role.description || 'No description provided',
+            type: 'system',
+            permissions: role.permissions || {},
+            isDefault: role.is_default || false,
+            isProtected: role.is_protected || false,
+            userCount: role.user_count || 0,
+            lastModified: role.updated_at || new Date().toISOString(),
+            createdBy: role.created_by || 'system',
+            color: role.color || 'primary'
+        })));
+    }
+
     const roleTypes = [...new Set(roles.map(role => role.type))];
 
-    // Permissions disponibles
     const allPermissions = {
         users: ['create', 'read', 'update', 'delete', 'manage_all'],
         realms: ['create', 'read', 'update', 'delete', 'manage_all'],
@@ -205,7 +79,6 @@ const Roles = () => {
         settings: ['read', 'update', 'system_config', 'api_config', 'billing']
     };
 
-    // Filtrage et tri
     const filteredRoles = roles
         .filter(role => {
             const matchesSearch = role.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -332,10 +205,8 @@ const Roles = () => {
                 const updatedPermissions = { ...role.permissions };
 
                 if (checked) {
-                    // Ajouter la permission
                     updatedPermissions[category] = [...(updatedPermissions[category] || []), permission];
                 } else {
-                    // Retirer la permission
                     updatedPermissions[category] = updatedPermissions[category].filter(p => p !== permission);
                 }
 

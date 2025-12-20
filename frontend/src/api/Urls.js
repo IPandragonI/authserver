@@ -23,6 +23,20 @@ const Urls = {
         create: '/users',
         update: '/users/{id}',
         delete: '/users/{id}',
+    },
+    role: {
+        list: '/roles',
+        get: '/roles/{id}',
+        create: '/roles',
+        update: '/roles/{id}',
+        delete: '/roles/{id}',
+    },
+    realm: {
+        list: '/realms',
+        get: '/realms/{id}',
+        create: '/realms',
+        update: '/realms/{id}',
+        delete: '/realms/{id}',
     }
 }
 

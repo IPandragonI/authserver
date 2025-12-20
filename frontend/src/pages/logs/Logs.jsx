@@ -1,4 +1,3 @@
-// src/pages/Logs.jsx
 import {useState, useEffect} from 'react';
 import {
     FaSearch,
@@ -29,149 +28,12 @@ import {
 } from 'react-icons/fa';
 import {format, formatDistanceToNow} from 'date-fns';
 import {fr} from 'date-fns/locale';
+import api from "../../api/index.js";
+import Urls from "../../api/Urls.js";
 
 const Logs = () => {
-    // État pour les logs et filtres
-    const [logs, setLogs] = useState([
-        {
-            id: 1,
-            timestamp: '2024-01-15T14:30:25.123Z',
-            level: 'ERROR',
-            source: 'AUTHENTICATION',
-            userId: 'user_12345',
-            username: 'john.doe@company.com',
-            ip: '192.168.1.100',
-            userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
-            action: 'LOGIN_FAILED',
-            details: 'Invalid credentials provided - Too many failed attempts',
-            statusCode: 401,
-            duration: 125,
-            realm: 'default-realm',
-            traceId: 'trace_abc123',
-            sessionId: 'session_xyz789'
-        },
-        {
-            id: 2,
-            timestamp: '2024-01-15T14:25:10.456Z',
-            level: 'INFO',
-            source: 'API',
-            userId: 'user_67890',
-            username: 'admin@system.com',
-            ip: '10.0.0.50',
-            userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)',
-            action: 'USER_CREATED',
-            details: 'New user created successfully',
-            statusCode: 201,
-            duration: 42,
-            realm: 'admin-realm',
-            traceId: 'trace_def456',
-            sessionId: 'session_abc456'
-        },
-        {
-            id: 3,
-            timestamp: '2024-01-15T14:20:15.789Z',
-            level: 'WARN',
-            source: 'SECURITY',
-            userId: null,
-            username: 'anonymous',
-            ip: '203.0.113.5',
-            userAgent: 'curl/7.68.0',
-            action: 'BRUTE_FORCE_DETECTED',
-            details: 'Multiple failed login attempts from IP 203.0.113.5',
-            statusCode: 429,
-            duration: 0,
-            realm: 'default-realm',
-            traceId: 'trace_ghi789',
-            sessionId: null
-        },
-        {
-            id: 4,
-            timestamp: '2024-01-15T14:15:30.123Z',
-            level: 'DEBUG',
-            source: 'DATABASE',
-            userId: 'system',
-            username: 'system',
-            ip: '127.0.0.1',
-            userAgent: null,
-            action: 'QUERY_EXECUTED',
-            details: 'SELECT * FROM users WHERE id = ?',
-            statusCode: 200,
-            duration: 15,
-            realm: 'system',
-            traceId: 'trace_jkl012',
-            sessionId: null
-        },
-        {
-            id: 5,
-            timestamp: '2024-01-15T14:10:45.456Z',
-            level: 'ERROR',
-            source: 'EMAIL',
-            userId: 'user_11111',
-            username: 'alice@company.com',
-            ip: '192.168.1.200',
-            userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X)',
-            action: 'EMAIL_SEND_FAILED',
-            details: 'Failed to send password reset email - SMTP connection timeout',
-            statusCode: 500,
-            duration: 5000,
-            realm: 'default-realm',
-            traceId: 'trace_mno345',
-            sessionId: 'session_def789'
-        },
-        {
-            id: 6,
-            timestamp: '2024-01-15T14:05:20.789Z',
-            level: 'INFO',
-            source: 'AUDIT',
-            userId: 'admin_001',
-            username: 'admin@security.com',
-            ip: '10.0.0.1',
-            userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0)',
-            action: 'ROLE_UPDATED',
-            details: 'User permissions updated for user_22222',
-            statusCode: 200,
-            duration: 80,
-            realm: 'security-realm',
-            traceId: 'trace_pqr678',
-            sessionId: 'session_ghi012'
-        },
-        {
-            id: 7,
-            timestamp: '2024-01-15T14:00:10.123Z',
-            level: 'WARN',
-            source: 'PERFORMANCE',
-            userId: null,
-            username: 'system',
-            ip: '127.0.0.1',
-            userAgent: null,
-            action: 'HIGH_LATENCY',
-            details: 'API endpoint /api/v1/users took 2500ms to respond',
-            statusCode: 200,
-            duration: 2500,
-            realm: 'system',
-            traceId: 'trace_stu901',
-            sessionId: null
-        },
-        {
-            id: 8,
-            timestamp: '2024-01-15T13:55:30.456Z',
-            level: 'INFO',
-            source: 'SSO',
-            userId: 'user_33333',
-            username: 'bob@partner.com',
-            ip: '198.51.100.25',
-            userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0.0.0',
-            action: 'SSO_LOGIN_SUCCESS',
-            details: 'Successful SAML 2.0 authentication via IdP partner-idp.com',
-            statusCode: 200,
-            duration: 320,
-            realm: 'partner-realm',
-            traceId: 'trace_vwx234',
-            sessionId: 'session_jkl345'
-        }
-    ]);
+    const [logs, setLogs] = useState([]);
 
-    // État pour les filtres
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedLevel, setSelectedLevel] = useState('all');
     const [selectedSource, setSelectedSource] = useState('all');
@@ -188,12 +50,36 @@ const Logs = () => {
     const [viewMode, setViewMode] = useState('table'); // 'table' or 'card'
     const [logsPerPage, setLogsPerPage] = useState(20);
 
-    // Sources uniques pour les filtres
+    useEffect(() => {
+        fetchLogs()
+    }, []);
+
+    const fetchLogs = async () => {
+        const response = await api.get(Urls.log.list)
+
+        setLogs(response.data.map(log => ({
+            id: log.id,
+            timestamp: log.timestamp || new Date().toISOString(),
+            level: log.level || 'INFO',
+            source: log.source || 'SYSTEM',
+            userId: log.userId || null,
+            username: log.username || 'system',
+            ip: log.ip || 'N/A',
+            userAgent: log.ua || 'N/A',
+            action: log.action || 'N/A',
+            details: log.details || 'N/A',
+            statusCode: log.statusCode || 200,
+            duration: log.duration || 0,
+            realm: log.realm || 'default-realm',
+            traceId: log.traceId || null,
+            sessionId: log.sessionId || null
+        })));
+    }
+
     const sources = [...new Set(logs.map(log => log.source))];
     const actions = [...new Set(logs.map(log => log.action))];
     const realms = [...new Set(logs.map(log => log.realm))];
 
-    // Niveaux de log avec couleurs
     const logLevels = {
         ERROR: {color: 'bg-error/10 text-error border-error/20', icon: <FaExclamationTriangle/>},
         WARN: {color: 'bg-warning/10 text-warning border-warning/20', icon: <FaExclamationTriangle/>},
@@ -202,7 +88,6 @@ const Logs = () => {
         AUDIT: {color: 'bg-success/10 text-success border-success/20', icon: <FaCheckCircle/>}
     };
 
-    // Filtrage et tri
     const filteredLogs = logs
         .filter(log => {
             const matchesSearch =
@@ -217,7 +102,6 @@ const Logs = () => {
             const matchesAction = selectedAction === 'all' || log.action === selectedAction;
             const matchesRealm = selectedRealm === 'all' || log.realm === selectedRealm;
 
-            // Filtrage par date
             const logDate = new Date(log.timestamp);
             let matchesDate = true;
 
@@ -255,7 +139,6 @@ const Logs = () => {
             }
         });
 
-    // Statistiques
     const getStats = () => {
         const total = logs.length;
         const errors = logs.filter(log => log.level === 'ERROR').length;
@@ -314,12 +197,10 @@ const Logs = () => {
         linkElement.click();
     };
 
-    // Auto-refresh
     useEffect(() => {
         let interval;
         if (autoRefresh) {
             interval = setInterval(() => {
-                // Simuler de nouveaux logs
                 const newLog = {
                     id: logs.length + 1,
                     timestamp: new Date().toISOString(),
@@ -336,7 +217,7 @@ const Logs = () => {
                     traceId: `trace_${Math.random().toString(36).substr(2, 9)}`
                 };
 
-                setLogs(prev => [newLog, ...prev.slice(0, 49)]); // Garder max 50 logs
+                setLogs(prev => [newLog, ...prev.slice(0, 49)]);
             }, 5000);
         }
 

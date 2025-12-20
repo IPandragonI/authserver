@@ -22,85 +22,11 @@ import {
 } from 'react-icons/fa';
 import {format} from 'date-fns';
 import {useSearchParams} from 'react-router-dom';
+import api from "../../api/index.js";
+import Urls from "../../api/Urls.js";
 
 const Realms = () => {
-    const [realms, setRealms] = useState([
-        {
-            id: 1,
-            name: 'default-realm',
-            displayName: 'Default Realm',
-            description: 'Main authentication realm for all users',
-            status: 'active',
-            visibility: 'public',
-            userCount: 1250,
-            activeSessions: 342,
-            lastModified: '2024-01-15T10:30:00',
-            createdBy: 'admin@system.com',
-            sslRequired: true,
-            registrationAllowed: true,
-            bruteForceProtected: true
-        },
-        {
-            id: 2,
-            name: 'enterprise-realm',
-            displayName: 'Enterprise Realm',
-            description: 'Dedicated realm for enterprise clients',
-            status: 'active',
-            visibility: 'private',
-            userCount: 450,
-            activeSessions: 89,
-            lastModified: '2024-01-14T15:45:00',
-            createdBy: 'admin@enterprise.com',
-            sslRequired: true,
-            registrationAllowed: false,
-            bruteForceProtected: true
-        },
-        {
-            id: 3,
-            name: 'test-realm',
-            displayName: 'Testing Environment',
-            description: 'Realm for testing and development purposes',
-            status: 'inactive',
-            visibility: 'private',
-            userCount: 25,
-            activeSessions: 0,
-            lastModified: '2024-01-13T09:15:00',
-            createdBy: 'dev@test.com',
-            sslRequired: false,
-            registrationAllowed: true,
-            bruteForceProtected: false
-        },
-        {
-            id: 4,
-            name: 'partner-realm',
-            displayName: 'Partners Access',
-            description: 'External partners authentication realm',
-            status: 'active',
-            visibility: 'restricted',
-            userCount: 180,
-            activeSessions: 42,
-            lastModified: '2024-01-12T14:20:00',
-            createdBy: 'admin@partner.com',
-            sslRequired: true,
-            registrationAllowed: false,
-            bruteForceProtected: true
-        },
-        {
-            id: 5,
-            name: 'mobile-realm',
-            displayName: 'Mobile Applications',
-            description: 'Realm dedicated to mobile applications',
-            status: 'maintenance',
-            visibility: 'public',
-            userCount: 850,
-            activeSessions: 210,
-            lastModified: '2024-01-11T11:10:00',
-            createdBy: 'mobile@admin.com',
-            sslRequired: true,
-            registrationAllowed: true,
-            bruteForceProtected: true
-        }
-    ]);
+    const [realms, setRealms] = useState([]);
 
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedStatus, setSelectedStatus] = useState('all');
@@ -119,6 +45,30 @@ const Realms = () => {
             setSearchParams(newParams, { replace: true });
         }
     }, [searchParams]);
+
+    useEffect(() => {
+        fetchRealms()
+    }, []);
+
+    const fetchRealms = async () => {
+        const response = await api.get(Urls.realm.list);
+
+        setRealms(response.data.map(realm => ({
+            id: realm.id,
+            name: realm.name.toLowerCase().replace(/\s+/g, '-'),
+            displayName: realm.name,
+            description: realm.description || 'No description provided',
+            status: realm.enabled ? 'active' : 'inactive',
+            visibility: realm.accessType || 'private',
+            userCount: realm.userCount || 0,
+            activeSessions: realm.activeSessions || 0,
+            lastModified: realm.lastModified || new Date().toISOString(),
+            createdBy: realm.createdBy || 'system',
+            sslRequired: realm.sslRequired || false,
+            registrationAllowed: realm.registrationAllowed || false,
+            bruteForceProtected: realm.bruteForceProtected || false
+        })));
+    }
 
     const filteredRealms = realms
         .filter(realm => {
