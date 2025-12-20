@@ -17,6 +17,13 @@ const Urls = {
         update: '/companies/{id}',
         delete: '/companies/{id}',
     },
+    user: {
+        list: '/users',
+        get: '/users/{id}',
+        create: '/users',
+        update: '/users/{id}',
+        delete: '/users/{id}',
+    }
 }
 
 export default Urls;

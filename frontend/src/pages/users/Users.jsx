@@ -27,105 +27,11 @@ import {
 } from 'react-icons/fa';
 import { format } from 'date-fns';
 import {useSearchParams} from "react-router-dom";
+import api from "../../api/index.js";
+import Urls from "../../api/Urls.js";
 
 const Users = () => {
-    const [users, setUsers] = useState([
-        {
-            id: 1,
-            email: 'admin@example.com',
-            name: 'Admin User',
-            firstName: 'Admin',
-            lastName: 'User',
-            username: 'admin',
-            status: 'active',
-            role: 'Super Admin',
-            phone: '+1 (555) 123-4567',
-            company: 'SSO Solutions Inc.',
-            department: 'IT Security',
-            lastLogin: '2024-01-15T14:30:00',
-            createdAt: '2023-03-15T09:00:00',
-            mfaEnabled: true,
-            emailVerified: true,
-            realm: 'default-realm',
-            lastIp: '192.168.1.100'
-        },
-        {
-            id: 2,
-            email: 'john.doe@company.com',
-            name: 'John Doe',
-            firstName: 'John',
-            lastName: 'Doe',
-            username: 'johndoe',
-            status: 'active',
-            role: 'Realm Administrator',
-            phone: '+1 (555) 987-6543',
-            company: 'TechCorp Solutions',
-            department: 'Engineering',
-            lastLogin: '2024-01-14T09:15:00',
-            createdAt: '2023-06-20T11:30:00',
-            mfaEnabled: false,
-            emailVerified: true,
-            realm: 'enterprise-realm',
-            lastIp: '10.0.0.50'
-        },
-        {
-            id: 3,
-            email: 'sarah.johnson@company.com',
-            name: 'Sarah Johnson',
-            firstName: 'Sarah',
-            lastName: 'Johnson',
-            username: 'sarahj',
-            status: 'inactive',
-            role: 'User Manager',
-            phone: '+1 (555) 456-7890',
-            company: 'HealthPlus Medical',
-            department: 'Administration',
-            lastLogin: '2024-01-10T16:45:00',
-            createdAt: '2023-08-15T14:20:00',
-            mfaEnabled: true,
-            emailVerified: false,
-            realm: 'healthcare-realm',
-            lastIp: '192.168.1.200'
-        },
-        {
-            id: 4,
-            email: 'alice.smith@partner.com',
-            name: 'Alice Smith',
-            firstName: 'Alice',
-            lastName: 'Smith',
-            username: 'alicesmith',
-            status: 'pending',
-            role: 'Read Only',
-            phone: '+1 (555) 234-5678',
-            company: 'Partner Corp',
-            department: 'Sales',
-            lastLogin: null,
-            createdAt: '2024-01-05T10:00:00',
-            mfaEnabled: false,
-            emailVerified: false,
-            realm: 'partner-realm',
-            lastIp: null
-        },
-        {
-            id: 5,
-            email: 'bob.wilson@company.com',
-            name: 'Bob Wilson',
-            firstName: 'Bob',
-            lastName: 'Wilson',
-            username: 'bobwilson',
-            status: 'suspended',
-            role: 'API Developer',
-            phone: '+1 (555) 345-6789',
-            company: 'FinanceSecure Bank',
-            department: 'Development',
-            lastLogin: '2024-01-02T11:30:00',
-            createdAt: '2023-11-30T08:45:00',
-            mfaEnabled: true,
-            emailVerified: true,
-            realm: 'finance-realm',
-            lastIp: '203.0.113.25'
-        },
-    ]);
+    const [users, setUsers] = useState([]);
 
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedStatus, setSelectedStatus] = useState('all');
@@ -149,6 +55,36 @@ const Users = () => {
             setSearchParams(newParams, { replace: true });
         }
     }, [searchParams]);
+
+    useEffect(() => {
+        fetchUsers()
+    }, []);
+
+    async function fetchUsers() {
+        const response = await api.get(Urls.user.list)
+
+        setUsers(response.data.map(user => ({
+            id: user.id,
+            email: user.email,
+            name: `${user.firstname || ''} ${user.lastname || ''}`.trim() || user.username,
+            firstName: user.firstname || '',
+            lastName: user.lastname || '',
+            username: user.username,
+            status: user.verifiedAt ? 'active' : 'pending',
+            role: user.role || 'User',
+            phone: user.phone || '',
+            company: user.company || '',
+            department: user.department || '',
+            lastLogin: user.lastLogin,
+            createdAt: user.createdAt,
+            mfaEnabled: user.mfaEnabled || false,
+            emailVerified: !!user.verifiedAt,
+            realm: user.realm || 'default-realm',
+            lastIp: user.lastIp || null
+        })));
+
+        console.log('Fetched users:', response.data)
+    }
 
     const [userForm, setUserForm] = useState({
         firstName: '',
