@@ -1,29 +1,27 @@
 import {useEffect, useState} from 'react';
 import {
-    FaSearch,
-    FaPlus,
-    FaEdit,
-    FaTrash,
-    FaCopy,
-    FaCheckCircle,
-    FaTimesCircle,
-    FaCreditCard,
-    FaUsers,
     FaChartLine,
-    FaDownload,
-    FaUpload,
-    FaFilter,
-    FaSort,
-    FaSortUp,
-    FaSortDown,
-    FaStar,
-    FaFire,
-    FaCrown,
-    FaGem,
-    FaShieldAlt,
-    FaInfinity,
     FaCheck,
-    FaTimes
+    FaCheckCircle,
+    FaCopy,
+    FaCreditCard,
+    FaCrown,
+    FaDownload,
+    FaEdit,
+    FaFilter,
+    FaFire,
+    FaGem,
+    FaInfinity,
+    FaPlus,
+    FaSearch,
+    FaShieldAlt,
+    FaSortDown,
+    FaSortUp,
+    FaStar,
+    FaTimes,
+    FaTimesCircle,
+    FaTrash,
+    FaUsers
 } from 'react-icons/fa';
 import api from "../../api/index.js";
 import Urls from "../../api/Urls.js";
@@ -49,7 +47,7 @@ const Plans = () => {
         const response = await api.get(Urls.plan.list)
 
         setPlans(response.data.map(plan => ({
-          id: plan.id,
+            id: plan.id,
             name: plan.name,
             code: plan.name.toUpperCase().replace(/\s+/g, '_'),
             description: plan.description,
@@ -516,7 +514,8 @@ const Plans = () => {
                                 {plans.filter(p => p.status === 'active').map(plan => (
                                     <td key={plan.id} className="text-center">
                                         {plan.features.users === 'unlimited' ? (
-                                            <span className="font-bold flex items-center justify-center gap-1"><FaInfinity/> Unlimited</span>
+                                            <span
+                                                className="font-bold flex items-center justify-center gap-1"><FaInfinity/> Unlimited</span>
                                         ) : (
                                             plan.features.users
                                         )}
@@ -528,7 +527,8 @@ const Plans = () => {
                                 {plans.filter(p => p.status === 'active').map(plan => (
                                     <td key={plan.id} className="text-center">
                                         {plan.features.realms === 'unlimited' ? (
-                                            <span className="font-bold flex items-center justify-center gap-1"><FaInfinity/> Unlimited</span>
+                                            <span
+                                                className="font-bold flex items-center justify-center gap-1"><FaInfinity/> Unlimited</span>
                                         ) : (
                                             plan.features.realms
                                         )}
@@ -556,7 +556,8 @@ const Plans = () => {
                                 {plans.filter(p => p.status === 'active').map(plan => (
                                     <td key={plan.id} className="text-center">
                                         {plan.features.apiCalls === 'unlimited' ? (
-                                            <span className="font-bold flex items-center justify-center gap-1"><FaInfinity/> Unlimited</span>
+                                            <span
+                                                className="font-bold flex items-center justify-center gap-1"><FaInfinity/> Unlimited</span>
                                         ) : (
                                             plan.features.apiCalls.toLocaleString()
                                         )}
@@ -584,7 +585,8 @@ const Plans = () => {
                                 {plans.filter(p => p.status === 'active').map(plan => (
                                     <td key={plan.id} className="text-center">
                                         {plan.features.auditLogs === 'unlimited' ? (
-                                            <span className="font-bold flex items-center justify-center gap-1"><FaInfinity/> Unlimited</span>
+                                            <span
+                                                className="font-bold flex items-center justify-center gap-1"><FaInfinity/> Unlimited</span>
                                         ) : (
                                             plan.features.auditLogs
                                         )}

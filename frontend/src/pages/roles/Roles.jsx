@@ -189,7 +189,7 @@ const Roles = () => {
     const [showCreateModal, setShowCreateModal] = useState(false);
     const [showPermissionsModal, setShowPermissionsModal] = useState(false);
     const [selectedRole, setSelectedRole] = useState(null);
-    const [viewMode, setViewMode] = useState('grid'); // 'grid' or 'list'
+    const [viewMode, setViewMode] = useState('list'); // 'grid' or 'list'
     const [editingPermissions, setEditingPermissions] = useState(null);
 
     // Types de rôles uniques

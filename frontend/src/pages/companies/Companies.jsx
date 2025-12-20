@@ -1,234 +1,61 @@
-// src/pages/Companies.jsx
-import { useState } from 'react';
+import {useEffect, useState} from 'react';
 import {
-    FaSearch,
-    FaPlus,
-    FaEdit,
-    FaTrash,
     FaBuilding,
-    FaUsers,
-    FaPhone,
-    FaEnvelope,
-    FaGlobe,
-    FaMapMarkerAlt,
-    FaIndustry,
-    FaCalendarAlt,
+    FaChartLine,
     FaCheckCircle,
-    FaTimesCircle,
-    FaExclamationTriangle,
-    FaDownload,
-    FaUpload,
-    FaFilter,
-    FaSort,
-    FaSortUp,
-    FaSortDown,
-    FaEye,
-    FaLink,
     FaCreditCard,
-    FaChartLine
+    FaDownload,
+    FaEdit,
+    FaEnvelope,
+    FaExclamationTriangle,
+    FaEye,
+    FaFilter,
+    FaGlobe,
+    FaIndustry,
+    FaLink,
+    FaMapMarkerAlt,
+    FaPhone,
+    FaPlus,
+    FaSearch,
+    FaSortDown,
+    FaSortUp,
+    FaTimesCircle,
+    FaTrash,
+    FaUpload,
+    FaUsers
 } from 'react-icons/fa';
-import { format } from 'date-fns';
+import {format} from 'date-fns';
+import api from "../../api/index.js";
+import Urls from "../../api/Urls.js";
+import {toast} from "react-toastify";
+
+const defaultNewCompanyData = {
+    name: '',
+    description: '',
+    domain: '',
+    email: '',
+    phone: '',
+    address: '',
+    city: '',
+    state: '',
+    country: '',
+    postal_code: '',
+    website: '',
+    enabled: false,
+    verified: false,
+    sso_enabled: false,
+    subscription_status: '',
+    trial_ends_at: '',
+    subscription_ends_at: '',
+    logo_url: '',
+    siret: '',
+    vat: '',
+    plan_id: 1,
+    industry: ''
+};
 
 const Companies = () => {
-    // État pour les données et filtres
-    const [companies, setCompanies] = useState([
-        {
-            id: 1,
-            name: 'TechCorp Solutions',
-            domain: 'techcorp.com',
-            industry: 'Information Technology',
-            plan: 'Enterprise',
-            status: 'active',
-            users: 245,
-            contact: {
-                name: 'John Smith',
-                email: 'john.smith@techcorp.com',
-                phone: '+1 (555) 123-4567'
-            },
-            location: {
-                city: 'San Francisco',
-                country: 'United States'
-            },
-            billing: {
-                amount: '$4,999',
-                cycle: 'monthly',
-                nextBilling: '2024-02-15'
-            },
-            created: '2023-06-15',
-            lastActive: '2024-01-15T14:30:00',
-            ssoEnabled: true,
-            mfaEnabled: true,
-            apiAccess: true
-        },
-        {
-            id: 2,
-            name: 'HealthPlus Medical',
-            domain: 'healthplus.com',
-            industry: 'Healthcare',
-            plan: 'Professional',
-            status: 'active',
-            users: 128,
-            contact: {
-                name: 'Sarah Johnson',
-                email: 'sarah.j@healthplus.com',
-                phone: '+1 (555) 987-6543'
-            },
-            location: {
-                city: 'New York',
-                country: 'United States'
-            },
-            billing: {
-                amount: '$2,499',
-                cycle: 'monthly',
-                nextBilling: '2024-02-10'
-            },
-            created: '2023-08-22',
-            lastActive: '2024-01-14T09:15:00',
-            ssoEnabled: true,
-            mfaEnabled: false,
-            apiAccess: true
-        },
-        {
-            id: 3,
-            name: 'EduLearn Academy',
-            domain: 'edulearn.edu',
-            industry: 'Education',
-            plan: 'Educational',
-            status: 'pending',
-            users: 85,
-            contact: {
-                name: 'Robert Chen',
-                email: 'r.chen@edulearn.edu',
-                phone: '+1 (555) 456-7890'
-            },
-            location: {
-                city: 'Boston',
-                country: 'United States'
-            },
-            billing: {
-                amount: '$1,499',
-                cycle: 'annual',
-                nextBilling: '2025-01-20'
-            },
-            created: '2024-01-05',
-            lastActive: '2024-01-10T16:45:00',
-            ssoEnabled: false,
-            mfaEnabled: false,
-            apiAccess: false
-        },
-        {
-            id: 4,
-            name: 'RetailChain Stores',
-            domain: 'retailchain.com',
-            industry: 'Retail',
-            plan: 'Business',
-            status: 'suspended',
-            users: 320,
-            contact: {
-                name: 'Maria Garcia',
-                email: 'maria.g@retailchain.com',
-                phone: '+1 (555) 234-5678'
-            },
-            location: {
-                city: 'Miami',
-                country: 'United States'
-            },
-            billing: {
-                amount: '$3,499',
-                cycle: 'monthly',
-                nextBilling: '2024-02-01'
-            },
-            created: '2023-04-18',
-            lastActive: '2024-01-05T11:20:00',
-            ssoEnabled: true,
-            mfaEnabled: true,
-            apiAccess: false
-        },
-        {
-            id: 5,
-            name: 'FinanceSecure Bank',
-            domain: 'financesecure.bank',
-            industry: 'Finance',
-            plan: 'Enterprise Plus',
-            status: 'active',
-            users: 560,
-            contact: {
-                name: 'David Wilson',
-                email: 'd.wilson@financesecure.bank',
-                phone: '+1 (555) 345-6789'
-            },
-            location: {
-                city: 'London',
-                country: 'United Kingdom'
-            },
-            billing: {
-                amount: '$7,999',
-                cycle: 'monthly',
-                nextBilling: '2024-02-20'
-            },
-            created: '2022-11-30',
-            lastActive: '2024-01-15T08:45:00',
-            ssoEnabled: true,
-            mfaEnabled: true,
-            apiAccess: true
-        },
-        {
-            id: 6,
-            name: 'Manufacturing Pro',
-            domain: 'manufacturingpro.com',
-            industry: 'Manufacturing',
-            plan: 'Professional',
-            status: 'inactive',
-            users: 42,
-            contact: {
-                name: 'James Miller',
-                email: 'j.miller@manufacturingpro.com',
-                phone: '+1 (555) 567-8901'
-            },
-            location: {
-                city: 'Detroit',
-                country: 'United States'
-            },
-            billing: {
-                amount: '$2,499',
-                cycle: 'monthly',
-                nextBilling: '2024-01-25'
-            },
-            created: '2023-12-01',
-            lastActive: '2023-12-20T14:10:00',
-            ssoEnabled: false,
-            mfaEnabled: false,
-            apiAccess: false
-        },
-        {
-            id: 7,
-            name: 'Creative Agency Co.',
-            domain: 'creativeagency.co',
-            industry: 'Marketing',
-            plan: 'Startup',
-            status: 'active',
-            users: 28,
-            contact: {
-                name: 'Emma Davis',
-                email: 'emma.d@creativeagency.co',
-                phone: '+1 (555) 678-9012'
-            },
-            location: {
-                city: 'Los Angeles',
-                country: 'United States'
-            },
-            billing: {
-                amount: '$499',
-                cycle: 'monthly',
-                nextBilling: '2024-02-05'
-            },
-            created: '2023-10-15',
-            lastActive: '2024-01-14T17:30:00',
-            ssoEnabled: true,
-            mfaEnabled: true,
-            apiAccess: true
-        }
-    ]);
+    const [companies, setCompanies] = useState([]);
 
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedStatus, setSelectedStatus] = useState('all');
@@ -239,15 +66,55 @@ const Companies = () => {
     const [showCreateModal, setShowCreateModal] = useState(false);
     const [showImportModal, setShowImportModal] = useState(false);
     const [selectedCompany, setSelectedCompany] = useState(null);
-    const [viewMode, setViewMode] = useState('grid'); // 'grid' or 'list'
+    const [viewMode, setViewMode] = useState('list');  // 'grid' or 'list'
+    const [availablePlans, setAvailablePlans] = useState([]);
+    const [newCompanyData, setNewCompanyData] = useState({...defaultNewCompanyData});
 
-    // Industries uniques pour le filtre
+    async function init() {
+        try {
+            const plans = await api.get(Urls.plan.list);
+            setAvailablePlans(plans.data);
+
+            const companiesRes = await api.get(Urls.company.list);
+            setCompanies(companiesRes.data.map(company => ({
+                id: company.id,
+                name: company.name,
+                domain: company.domain,
+                industry: company.industry || 'N/A',
+                plan: plans.data.find(p => p.id === company.planId)?.name || 'Free',
+                status: company.enabled ? 'active' : 'inactive',
+                users: company.users || 0,
+                contact: {
+                    name: company.contactName || 'N/A',
+                    email: company.email,
+                    phone: company.phone || 'N/A'
+                },
+                location: {
+                    city: company.city || 'N/A',
+                    country: company.country || 'N/A'
+                },
+                billing: {
+                    amount: company.billingAmount || '$0',
+                    cycle: company.billingCycle || 'monthly',
+                    nextBilling: company.subscriptionEndsAt ? format(new Date(company.subscriptionEndsAt), 'yyyy-MM-dd') : 'N/A'
+                },
+                created: format(new Date(company.createdAt), 'yyyy-MM-dd'),
+                lastActive: company.lastActive || new Date().toISOString(),
+                ssoEnabled: company.ssoEnabled,
+                mfaEnabled: company.mfaEnabled || false,
+                apiAccess: company.apiAccess || false
+            })));
+        } catch (err) {
+            toast.error('Impossible de charger les données des sociétés.');
+        }
+    }
+
+    useEffect(() => {
+        init();
+    }, []);
+
     const industries = [...new Set(companies.map(company => company.industry))];
 
-    // Plans uniques pour le filtre
-    const plans = [...new Set(companies.map(company => company.plan))];
-
-    // Filtrage et tri
     const filteredCompanies = companies
         .filter(company => {
             const matchesSearch = company.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -280,12 +147,12 @@ const Companies = () => {
 
     const getStatusBadge = (status) => {
         const statusConfig = {
-            active: { color: 'badge-success', icon: <FaCheckCircle className="mr-1" />, text: 'Active' },
-            pending: { color: 'badge-warning', icon: <FaExclamationTriangle className="mr-1" />, text: 'Pending' },
-            suspended: { color: 'badge-error', icon: <FaTimesCircle className="mr-1" />, text: 'Suspended' },
-            inactive: { color: 'badge-neutral', icon: <FaTimesCircle className="mr-1" />, text: 'Inactive' }
+            active: {color: 'badge-success', icon: <FaCheckCircle className="mr-1"/>, text: 'Active'},
+            pending: {color: 'badge-warning', icon: <FaExclamationTriangle className="mr-1"/>, text: 'Pending'},
+            suspended: {color: 'badge-error', icon: <FaTimesCircle className="mr-1"/>, text: 'Suspended'},
+            inactive: {color: 'badge-neutral', icon: <FaTimesCircle className="mr-1"/>, text: 'Inactive'}
         };
-        const config = statusConfig[status] || { color: 'badge-neutral', text: status };
+        const config = statusConfig[status] || {color: 'badge-neutral', text: status};
         return (
             <span className={`badge ${config.color} gap-1`}>
         {config.icon}
@@ -296,27 +163,46 @@ const Companies = () => {
 
     const getPlanBadge = (plan) => {
         const planConfig = {
-            'Enterprise Plus': { color: 'badge-primary', text: 'Enterprise+' },
-            'Enterprise': { color: 'badge-primary', text: 'Enterprise' },
-            'Professional': { color: 'badge-info', text: 'Professional' },
-            'Business': { color: 'badge-info', text: 'Business' },
-            'Startup': { color: 'badge-secondary', text: 'Startup' },
-            'Educational': { color: 'badge-accent', text: 'Educational' }
+            'Enterprise': {color: 'badge-primary', text: 'Enterprise'},
+            'Pro': {color: 'badge-accent', text: 'Pro'},
+            'Basic': {color: 'badge-info', text: 'Basic'},
+            'Free': {color: 'badge-ghost', text: 'Free'}
         };
-        const config = planConfig[plan] || { color: 'badge-neutral', text: plan };
+        const config = planConfig[plan] || {color: 'badge-neutral', text: plan};
         return <span className={`badge ${config.color}`}>{config.text}</span>;
     };
 
-    const handleDeleteCompany = (id) => {
+    const createCompany = async () => {
+        try {
+            const payload = {
+                ...newCompanyData
+            };
+            const response = await api.post(Urls.company.create, payload);
+            toast.success('Société créée avec succès.');
+            setShowCreateModal(false);
+            setNewCompanyData({...defaultNewCompanyData});
+            await init();
+        } catch (err) {
+            toast.error(err?.response?.data?.message || 'Échec de la création de la société.');
+        }
+    }
+
+    const handleDeleteCompany = async (id) => {
         if (window.confirm('Are you sure you want to delete this company? This will also remove all associated users.')) {
-            setCompanies(companies.filter(company => company.id !== id));
+            const response = await api.delete(Urls.company.delete.replace('{id}', id));
+            if (response.status !== 204) {
+                toast.error(response.data.message || 'Failed to delete company.');
+                return;
+            }
+            toast.success('Company deleted successfully.');
+            init();
         }
     };
 
     const handleToggleStatus = (id, currentStatus) => {
         const newStatus = currentStatus === 'active' ? 'suspended' : 'active';
         setCompanies(companies.map(company =>
-            company.id === id ? { ...company, status: newStatus } : company
+            company.id === id ? {...company, status: newStatus} : company
         ));
     };
 
@@ -331,7 +217,7 @@ const Companies = () => {
                 return sum + (isNaN(amount) ? 0 : amount);
             }, 0);
 
-        return { totalCompanies, activeCompanies, totalUsers, monthlyRevenue };
+        return {totalCompanies, activeCompanies, totalUsers, monthlyRevenue};
     };
 
     const metrics = getCompanyMetrics();
@@ -341,7 +227,7 @@ const Companies = () => {
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div>
                     <h1 className="text-3xl font-bold flex items-center gap-2">
-                        <FaBuilding className="text-primary" />
+                        <FaBuilding className="text-primary"/>
                         Companies Management
                     </h1>
                     <p className="text-base-content/70">
@@ -350,19 +236,19 @@ const Companies = () => {
                 </div>
                 <div className="flex flex-wrap gap-2">
                     <button className="btn btn-ghost">
-                        <FaDownload /> Export
+                        <FaDownload/> Export
                     </button>
                     <button
                         className="btn btn-secondary"
                         onClick={() => setShowImportModal(true)}
                     >
-                        <FaUpload /> Import
+                        <FaUpload/> Import
                     </button>
                     <button
                         className="btn btn-primary"
                         onClick={() => setShowCreateModal(true)}
                     >
-                        <FaPlus /> Add Company
+                        <FaPlus/> Add Company
                     </button>
                 </div>
             </div>
@@ -376,7 +262,7 @@ const Companies = () => {
                                 <p className="text-3xl font-bold">{metrics.totalCompanies}</p>
                             </div>
                             <div className="text-primary text-2xl">
-                                <FaBuilding />
+                                <FaBuilding/>
                             </div>
                         </div>
                         <div className="text-xs opacity-70 mt-2">
@@ -393,7 +279,7 @@ const Companies = () => {
                                 <p className="text-3xl font-bold">{metrics.activeCompanies}</p>
                             </div>
                             <div className="text-success text-2xl">
-                                <FaCheckCircle />
+                                <FaCheckCircle/>
                             </div>
                         </div>
                         <div className="text-xs opacity-70 mt-2">
@@ -410,7 +296,7 @@ const Companies = () => {
                                 <p className="text-3xl font-bold">{metrics.totalUsers.toLocaleString()}</p>
                             </div>
                             <div className="text-info text-2xl">
-                                <FaUsers />
+                                <FaUsers/>
                             </div>
                         </div>
                         <div className="text-xs opacity-70 mt-2">
@@ -427,7 +313,7 @@ const Companies = () => {
                                 <p className="text-3xl font-bold">${metrics.monthlyRevenue.toLocaleString()}</p>
                             </div>
                             <div className="text-accent text-2xl">
-                                <FaCreditCard />
+                                <FaCreditCard/>
                             </div>
                         </div>
                         <div className="text-xs opacity-70 mt-2">
@@ -442,7 +328,7 @@ const Companies = () => {
                     <div className="flex flex-col lg:flex-row gap-4 mb-6">
                         <div className="form-control flex-1">
                             <div className="input input-bordered flex items-center gap-2">
-                                <FaSearch className="opacity-50" />
+                                <FaSearch className="opacity-50"/>
                                 <input
                                     type="text"
                                     placeholder="Search companies by name, domain, or contact..."
@@ -497,8 +383,8 @@ const Companies = () => {
                                 onChange={(e) => setSelectedPlan(e.target.value)}
                             >
                                 <option value="all">All Plans</option>
-                                {plans.map(plan => (
-                                    <option key={plan} value={plan}>{plan}</option>
+                                {availablePlans.map(plan => (
+                                    <option key={plan.name} value={plan.name}>{plan.name}</option>
                                 ))}
                             </select>
 
@@ -514,7 +400,7 @@ const Companies = () => {
                             </select>
 
                             <button className="btn btn-ghost btn-sm">
-                                <FaFilter /> More
+                                <FaFilter/> More
                             </button>
                         </div>
                     </div>
@@ -522,13 +408,14 @@ const Companies = () => {
                     {viewMode === 'grid' ? (
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                             {filteredCompanies.map((company) => (
-                                <div key={company.id} className="card bg-base-100 border border-base-300 hover:shadow-xl transition-shadow">
+                                <div key={company.id}
+                                     className="card bg-base-100 border border-base-300 hover:shadow-xl transition-shadow">
                                     <div className="card-body">
                                         <div className="flex justify-between items-start mb-4">
                                             <div>
                                                 <h3 className="card-title text-lg">{company.name}</h3>
                                                 <div className="flex items-center gap-2 mt-1">
-                                                    <FaGlobe className="text-xs opacity-50" />
+                                                    <FaGlobe className="text-xs opacity-50"/>
                                                     <span className="text-sm opacity-70">{company.domain}</span>
                                                 </div>
                                             </div>
@@ -540,46 +427,50 @@ const Companies = () => {
 
                                         <div className="space-y-2 mb-4">
                                             <div className="flex items-center gap-2">
-                                                <FaUsers className="opacity-50" />
+                                                <FaUsers className="opacity-50"/>
                                                 <span className="text-sm">{company.users} users</span>
                                             </div>
                                             <div className="flex items-center gap-2">
-                                                <FaIndustry className="opacity-50" />
+                                                <FaIndustry className="opacity-50"/>
                                                 <span className="text-sm">{company.industry}</span>
                                             </div>
                                             <div className="flex items-center gap-2">
-                                                <FaMapMarkerAlt className="opacity-50" />
-                                                <span className="text-sm">{company.location.city}, {company.location.country}</span>
+                                                <FaMapMarkerAlt className="opacity-50"/>
+                                                <span
+                                                    className="text-sm">{company.location.city}, {company.location.country}</span>
                                             </div>
                                         </div>
 
                                         <div className="bg-base-200 rounded-lg p-3 mb-4">
                                             <p className="font-medium text-sm">Primary Contact</p>
                                             <div className="flex items-center gap-2 mt-1">
-                                                <FaEnvelope className="text-xs" />
+                                                <FaEnvelope className="text-xs"/>
                                                 <span className="text-sm">{company.contact.email}</span>
                                             </div>
                                             <div className="flex items-center gap-2 mt-1">
-                                                <FaPhone className="text-xs" />
+                                                <FaPhone className="text-xs"/>
                                                 <span className="text-sm">{company.contact.phone}</span>
                                             </div>
                                         </div>
 
                                         <div className="flex justify-between mb-4">
                                             <div className="text-center">
-                                                <div className={`badge ${company.ssoEnabled ? 'badge-success' : 'badge-neutral'}`}>
+                                                <div
+                                                    className={`badge ${company.ssoEnabled ? 'badge-success' : 'badge-neutral'}`}>
                                                     SSO
                                                 </div>
                                                 <p className="text-xs mt-1">{company.ssoEnabled ? 'Enabled' : 'Disabled'}</p>
                                             </div>
                                             <div className="text-center">
-                                                <div className={`badge ${company.mfaEnabled ? 'badge-success' : 'badge-neutral'}`}>
+                                                <div
+                                                    className={`badge ${company.mfaEnabled ? 'badge-success' : 'badge-neutral'}`}>
                                                     MFA
                                                 </div>
                                                 <p className="text-xs mt-1">{company.mfaEnabled ? 'Enabled' : 'Disabled'}</p>
                                             </div>
                                             <div className="text-center">
-                                                <div className={`badge ${company.apiAccess ? 'badge-success' : 'badge-neutral'}`}>
+                                                <div
+                                                    className={`badge ${company.apiAccess ? 'badge-success' : 'badge-neutral'}`}>
                                                     API
                                                 </div>
                                                 <p className="text-xs mt-1">{company.apiAccess ? 'Enabled' : 'Disabled'}</p>
@@ -591,13 +482,13 @@ const Companies = () => {
                                                 className="btn btn-sm btn-ghost"
                                                 onClick={() => setSelectedCompany(company)}
                                             >
-                                                <FaEye /> View
+                                                <FaEye/> View
                                             </button>
                                             <button
                                                 className="btn btn-sm btn-info"
                                                 onClick={() => setSelectedCompany(company)}
                                             >
-                                                <FaEdit /> Edit
+                                                <FaEdit/> Edit
                                             </button>
                                             <button
                                                 className={`btn btn-sm ${company.status === 'active' ? 'btn-warning' : 'btn-success'}`}
@@ -611,7 +502,6 @@ const Companies = () => {
                             ))}
                         </div>
                     ) : (
-                        /* Vue Liste/Tableau */
                         <div className="overflow-x-auto">
                             <table className="table table-zebra">
                                 <thead>
@@ -623,7 +513,7 @@ const Companies = () => {
                                         >
                                             Company
                                             {sortField === 'name' && (
-                                                sortDirection === 'asc' ? <FaSortUp /> : <FaSortDown />
+                                                sortDirection === 'asc' ? <FaSortUp/> : <FaSortDown/>
                                             )}
                                         </button>
                                     </th>
@@ -648,7 +538,7 @@ const Companies = () => {
                                         </td>
                                         <td>
                                             <div className="flex items-center gap-1">
-                                                <FaGlobe className="opacity-50" />
+                                                <FaGlobe className="opacity-50"/>
                                                 {company.domain}
                                             </div>
                                         </td>
@@ -656,13 +546,13 @@ const Companies = () => {
                                         <td>{getPlanBadge(company.plan)}</td>
                                         <td>
                                             <div className="flex items-center gap-2">
-                                                <FaUsers className="opacity-50" />
+                                                <FaUsers className="opacity-50"/>
                                                 <span className="font-medium">{company.users}</span>
                                             </div>
                                         </td>
                                         <td>
                                             <div className="flex items-center gap-1">
-                                                <FaIndustry className="opacity-50" />
+                                                <FaIndustry className="opacity-50"/>
                                                 {company.industry}
                                             </div>
                                         </td>
@@ -670,15 +560,18 @@ const Companies = () => {
                                             <div className="flex flex-col">
                                                 <span className="font-medium">{company.billing.amount}</span>
                                                 <span className="text-xs opacity-70">
-                            {company.billing.cycle}
-                          </span>
+                                                    {company.billing.cycle}
+                                                </span>
                                             </div>
                                         </td>
                                         <td>
                                             <div className="flex gap-1">
-                                                {company.ssoEnabled && <span className="badge badge-success badge-xs">SSO</span>}
-                                                {company.mfaEnabled && <span className="badge badge-info badge-xs">MFA</span>}
-                                                {company.apiAccess && <span className="badge badge-warning badge-xs">API</span>}
+                                                {company.ssoEnabled &&
+                                                    <span className="badge badge-success badge-xs">SSO</span>}
+                                                {company.mfaEnabled &&
+                                                    <span className="badge badge-info badge-xs">MFA</span>}
+                                                {company.apiAccess &&
+                                                    <span className="badge badge-warning badge-xs">API</span>}
                                             </div>
                                         </td>
                                         <td>
@@ -687,19 +580,19 @@ const Companies = () => {
                                                     className="btn btn-xs btn-ghost"
                                                     onClick={() => setSelectedCompany(company)}
                                                 >
-                                                    <FaEye />
+                                                    <FaEye/>
                                                 </button>
                                                 <button
                                                     className="btn btn-xs btn-info"
                                                     onClick={() => setSelectedCompany(company)}
                                                 >
-                                                    <FaEdit />
+                                                    <FaEdit/>
                                                 </button>
                                                 <button
                                                     className="btn btn-xs btn-error"
                                                     onClick={() => handleDeleteCompany(company.id)}
                                                 >
-                                                    <FaTrash />
+                                                    <FaTrash/>
                                                 </button>
                                             </div>
                                         </td>
@@ -740,6 +633,8 @@ const Companies = () => {
                                     type="text"
                                     placeholder="e.g., Acme Corporation"
                                     className="input input-bordered"
+                                    value={newCompanyData.name}
+                                    onChange={(e) => setNewCompanyData({...newCompanyData, name: e.target.value})}
                                 />
                             </div>
 
@@ -751,29 +646,24 @@ const Companies = () => {
                                     type="text"
                                     placeholder="e.g., acme.com"
                                     className="input input-bordered"
+                                    value={newCompanyData.domain}
+                                    onChange={(e) => setNewCompanyData({...newCompanyData, domain: e.target.value})}
                                 />
-                            </div>
-
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Industry</span>
-                                </label>
-                                <select className="select select-bordered">
-                                    <option value="">Select Industry</option>
-                                    {industries.map(industry => (
-                                        <option key={industry} value={industry}>{industry}</option>
-                                    ))}
-                                </select>
                             </div>
 
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Plan</span>
                                 </label>
-                                <select className="select select-bordered">
+                                <select
+                                    className="select select-bordered"
+                                    value={Number(newCompanyData.plan_id)}
+                                    onChange={(e) => setNewCompanyData({...newCompanyData, plan_id: Number(e.target.value)})}
+                                >
                                     <option value="">Select Plan</option>
-                                    {plans.map(plan => (
-                                        <option key={plan} value={plan}>{plan}</option>
+                                    {availablePlans.map(plan => (
+                                        <option key={plan.id || plan.name}
+                                                value={plan.id || plan.name}>{plan.name}</option>
                                     ))}
                                 </select>
                             </div>
@@ -786,6 +676,11 @@ const Companies = () => {
                                     type="text"
                                     placeholder="e.g., John Doe"
                                     className="input input-bordered"
+                                    value={newCompanyData.contactName || ''}
+                                    onChange={(e) => setNewCompanyData({
+                                        ...newCompanyData,
+                                        contactName: e.target.value
+                                    })}
                                 />
                             </div>
 
@@ -797,20 +692,136 @@ const Companies = () => {
                                     type="email"
                                     placeholder="e.g., john@acme.com"
                                     className="input input-bordered"
+                                    value={newCompanyData.email}
+                                    onChange={(e) => setNewCompanyData({...newCompanyData, email: e.target.value})}
                                 />
+                            </div>
+
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Phone</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    placeholder="e.g., +1 555 555"
+                                    className="input input-bordered"
+                                    value={newCompanyData.phone}
+                                    onChange={(e) => setNewCompanyData({...newCompanyData, phone: e.target.value})}
+                                />
+                            </div>
+
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Address</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    placeholder="e.g., 123 Main St, City, Country"
+                                    className="input input-bordered"
+                                    value={newCompanyData.address || ''}
+                                    onChange={(e) => setNewCompanyData({
+                                        ...newCompanyData,
+                                        address: e.target.value
+                                    })}
+                                />
+                            </div>
+
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">State</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    placeholder="e.g., California"
+                                    className="input input-bordered"
+                                    value={newCompanyData.state || ''}
+                                    onChange={(e) => setNewCompanyData({
+                                        ...newCompanyData,
+                                        state: e.target.value
+                                    })}
+                                />
+                            </div>
+
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Country</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    placeholder="e.g., USA"
+                                    className="input input-bordered"
+                                    value={newCompanyData.country || ''}
+                                    onChange={(e) => setNewCompanyData({
+                                        ...newCompanyData,
+                                        country: e.target.value
+                                    })}
+                                />
+                            </div>
+
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">zipcode</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    placeholder="e.g., 90210"
+                                    className="input input-bordered"
+                                    value={newCompanyData.zipcode || ''}
+                                    onChange={(e) => setNewCompanyData({
+                                        ...newCompanyData,
+                                        zipcode: e.target.value
+                                    })}
+                                />
+                            </div>
+
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">website</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    placeholder="e.g., https://acme.com"
+                                    className="input input-bordered"
+                                    value={newCompanyData.website || ''}
+                                    onChange={(e) => setNewCompanyData({
+                                        ...newCompanyData,
+                                        website: e.target.value
+                                    })}
+                                />
+                            </div>
+
+                            <div className="form-control">
+                                <label className="cursor-pointer label">
+                                    <span className="label-text">SSO Enabled</span>
+                                    <input
+                                        type="checkbox"
+                                        className="toggle"
+                                        checked={newCompanyData.sso_enabled}
+                                        onChange={(e) => setNewCompanyData({
+                                            ...newCompanyData,
+                                            sso_enabled: e.target.checked
+                                        })}
+                                    />
+                                </label>
                             </div>
                         </div>
 
                         <div className="modal-action">
-                            <button className="btn btn-ghost" onClick={() => setShowCreateModal(false)}>
+                            <button className="btn btn-ghost" onClick={() => {
+                                setShowCreateModal(false);
+                                setNewCompanyData({...defaultNewCompanyData});
+                            }}>
                                 Cancel
                             </button>
-                            <button className="btn btn-primary">
+                            <button className="btn btn-primary" onClick={createCompany}>
                                 Create Company
                             </button>
                         </div>
                     </div>
-                    <div className="modal-backdrop" onClick={() => setShowCreateModal(false)}></div>
+                    <div className="modal-backdrop" onClick={() => {
+                        setShowCreateModal(false);
+                        setNewCompanyData({...defaultNewCompanyData});
+                    }}></div>
                 </div>
             )}
 
@@ -821,7 +832,7 @@ const Companies = () => {
                         <p className="py-4">Upload a CSV file with company data</p>
 
                         <div className="border-2 border-dashed border-base-300 rounded-lg p-8 text-center">
-                            <FaUpload className="text-3xl opacity-50 mx-auto mb-4" />
+                            <FaUpload className="text-3xl opacity-50 mx-auto mb-4"/>
                             <p className="mb-2">Drag & drop your CSV file here</p>
                             <p className="text-sm opacity-70 mb-4">or</p>
                             <button className="btn btn-primary">
@@ -896,7 +907,7 @@ const Companies = () => {
                                     <div>
                                         <h4 className="font-bold mb-2">Location</h4>
                                         <div className="flex items-center gap-2">
-                                            <FaMapMarkerAlt className="opacity-50" />
+                                            <FaMapMarkerAlt className="opacity-50"/>
                                             <span>{selectedCompany.location.city}, {selectedCompany.location.country}</span>
                                         </div>
                                     </div>
@@ -907,11 +918,11 @@ const Companies = () => {
                                         <h4 className="font-bold mb-2">Contact Information</h4>
                                         <div className="space-y-2">
                                             <div className="flex items-center gap-2">
-                                                <FaEnvelope className="opacity-50" />
+                                                <FaEnvelope className="opacity-50"/>
                                                 <span>{selectedCompany.contact.email}</span>
                                             </div>
                                             <div className="flex items-center gap-2">
-                                                <FaPhone className="opacity-50" />
+                                                <FaPhone className="opacity-50"/>
                                                 <span>{selectedCompany.contact.phone}</span>
                                             </div>
                                         </div>
@@ -922,7 +933,8 @@ const Companies = () => {
                                         <div className="space-y-2">
                                             <div className="flex justify-between">
                                                 <span className="opacity-70">Amount:</span>
-                                                <span className="font-bold text-lg">{selectedCompany.billing.amount}</span>
+                                                <span
+                                                    className="font-bold text-lg">{selectedCompany.billing.amount}</span>
                                             </div>
                                             <div className="flex justify-between">
                                                 <span className="opacity-70">Cycle:</span>
@@ -940,30 +952,36 @@ const Companies = () => {
                             <div className="mt-6">
                                 <h4 className="font-bold mb-4">SSO Features</h4>
                                 <div className="flex gap-4">
-                                    <div className={`card ${selectedCompany.ssoEnabled ? 'bg-success/10' : 'bg-base-200'} flex-1`}>
+                                    <div
+                                        className={`card ${selectedCompany.ssoEnabled ? 'bg-success/10' : 'bg-base-200'} flex-1`}>
                                         <div className="card-body items-center text-center">
-                                            <div className={`text-2xl ${selectedCompany.ssoEnabled ? 'text-success' : 'opacity-30'}`}>
-                                                <FaLink />
+                                            <div
+                                                className={`text-2xl ${selectedCompany.ssoEnabled ? 'text-success' : 'opacity-30'}`}>
+                                                <FaLink/>
                                             </div>
                                             <h5 className="card-title text-sm">SSO</h5>
                                             <p className="text-xs">{selectedCompany.ssoEnabled ? 'Enabled' : 'Disabled'}</p>
                                         </div>
                                     </div>
 
-                                    <div className={`card ${selectedCompany.mfaEnabled ? 'bg-info/10' : 'bg-base-200'} flex-1`}>
+                                    <div
+                                        className={`card ${selectedCompany.mfaEnabled ? 'bg-info/10' : 'bg-base-200'} flex-1`}>
                                         <div className="card-body items-center text-center">
-                                            <div className={`text-2xl ${selectedCompany.mfaEnabled ? 'text-info' : 'opacity-30'}`}>
-                                                <FaCheckCircle />
+                                            <div
+                                                className={`text-2xl ${selectedCompany.mfaEnabled ? 'text-info' : 'opacity-30'}`}>
+                                                <FaCheckCircle/>
                                             </div>
                                             <h5 className="card-title text-sm">MFA</h5>
                                             <p className="text-xs">{selectedCompany.mfaEnabled ? 'Enabled' : 'Disabled'}</p>
                                         </div>
                                     </div>
 
-                                    <div className={`card ${selectedCompany.apiAccess ? 'bg-warning/10' : 'bg-base-200'} flex-1`}>
+                                    <div
+                                        className={`card ${selectedCompany.apiAccess ? 'bg-warning/10' : 'bg-base-200'} flex-1`}>
                                         <div className="card-body items-center text-center">
-                                            <div className={`text-2xl ${selectedCompany.apiAccess ? 'text-warning' : 'opacity-30'}`}>
-                                                <FaChartLine />
+                                            <div
+                                                className={`text-2xl ${selectedCompany.apiAccess ? 'text-warning' : 'opacity-30'}`}>
+                                                <FaChartLine/>
                                             </div>
                                             <h5 className="card-title text-sm">API Access</h5>
                                             <p className="text-xs">{selectedCompany.apiAccess ? 'Enabled' : 'Disabled'}</p>
@@ -984,7 +1002,10 @@ const Companies = () => {
                                     <div className="stat-value text-xl">
                                         {format(new Date(selectedCompany.created), 'MMM dd, yyyy')}
                                     </div>
-                                    <div className="stat-desc">{Math.floor((new Date() - new Date(selectedCompany.created)) / (1000 * 60 * 60 * 24))} days ago</div>
+                                    <div
+                                        className="stat-desc">{Math.floor((new Date() - new Date(selectedCompany.created)) / (1000 * 60 * 60 * 24))} days
+                                        ago
+                                    </div>
                                 </div>
 
                                 <div className="stat">
@@ -992,7 +1013,8 @@ const Companies = () => {
                                     <div className="stat-value text-xl">
                                         {format(new Date(selectedCompany.lastActive), 'MMM dd')}
                                     </div>
-                                    <div className="stat-desc">{format(new Date(selectedCompany.lastActive), 'HH:mm')}</div>
+                                    <div
+                                        className="stat-desc">{format(new Date(selectedCompany.lastActive), 'HH:mm')}</div>
                                 </div>
                             </div>
                         </div>
@@ -1011,7 +1033,7 @@ const Companies = () => {
             )}
 
             <div className="alert alert-info">
-                <FaBuilding />
+                <FaBuilding/>
                 <div>
                     <h3 className="font-bold">Company Management Guide</h3>
                     <div className="text-xs">

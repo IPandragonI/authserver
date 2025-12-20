@@ -9,7 +9,14 @@ const Urls = {
         create: '/plans',
         update: '/plans/{id}',
         delete: '/plans/{id}',
-    }
+    },
+    company: {
+        list: '/companies',
+        get: '/companies/{id}',
+        create: '/companies',
+        update: '/companies/{id}',
+        delete: '/companies/{id}',
+    },
 }
 
 export default Urls;
