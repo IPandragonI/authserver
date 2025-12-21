@@ -159,4 +159,21 @@ public class User {
     protected void onUpdate() {
         this.updatedAt = LocalDateTime.now();
     }
+
+    @Override
+    public String toString() {
+        String rolesString = roles != null ? roles.stream().map(Role::getName).reduce((a, b) -> a + ", " + b).orElse("") : "";
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", email='" + email + '\'' +
+                ", firstname='" + firstname + '\'' +
+                ", lastname='" + lastname + '\'' +
+                ", verifiedAt=" + verifiedAt +
+                ", company=" + (company != null ? company.getId() : null) +
+                ", roles=" + rolesString +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                '}';
+    }
 }

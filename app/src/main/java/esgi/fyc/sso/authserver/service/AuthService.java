@@ -151,4 +151,44 @@ public class AuthService {
             return false;
         }
     }
+
+    public boolean testUser(String username) {
+        return testUser(username, null, null);
+    }
+
+    public boolean testUser(String username, String realm) {
+        return testUser(username, realm, null);
+    }
+
+    public boolean testUser(String username, String realm, String clientId) {
+        if (username == null || username.isBlank()) return false;
+        System.out.println("Testing user '" + username + "' for realm '" + realm + "' and clientId '" + clientId + "'");
+
+        if (!"security-admin-console".equals(clientId)) {
+            return userRepository.existsByUsername(username);
+        }
+
+        Optional<User> opt = userRepository.findByUsername(username);
+        if (opt.isEmpty()) return false;
+        User user = opt.get();
+        System.out.println("Found user: " + user);
+
+        if (realm != null && !realm.isBlank()) {
+            try {
+                java.lang.reflect.Method m = user.getClass().getMethod("getRealm");
+                Object realmValue = m.invoke(user);
+                if (realmValue == null) return false;
+                if (!realm.equals(realmValue.toString())) return false;
+            } catch (NoSuchMethodException e) {
+            } catch (Exception e) {
+                return false;
+            }
+        }
+
+        Set<String> names = user.getRoles().stream()
+                .map(Role::getName)
+                .collect(Collectors.toSet());
+
+        return names.contains("ADMIN") || names.contains("SUPER_ADMIN") || names.contains("REALM_ADMIN");
+    }
 }

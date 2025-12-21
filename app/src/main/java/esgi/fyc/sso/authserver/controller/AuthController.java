@@ -3,17 +3,25 @@ package esgi.fyc.sso.authserver.controller;
 import esgi.fyc.sso.authserver.dto.AuthResponseDTO;
 import esgi.fyc.sso.authserver.dto.MessageDTO;
 import esgi.fyc.sso.authserver.service.AuthService;
-import esgi.fyc.sso.authserver.web.*;
+import esgi.fyc.sso.authserver.web.LoginRequest;
+import esgi.fyc.sso.authserver.web.RefreshTokenRequest;
+import esgi.fyc.sso.authserver.web.RegisterRequest;
 import jakarta.validation.Valid;
+import jakarta.servlet.http.HttpServletRequest;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/auth")
 @CrossOrigin(origins = "*", maxAge = 3600)
 public class AuthController {
+
+    private static final Logger logger = LoggerFactory.getLogger(AuthController.class);
 
     @Autowired
     private AuthService authService;
@@ -30,15 +38,40 @@ public class AuthController {
         }
     }
 
-    @PostMapping("/login")
-    public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
+    @PostMapping("/login/{realm}")
+    public ResponseEntity<?> loginPost(
+            @PathVariable String realm,
+            @RequestParam(value = "client_id", required = false) String clientId,
+            @Valid @RequestBody LoginRequest loginRequest,
+            HttpServletRequest request) {
+
+        logger.info("POST /api/auth/login/{} from {} - client_id='{}' - username='{}'",
+                realm,
+                request.getRemoteAddr(),
+                clientId,
+                loginRequest.getUsername());
+
         try {
             AuthResponseDTO authResponse = authService.authenticateUser(loginRequest);
+
+            if ("security-admin-console".equals(clientId)) {
+                boolean allowed = authService.testUser(loginRequest.getUsername(), realm, clientId);
+                if (!allowed) {
+                    return ResponseEntity
+                            .status(HttpStatus.FORBIDDEN)
+                            .body(new MessageDTO("Utilisateur non autorisé pour ce realm/client"));
+                }
+            }
+
             return ResponseEntity.ok(authResponse);
         } catch (RuntimeException e) {
             return ResponseEntity
                     .status(HttpStatus.UNAUTHORIZED)
-                    .body(new MessageDTO("Erreur: " + e.getMessage()));
+                    .body(new MessageDTO("Authentification échouée: " + e.getMessage()));
+        } catch (Exception e) {
+            return ResponseEntity
+                    .status(HttpStatus.UNAUTHORIZED)
+                    .body(new MessageDTO("Authentification échouée"));
         }
     }
 
