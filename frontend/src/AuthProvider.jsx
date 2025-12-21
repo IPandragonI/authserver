@@ -7,6 +7,12 @@ export const AuthProvider = ({children, pollInterval = 1000}) => {
     const getTokenFromStorage = () => window.localStorage.getItem('token');
 
     const [token, setTokenState] = useState(getTokenFromStorage());
+    const [username, setUsername] = useState(localStorage.getItem('username'));
+    const [email, setEmail] = useState(localStorage.getItem('email'));
+    const [roles, setRoles] = useState(() => {
+        const rolesStr = localStorage.getItem('roles');
+        return rolesStr ? JSON.parse(rolesStr) : [];
+    });
     const [isAuthenticated, setIsAuthenticated] = useState(Boolean(getTokenFromStorage()));
 
     const applyToken = useCallback((newToken) => {
@@ -79,11 +85,21 @@ export const AuthProvider = ({children, pollInterval = 1000}) => {
         };
     }, [applyToken, pollInterval]);
 
+    useEffect(() => {
+        const rolesStr = window.localStorage.getItem('roles');
+        setRoles(rolesStr ? JSON.parse(rolesStr) : []);
+        setUsername(window.localStorage.getItem('username'));
+        setEmail(window.localStorage.getItem('email'));
+    }, [token]);
+
     const value = {
         token,
         isAuthenticated,
         setAuthData,
         logout,
+        roles,
+        username,
+        email
     };
 
     return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
