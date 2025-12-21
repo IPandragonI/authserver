@@ -1,26 +1,26 @@
-import {useState, useEffect} from 'react';
+import {useEffect, useState} from 'react';
 import {
-    FaBell,
-    FaSearch,
-    FaMoon,
-    FaSun,
-    FaCog,
-    FaQuestionCircle,
-    FaSignOutAlt,
     FaBars,
-    FaTimes,
-    FaChartLine,
-    FaUser,
-    FaDatabase,
-    FaGlobe,
-    FaCheckCircle,
-    FaExclamationTriangle,
+    FaBell,
     FaCalendarAlt,
+    FaChartLine,
+    FaCheckCircle,
+    FaCog,
+    FaDatabase,
+    FaExclamationTriangle,
+    FaGlobe,
+    FaMoon,
     FaPlug,
+    FaQuestionCircle,
+    FaSearch,
     FaServer,
+    FaSignOutAlt,
+    FaSun,
+    FaTimes,
+    FaUser,
     FaUserFriends
 } from 'react-icons/fa';
-import {useNavigate} from 'react-router-dom';
+import {useNavigate, useParams} from 'react-router-dom';
 import {useAuth} from "../../AuthProvider.jsx";
 
 
@@ -29,7 +29,9 @@ const Header = ({toggleSidebar, isSidebarOpen, currentPage = 'Dashboard', pageSt
         return window.matchMedia('(prefers-color-scheme: dark)').matches;
     });
     const navigate = useNavigate();
-    const { logout } = useAuth();
+    const {logout} = useAuth();
+    const {realm} = useParams();
+    const realmUsed = realm || 'master';
 
     const [searchQuery, setSearchQuery] = useState('');
     const [notifications, setNotifications] = useState([
@@ -136,8 +138,8 @@ const Header = ({toggleSidebar, isSidebarOpen, currentPage = 'Dashboard', pageSt
     };
 
     const quickActions = [
-        {label: 'Add User', icon: <FaUser/>, path: '/admin/users?create=true'},
-        {label: 'Create Realm', icon: <FaGlobe/>, path: '/admin/realms?create=true'},
+        {label: 'Add User', icon: <FaUser/>, path: '/realm/{realm}/users?create=true'},
+        {label: 'Create Realm', icon: <FaGlobe/>, path: '/realm/{realm}/realms?create=true'},
     ];
 
     return (
@@ -223,17 +225,17 @@ const Header = ({toggleSidebar, isSidebarOpen, currentPage = 'Dashboard', pageSt
                                         <div className="text-xs font-semibold opacity-70 mb-2">Quick Actions</div>
                                         <ul className="menu menu-compact">
                                             <li>
-                                                <a href={`/admin/users?search=${searchQuery}`}>
+                                                <a href={`/realm/${realmUsed}/users?search=${searchQuery}`}>
                                                     <FaUser/> Search users for "{searchQuery}"
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href={`/admin/logs?search=${searchQuery}`}>
+                                                <a href={`/realm/${realmUsed}/logs?search=${searchQuery}`}>
                                                     <FaDatabase/> Search logs for "{searchQuery}"
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href={`/admin/companies?search=${searchQuery}`}>
+                                                <a href={`/realm/${realmUsed}/companies?search=${searchQuery}`}>
                                                     <FaUserFriends/> Search companies for "{searchQuery}"
                                                 </a>
                                             </li>
@@ -276,7 +278,7 @@ const Header = ({toggleSidebar, isSidebarOpen, currentPage = 'Dashboard', pageSt
                                         {quickActions.map(action => (
                                             <li key={action.label}>
                                                 <a
-                                                    href={action.path}
+                                                    href={action.path.replace('{realm}', realmUsed)}
                                                     onClick={(e) => {
                                                         e.preventDefault();
                                                         navigate(action.path);
@@ -344,10 +346,14 @@ const Header = ({toggleSidebar, isSidebarOpen, currentPage = 'Dashboard', pageSt
                                 <div className="p-3">
                                     <h3 className="font-bold mb-3">Settings</h3>
                                     <ul className="menu menu-compact">
-                                        <li><a href="/admin/settings/profile" className="py-2">Profile Settings</a></li>
-                                        <li><a href="/admin/settings/security" className="py-2">Security</a></li>
-                                        <li><a href="/admin/settings/notifications" className="py-2">Notifications</a></li>
-                                        <li><a href="/admin/settings/preferences" className="py-2">Preferences</a></li>
+                                        <li><a href={`/realm/${realmUsed}/settings/profile`} className="py-2">Profile
+                                            Settings</a></li>
+                                        <li><a href={`/realm/${realmUsed}/settings/security`}
+                                               className="py-2">Security</a></li>
+                                        <li><a href={`/realm/${realmUsed}/settings/notifications`}
+                                               className="py-2">Notifications</a></li>
+                                        <li><a href={`/realm/${realmUsed}/settings/preferences`}
+                                               className="py-2">Preferences</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -407,8 +413,8 @@ const Header = ({toggleSidebar, isSidebarOpen, currentPage = 'Dashboard', pageSt
                                                                     <p className="font-medium text-sm line-clamp-2">{notification.message}</p>
                                                                     <span
                                                                         className="text-xs opacity-70 whitespace-nowrap ml-2">
-                                    {notification.time}
-                                  </span>
+                                                                        {notification.time}
+                                                                    </span>
                                                                 </div>
                                                                 {!notification.read && (
                                                                     <div className="flex justify-end mt-2">
@@ -452,7 +458,7 @@ const Header = ({toggleSidebar, isSidebarOpen, currentPage = 'Dashboard', pageSt
                                     <div className="flex items-center gap-3 mb-4">
                                         <div className="avatar">
                                             <div
-                                                className="w-12 rounded-full bg-gradient-to-br from-primary to-secondary">
+                                                className="w-12 rounded-full bg-linear-to-br from-primary to-secondary">
                                                 <span className="text-xl font-bold text-white">A</span>
                                             </div>
                                         </div>
@@ -465,7 +471,7 @@ const Header = ({toggleSidebar, isSidebarOpen, currentPage = 'Dashboard', pageSt
 
                                     <ul className="menu menu-compact">
                                         <li>
-                                            <a href="/admin/settings/profile" className="py-3">
+                                            <a href={`/realm/${realmUsed}/settings/profile`} className="py-3">
                                                 <FaCog className="opacity-70"/>
                                                 Account Settings
                                             </a>

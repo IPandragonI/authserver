@@ -1,23 +1,27 @@
-import {NavLink} from 'react-router-dom';
+import {NavLink, useParams} from 'react-router-dom';
 import {
     FaUsers, FaKey, FaUserShield,
     FaCreditCard, FaBuilding, FaClipboardList, FaHome, FaTimes
 } from 'react-icons/fa';
 
 const menuItems = [
-    {path: '/admin/dashboard', label: 'Dashboard', icon: <FaHome/>},
-    {path: '/admin/realms', label: 'Realms', icon: <FaKey/>},
-    {path: '/admin/users', label: 'Users', icon: <FaUsers/>},
-    {path: '/admin/roles', label: 'Roles', icon: <FaUserShield/>},
-    {path: '/admin/plans', label: 'Plans', icon: <FaCreditCard/>},
-    {path: '/admin/companies', label: 'Companies', icon: <FaBuilding/>},
-    {path: '/admin/logs', label: 'Logs', icon: <FaClipboardList/>},
+    {path: '/realm/{realm}/dashboard', label: 'Dashboard', icon: <FaHome/>},
+    {path: '/realm/{realm}/realms', label: 'Realms', icon: <FaKey/>},
+    {path: '/realm/{realm}/users', label: 'Users', icon: <FaUsers/>},
+    {path: '/realm/{realm}/roles', label: 'Roles', icon: <FaUserShield/>},
+    {path: '/realm/{realm}/plans', label: 'Plans', icon: <FaCreditCard/>},
+    {path: '/realm/{realm}/companies', label: 'Companies', icon: <FaBuilding/>},
+    {path: '/realm/{realm}/logs', label: 'Logs', icon: <FaClipboardList/>},
 ];
 
 const Sidebar = ({
                      onClose = () => {
                      }
                  }) => {
+
+    const { realm } = useParams();
+    const realmUsed = realm || 'master';
+
     return (
         <div className="w-64 bg-base-100 border-r border-base-300 flex flex-col min-h-screen">
 
@@ -37,7 +41,7 @@ const Sidebar = ({
                     {menuItems.map((item) => (
                         <li key={item.path}>
                             <NavLink
-                                to={item.path}
+                                to={item.path.replace('{realm}', realmUsed)}
                                 className={({isActive}) =>
                                     isActive ? 'active bg-primary text-primary-content' : ''
                                 }

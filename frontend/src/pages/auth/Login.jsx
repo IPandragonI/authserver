@@ -1,5 +1,6 @@
-import {useState} from 'react';
-import {useNavigate} from 'react-router-dom';
+// src/pages/auth/Login.jsx
+import {useEffect, useState} from 'react';
+import {useNavigate, useParams, useSearchParams} from 'react-router-dom';
 import {FaEye, FaEyeSlash} from 'react-icons/fa';
 import api from "../../api/index.js";
 import Urls from "../../api/Urls.js";
@@ -9,12 +10,29 @@ import {useAuth} from "../../AuthProvider.jsx";
 const Login = () => {
     const navigate = useNavigate();
     const {setAuthData} = useAuth();
+    const { realm } = useParams();
+    const realmUsed = realm || 'master';
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState('');
+    const [searchParams, setSearchParams] = useSearchParams();
+
+    useEffect(() => {
+        const newParams = new URLSearchParams(searchParams);
+        if (!newParams.get('client_id')) {
+            newParams.set('client_id', 'security-admin-console');
+        }
+        if (!newParams.get('redirect_uri')) {
+            newParams.set('redirect_uri', `${window.location.origin}/realms/${realmUsed}/auth`);
+        }
+        if (!newParams.get('response_type')) {
+            newParams.set('response_type', 'code');
+        }
+        setSearchParams(newParams);
+    }, []);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -28,7 +46,7 @@ const Login = () => {
         }
 
         try {
-            const response = await api.post(Urls.auth.login, {
+            const response = await api.post(`${Urls.auth.login}?${searchParams.toString().replace('{realm}', realmUsed)}`, {
                 username: username.trim(),
                 password: password.trim()
             });
@@ -36,7 +54,7 @@ const Login = () => {
             if (response && response.status >= 200 && response.status < 300) {
                 setAuthData(response.data);
                 toast.success('Login successful!');
-                navigate('/admin/dashboard');
+                navigate(`/realm/${realmUsed}/dashboard`);
             } else {
                 const msg = response?.data?.message || 'Registration failed. Please try again.';
                 toast.error(msg);
@@ -58,7 +76,7 @@ const Login = () => {
                 <div className="card bg-base-100 shadow-xl">
                     <div className="card-body">
                         <h2 className="card-title justify-center text-2xl mb-2">Login</h2>
-                        <p className="text-center opacity-70 mb-6">Enter your credentials</p>
+                        <p className="text-center opacity-70 mb-6">Enter your credentials (realm: {realmUsed})</p>
 
                         {error && (
                             <div className="alert alert-error">

@@ -1,7 +1,8 @@
 const Urls = {
     auth: {
-        login: '/auth/login',
-        register: '/auth/register',
+        login: '/auth/login/{realm}',
+        register: '/auth/register/{realm}',
+        forgotPassword: '/auth/forgot-password/{realm}',
     },
     plan: {
         list: '/plans',

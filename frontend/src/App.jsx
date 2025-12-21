@@ -1,4 +1,4 @@
-import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import {BrowserRouter, Navigate, Route, Routes} from 'react-router-dom';
 import Layout from './components/layout/Layout';
 import Dashboard from './pages/dashboard/Dashboard';
 import Users from './pages/users/Users';
@@ -24,7 +24,7 @@ const App = () => {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Home/>}/>
-                <Route path="/admin" element={<Layout/>}>
+                <Route path="/realm/:realm" element={<Layout/>}>
                     <Route index element={<Dashboard/>}/>
                     <Route path="dashboard" element={<Dashboard/>}/>
                     <Route path="realms" element={<Realms/>}/>
@@ -44,8 +44,10 @@ const App = () => {
                 </Route>
 
                 <Route path="/contact" element={<Contact/>}/>
-                <Route path="/auth" element={<Login/>}/>
-                <Route path="/auth/login" element={<Login/>}/>
+
+                <Route path="/auth" element={<Navigate to="/auth/login/master" replace/>}/>
+                <Route path="/auth/login" element={<Navigate to="/auth/login/master" replace/>}/>
+                <Route path="/auth/login/:realm" element={<Login/>}/>
                 <Route path="/auth/register" element={<Register/>}/>
                 <Route path="/auth/forgot-password" element={<ForgotPassword/>}/>
 
