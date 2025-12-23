@@ -90,18 +90,9 @@ const Home = () => {
         }
     ];
 
-    const integrations = [
-        { name: "Microsoft Azure AD", icon: <FaMicrosoft />, color: "bg-blue-100 text-blue-600" },
-        { name: "Google Workspace", icon: <FaGoogle />, color: "bg-red-100 text-red-600" },
-        { name: "Slack", icon: <FaSlack />, color: "bg-purple-100 text-purple-600" },
-        { name: "Salesforce", icon: <FaSalesforce />, color: "bg-blue-100 text-blue-900" },
-        { name: "GitHub", icon: <FaGithub />, color: "bg-gray-100 text-gray-800" },
-        { name: "AWS", icon: <FaAws />, color: "bg-orange-100 text-orange-600" }
-    ];
-
     return (
         <div className="min-h-screen">
-            <div className="hero bg-gradient-to-br from-primary/10 via-base-100 to-secondary/10">
+            <div className="hero bg-linear-to-br from-primary/10 via-base-100 to-secondary/10">
                 <div className="hero-content text-center py-20">
                     <div className="max-w-4xl">
                         <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full bg-primary/10">
@@ -120,14 +111,20 @@ const Home = () => {
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-                            <Link to="/demo" className="btn btn-primary btn-lg">
-                                <FaRocket className="mr-2" />
-                                Start Free Trial
-                            </Link>
-                            <Link to="/contact" className="btn btn-outline btn-lg">
-                                <FaHandshake className="mr-2" />
-                                Schedule Demo
-                            </Link>
+                            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+                                <Link to="/demo" className="btn btn-primary btn-lg">
+                                    <FaRocket className="mr-2" />
+                                    Start Free Trial
+                                </Link>
+                                <Link to="/contact" className="btn btn-outline btn-lg">
+                                    <FaHandshake className="mr-2" />
+                                    Schedule Demo
+                                </Link>
+                                <Link to="/auth/login" className="btn btn-secondary btn-lg">
+                                    <FaKey className="mr-2" />
+                                    Sign In
+                                </Link>
+                            </div>
                         </div>
 
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
