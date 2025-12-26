@@ -13,6 +13,7 @@ const menuItems = [
     {path: '/realm/{realm}/plans', label: 'Plans', icon: <FaCreditCard/>, roles: [ 'SUPER_ADMIN', 'ADMIN']},
     {path: '/realm/{realm}/companies', label: 'Companies', icon: <FaBuilding/>, roles: [ 'SUPER_ADMIN', 'ADMIN']},
     {path: '/realm/{realm}/logs', label: 'Logs', icon: <FaClipboardList/>, roles: [ 'SUPER_ADMIN', 'ADMIN', 'REALM_ADMIN']},
+    {path: '/realm/{realm}/settings', label: 'Settings', icon: <FaUserShield/>, roles: [ 'SUPER_ADMIN', 'ADMIN', 'REALM_ADMIN']},
 ];
 
 const Sidebar = ({

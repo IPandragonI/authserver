@@ -346,13 +346,13 @@ const Header = ({toggleSidebar, isSidebarOpen, currentPage = 'Dashboard', pageSt
                                 <div className="p-3">
                                     <h3 className="font-bold mb-3">Settings</h3>
                                     <ul className="menu menu-compact">
-                                        <li><a href={`/realm/${realmUsed}/settings/profile`} className="py-2">Profile
+                                        <li><a href={`/realm/${realmUsed}/profile/settings`} className="py-2">Profile
                                             Settings</a></li>
-                                        <li><a href={`/realm/${realmUsed}/settings/security`}
+                                        <li><a href={`/realm/${realmUsed}/profile/settings/security`}
                                                className="py-2">Security</a></li>
-                                        <li><a href={`/realm/${realmUsed}/settings/notifications`}
+                                        <li><a href={`/realm/${realmUsed}/profile/settings/notifications`}
                                                className="py-2">Notifications</a></li>
-                                        <li><a href={`/realm/${realmUsed}/settings/preferences`}
+                                        <li><a href={`/realm/${realmUsed}/profile/settings/preferences`}
                                                className="py-2">Preferences</a></li>
                                     </ul>
                                 </div>
@@ -471,7 +471,7 @@ const Header = ({toggleSidebar, isSidebarOpen, currentPage = 'Dashboard', pageSt
 
                                     <ul className="menu menu-compact">
                                         <li>
-                                            <a href={`/realm/${realmUsed}/settings/profile`} className="py-3">
+                                            <a href={`/realm/${realmUsed}/profile/settings`} className="py-3">
                                                 <FaCog className="opacity-70"/>
                                                 Account Settings
                                             </a>
