@@ -5,7 +5,7 @@ Rappel du schéma de base de données :
 ![Modèle de la base de données](../../../img/mvc.jpg "Modèle de la base de données")
 
 ## Vidéo explicative
-<iframe width="640" height="360" src="https://youtube.com/embed/WYVcPAk27Yg" frameborder="0" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/WYVcPAk27Yg" frameborder="0" allowfullscreen></iframe>
 
 ## 1. Créer les entités
 
