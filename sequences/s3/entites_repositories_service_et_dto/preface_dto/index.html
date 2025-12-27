@@ -12,9 +12,13 @@
         <meta name="author" content="Léo Deroin | Mathys Farineau | Alan Sapet">
       
       
-        <link rel="canonical" href="https://ipandragoni.github.io/authserver/sequences/s3/entites_repositories_service_et_dao/creation_service/">
+        <link rel="canonical" href="https://ipandragoni.github.io/authserver/sequences/s3/entites_repositories_service_et_dto/preface_dto/">
       
       
+        <link rel="prev" href="../creation_service/">
+      
+      
+        <link rel="next" href="../creation_dto/">
       
       
         
@@ -25,7 +29,7 @@
     
     
       
-        <title>Créer les services - SSO & Spring  : créez une authentification centralisée de A à Z</title>
+        <title>Créer les DTO - avant de commencer - SSO & Spring  : créez une authentification centralisée de A à Z</title>
       
     
     
@@ -76,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#creer-les-services" class="md-skip">
+        <a href="#creation-des-dto-avant-de-commencer" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Créer les services
+              Créer les DTO - avant de commencer
             
           </span>
         </div>
@@ -286,6 +290,8 @@
   
   
   
+    
+  
   
     
     
@@ -293,10 +299,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../../mvc/rappels/" class="md-tabs__link">
           
   
@@ -959,24 +967,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   
@@ -994,7 +1007,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1237,6 +1250,415 @@
                 
   
   
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Création de la couche DTO & Service
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Création de la couche DTO & Service
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preface_entites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Créer les entités - avant de commencer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creation_entites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Créer les entités
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preface_repositories/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Créer les repositories - avant de commencer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creation_repositories/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Créer les repositories
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preface_services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Créer les services - avant de commencer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creation_service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Créer les services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Créer les DTO - avant de commencer
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Créer les DTO - avant de commencer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#classe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classe
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Méthodes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creation_dto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Créer les DTO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preface_mapper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Créer les mappers - avant de commencer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creation_mapper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Créer les mappers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
   
   
     
@@ -1251,10 +1673,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
         
           
-          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
             
   
   
@@ -1272,8 +1694,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1573,40 +1995,35 @@
   
 
 
-<h1 id="creer-les-services">Créer les services</h1>
-<h2 id="video-explicative">Vidéo explicative</h2>
-<p>(à ajouter)</p>
-<h2 id="1-creer-les-services">1. Créer les services</h2>
-<ol>
-<li>Créer les services pour chaque repository de l'application. Pensez à créer les différentes méthodes que nous pourrons utiliser pour manipuler les données de chaque table de la base de données.</li>
-<li>Si vous avez des difficultés pour créer ces services, consultez le dépôt Github fourni.</li>
-<li>Une fois vos services créés, vous devriez avoir l'arborescence suivante :</li>
-</ol>
-<pre><code>src/main/java/esgi.fyc.sso.authserver/
-│
-└── controller
-|   └── ...
-└── model
-|   └── ...
-└── repository
-|   └── ...
-└── service
-│   └── AuditLogService
-│   └── CompanyService
-│   └── EmailVerificationTokenService
-│   └── PasswordResetTokenService
-│   └── PlanService
-│   └── RealmService
-│   └── RoleService
-│   └── UserService
-│   └── UserRealmService
-│   └── UserRealmIdService
-│   └── UserRoleService
-│   └── UserRoleIdService
-│   └── UserSessionService
-...
+<h1 id="creation-des-dto-avant-de-commencer">Création des DTO - Avant de commencer</h1>
+<p>Nous allons dans cette partie créer des classes <strong>DTO (Data Transfert Object)</strong>. Ces objets DTO ont pour utilité de communiquer directement avec la base de données pour effectuer diverses actions. Ces objets sont des "clones" de nos entités, à la différence près qu'elles représentent la communication directe entre notre entité et sa table dans la base de données. Avant de créer ces DTO, quelques explications :</p>
+<h2 id="classe">Classe</h2>
+<ul>
+<li>un DTO est une classe qui utilise un repository. Elle doit donc avoir un attribut correspondant au repository de l'entité.</li>
+<li>un DTO, quand déclaré, doit être précédé de l'annoatation "Repository", pour signaler qu'on va interagir avec un regroupement de données.</li>
+<li>un DTO doit avoir un/plusieurs constructeurs, qui lui permettront de construire un objet utilisable :</li>
+</ul>
+<p>exemple :</p>
+<pre><code class="language-java">@Repository
+public class TestDTO(){
+    private TestRepository testRepository;
+
+    public TestDTO(TestRepository testRepository){
+        this.testRepository = testRepository;
+    }
+}
 </code></pre>
-<p>Nous pouvons ensuite passer à la création des DAO.</p>
+<h2 id="methodes">Méthodes</h2>
+<ul>
+<li>Chaque classe DTO doit permettre d'interagir avec des données, et par conséquent doit fournir des méthodes permettant de modifier/consulter ces données.</li>
+<li>On peut se servir des méthodes écrites dans le repository dans le DTO.</li>
+</ul>
+<p>exemple :</p>
+<pre><code class="language-java">    public Optional&lt;Test&gt; getTestById(Id test) {
+        return testRepository.findByTest(test)
+    }
+</code></pre>
+<p>Nous pouvons ensuite passer à la création des DTO.</p>
 
 
 
@@ -1637,6 +2054,44 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../creation_service/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Créer les services">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Créer les services
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../creation_dto/" class="md-footer__link md-footer__link--next" aria-label="Next: Créer les DTO">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Créer les DTO
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">

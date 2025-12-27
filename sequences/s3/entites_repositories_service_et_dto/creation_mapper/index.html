@@ -12,13 +12,13 @@
         <meta name="author" content="Léo Deroin | Mathys Farineau | Alan Sapet">
       
       
-        <link rel="canonical" href="https://ipandragoni.github.io/authserver/sequences/s3/hibernate_liquibase/hibernate/">
+        <link rel="canonical" href="https://ipandragoni.github.io/authserver/sequences/s3/entites_repositories_service_et_dto/creation_mapper/">
       
       
-        <link rel="prev" href="../../mvc/rappels/">
+        <link rel="prev" href="../preface_mapper/">
       
       
-        <link rel="next" href="../liquibase/">
+        <link rel="next" href="../../security/jwt/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>Introduction à Hibernate - SSO & Spring  : créez une authentification centralisée de A à Z</title>
+        <title>Créer les mappers - SSO & Spring  : créez une authentification centralisée de A à Z</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#introduction-a-hibernate" class="md-skip">
+        <a href="#creation-des-mappers" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Introduction à Hibernate
+              Créer les mappers
             
           </span>
         </div>
@@ -1108,8 +1108,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1120,11 +1118,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
         
           
           <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
@@ -1145,7 +1143,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1160,37 +1158,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Introduction à Hibernate
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../hibernate_liquibase/hibernate/" class="md-nav__link">
         
   
   
@@ -1206,125 +1177,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#quest-ce-quhibernate" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Qu’est-ce qu’Hibernate ?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pourquoi-utiliser-hibernate-dans-ce-projet" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Pourquoi utiliser Hibernate dans ce projet ?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#exemple-dutilisation-dhibernate" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Exemple d’utilisation d’Hibernate
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hibernate-et-jpa" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Hibernate et JPA
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#annotations-principales" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Annotations principales
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#operations-principales" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Opérations principales
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#operateurs-disponibles" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Opérateurs disponibles
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Conclusion
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sources" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Sources
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1337,7 +1189,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../liquibase/" class="md-nav__link">
+      <a href="../../hibernate_liquibase/liquibase/" class="md-nav__link">
         
   
   
@@ -1365,7 +1217,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../integration/" class="md-nav__link">
+      <a href="../../hibernate_liquibase/integration/" class="md-nav__link">
         
   
   
@@ -1398,6 +1250,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1408,11 +1262,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" checked>
         
           
           <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
@@ -1433,7 +1287,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1451,7 +1305,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../entites_repositories_service_et_dto/preface_entites/" class="md-nav__link">
+      <a href="../preface_entites/" class="md-nav__link">
         
   
   
@@ -1479,7 +1333,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../entites_repositories_service_et_dto/creation_entites/" class="md-nav__link">
+      <a href="../creation_entites/" class="md-nav__link">
         
   
   
@@ -1507,7 +1361,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../entites_repositories_service_et_dto/preface_repositories/" class="md-nav__link">
+      <a href="../preface_repositories/" class="md-nav__link">
         
   
   
@@ -1535,7 +1389,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../entites_repositories_service_et_dto/creation_repositories/" class="md-nav__link">
+      <a href="../creation_repositories/" class="md-nav__link">
         
   
   
@@ -1563,7 +1417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../entites_repositories_service_et_dto/preface_services/" class="md-nav__link">
+      <a href="../preface_services/" class="md-nav__link">
         
   
   
@@ -1591,7 +1445,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../entites_repositories_service_et_dto/creation_service/" class="md-nav__link">
+      <a href="../creation_service/" class="md-nav__link">
         
   
   
@@ -1619,7 +1473,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../entites_repositories_service_et_dto/preface_dto/" class="md-nav__link">
+      <a href="../preface_dto/" class="md-nav__link">
         
   
   
@@ -1647,7 +1501,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../entites_repositories_service_et_dto/creation_dto/" class="md-nav__link">
+      <a href="../creation_dto/" class="md-nav__link">
         
   
   
@@ -1675,7 +1529,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../entites_repositories_service_et_dto/preface_mapper/" class="md-nav__link">
+      <a href="../preface_mapper/" class="md-nav__link">
         
   
   
@@ -1700,10 +1554,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../entites_repositories_service_et_dto/creation_mapper/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Créer les mappers
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1719,6 +1600,48 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#video-explicative" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vidéo explicative
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-creer-les-mappers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Créer les mappers
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2072,121 +1995,36 @@
   
 
 
-<h1 id="introduction-a-hibernate">Introduction à Hibernate</h1>
-<h2 id="quest-ce-quhibernate">Qu’est-ce qu’Hibernate ?</h2>
-<p>Hibernate est un ORM (Object-Relational Mapping), c’est-à-dire un outil qui permet de faire le lien entre les objets Java et les tables d’une base de données relationnelle.</p>
-<p>En gros, il permet de manipuler des objets Java sans écrire directement de SQL.
-C’est Hibernate qui se charge de traduire les opérations Java (création, lecture, mise à jour, suppression) en requêtes SQL.</p>
-<h2 id="pourquoi-utiliser-hibernate-dans-ce-projet">Pourquoi utiliser Hibernate dans ce projet ?</h2>
-<p>Hibernate est l'un des ORM les plus populaires et largement utilisés dans l'écosystème Java.
-Utiliser un ORM permet de gagner du temps et d'automatiser la gestion des interactions avec la base de données.</p>
-<h2 id="exemple-dutilisation-dhibernate">Exemple d’utilisation d’Hibernate</h2>
-<p>Définissons une entité <code>User</code> qui sera mappée à une table <code>users</code> dans la base de données.
-Tout d'abord, nous créons la classe <code>User</code> avec les annotations Hibernate nécessaires :</p>
-<pre><code class="language-java">@Entity
-public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String username;
-}
+<h1 id="creation-des-mappers">Création des mappers</h1>
+<h2 id="video-explicative">Vidéo explicative</h2>
+<p>(à ajouter)</p>
+<h2 id="1-creer-les-mappers">1. Créer les mappers</h2>
+<ol>
+<li>Pour chaque entité &amp; DTO de l'application, créer un mapper qui lui correspond. Attention de bien définir le mapper selon les normes expliquées (voir cours précédent).</li>
+<li>Si vous avez des difficultés pour créer ces mappers, consultez le dépôt Github fourni.</li>
+<li>Une fois vos mappers créés, vous devriez avoir l'arborescence suivante :</li>
+</ol>
+<pre><code>src/main/java/esgi.fyc.sso.authserver/
+│
+└── mappers
+│   └── AuditLogMapper
+│   └── ClientMapper
+│   └── CompanyMapper
+│   └── PlanMapper
+│   └── RealmMapper
+│   └── RoleMapper
+│   └── UserMapper
+│   └── UserRealmMapper
+│   └── UserRoleMapper
+│   └── UserSessionMapper
+└── model
+|   └── ...
+└── repository
+|   └── ...
+└── service
+|   └── ...
+...
 </code></pre>
-<p>Ici, on retrouve l'annotation <code>@Entity</code> qui indique qu’il s’agit d’une entité persistante.</p>
-<p>L’annotation <code>@Id</code> indique que le champ <code>id</code> est la clé primaire de l’entité, et <code>@GeneratedValue</code> spécifie que sa valeur sera générée automatiquement par la base de données.</p>
-<p>De fait, cette entity représente en base une table SQL :</p>
-<pre><code class="language-sql">CREATE TABLE users (
-    id BIGINT PRIMARY KEY AUTO_INCREMENT,
-    username VARCHAR(255)
-);
-</code></pre>
-<h2 id="hibernate-et-jpa">Hibernate et JPA</h2>
-<p>JPA (Java Persistence API) est une spécification Java EE.
-Hibernate est une implémentation de cette spécification.</p>
-<p>JPA définit comment gérer la persistance.</p>
-<p>Hibernate fournit le code concret pour le faire.</p>
-<h2 id="annotations-principales">Annotations principales</h2>
-<ul>
-<li><code>@Entity</code> : Indique qu’une classe est une entité persistante.</li>
-<li><code>@Table(name = "table_name")</code> : Spécifie le nom de la table en base de données.</li>
-<li><code>@Id</code> : Indique le champ qui est la clé primaire.</li>
-<li><code>@GeneratedValue(strategy = GenerationType.IDENTITY)</code> : Spécifie que la valeur de la clé primaire est générée automatiquement.</li>
-<li><code>@Column(name = "column_name")</code> : Spécifie le nom de la colonne en base de données.</li>
-<li><code>@OneToMany</code>, <code>@ManyToOne</code>, <code>@ManyToMany</code> : Définissent les relations entre les entités.</li>
-</ul>
-<h2 id="operations-principales">Opérations principales</h2>
-<ul>
-<li><code>findAll()</code> : Récupérer toutes les entités d’un type donné.</li>
-<li><code>findById(id)</code> : Récupérer une entité par son ID.</li>
-<li><code>save(entity)</code> : Enregistrer une nouvelle entité ou mettre à jour une entité existante.</li>
-<li><code>delete(entity)</code> : Supprimer une entité.</li>
-<li><code>deleteById(id)</code> : Supprimer une entité par son ID.</li>
-<li><code>deleteAll()</code> : Supprimer toutes les entités d’un type donné.</li>
-<li><code>count()</code> : Compter le nombre d’entités d’un type donné.</li>
-<li><code>existsById(id)</code> : Vérifier si une entité existe par son ID.</li>
-<li><code>query()</code> : Exécuter des requêtes personnalisées.</li>
-</ul>
-<h2 id="operateurs-disponibles">Opérateurs disponibles</h2>
-<table>
-<thead>
-<tr>
-<th>Opérateur</th>
-<th>Exemple</th>
-<th>SQL généré</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>And</code></td>
-<td><code>findByUsernameAndEmail(String username, String email)</code></td>
-<td><code>SELECT * FROM users WHERE username = ? AND email = ?</code></td>
-</tr>
-<tr>
-<td><code>Or</code></td>
-<td><code>findByUsernameOrEmail(String username, String email)</code></td>
-<td><code>SELECT * FROM users WHERE username = ? OR email = ?</code></td>
-</tr>
-<tr>
-<td><code>Between</code></td>
-<td><code>findByAgeBetween(int start, int end)</code></td>
-<td><code>SELECT * FROM users WHERE age BETWEEN ? AND ?</code></td>
-</tr>
-<tr>
-<td><code>LessThan</code></td>
-<td><code>findByAgeLessThan(int age)</code></td>
-<td><code>SELECT * FROM users WHERE age &lt; ?</code></td>
-</tr>
-<tr>
-<td><code>GreaterThan</code></td>
-<td><code>findByAgeGreaterThan(int age)</code></td>
-<td><code>SELECT * FROM users WHERE age &gt; ?</code></td>
-</tr>
-<tr>
-<td><code>Like</code></td>
-<td><code>findByUsernameLike(String pattern)</code></td>
-<td><code>SELECT * FROM users WHERE username LIKE ?</code></td>
-</tr>
-<tr>
-<td><code>In</code></td>
-<td><code>findByRoleIn(List&lt;String&gt; roles)</code></td>
-<td><code>SELECT * FROM users WHERE role IN (?)</code></td>
-</tr>
-<tr>
-<td><code>OrderBy</code></td>
-<td><code>findByOrderByUsernameAsc()</code></td>
-<td><code>SELECT * FROM users ORDER BY username ASC</code></td>
-</tr>
-</tbody>
-</table>
-<h2 id="conclusion">Conclusion</h2>
-<p>Hibernate est un outil puissant pour gérer la persistance des données dans une application Java.
-Il simplifie grandement les interactions avec la base de données en permettant de travailler avec des objets Java plutôt qu’avec du SQL brut.
-Dans ce projet, nous utiliserons Hibernate pour gérer les entités et les opérations CRUD sur la base de données.</p>
-<h2 id="sources">Sources</h2>
-<ul>
-<li><a href="https://hibernate.org/orm/documentation/">Documentation officielle Hibernate</a></li>
-<li><a href="https://www.baeldung.com/the-persistence-layer-with-spring-data-jpa">Guide JPA de Baeldung</a></li>
-<li><a href="https://spring.io/projects/spring-data-jpa">Spring Data JPA</a></li>
-</ul>
 
 
 
@@ -2222,7 +2060,7 @@ Dans ce projet, nous utiliserons Hibernate pour gérer les entités et les opér
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../mvc/rappels/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Rappel et principes de l’architecture MVC">
+          <a href="../preface_mapper/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Créer les mappers - avant de commencer">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2232,20 +2070,20 @@ Dans ce projet, nous utiliserons Hibernate pour gérer les entités et les opér
                 Previous
               </span>
               <div class="md-ellipsis">
-                Rappel et principes de l’architecture MVC
+                Créer les mappers - avant de commencer
               </div>
             </div>
           </a>
         
         
           
-          <a href="../liquibase/" class="md-footer__link md-footer__link--next" aria-label="Next: Introduction à Liquibase">
+          <a href="../../security/jwt/" class="md-footer__link md-footer__link--next" aria-label="Next: Configuration des tokens JWT">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Introduction à Liquibase
+                Configuration des tokens JWT
               </div>
             </div>
             <div class="md-footer__button md-icon">

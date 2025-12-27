@@ -41,27 +41,43 @@
          <lastmod>2025-12-27</lastmod>
     </url>
     <url>
-         <loc>https://ipandragoni.github.io/authserver/sequences/s3/entites_repositories_service_et_dao/creation_entites/</loc>
+         <loc>https://ipandragoni.github.io/authserver/sequences/s3/entites_repositories_service_et_dto/creation_dto/</loc>
          <lastmod>2025-12-27</lastmod>
     </url>
     <url>
-         <loc>https://ipandragoni.github.io/authserver/sequences/s3/entites_repositories_service_et_dao/creation_repositories/</loc>
+         <loc>https://ipandragoni.github.io/authserver/sequences/s3/entites_repositories_service_et_dto/creation_entites/</loc>
          <lastmod>2025-12-27</lastmod>
     </url>
     <url>
-         <loc>https://ipandragoni.github.io/authserver/sequences/s3/entites_repositories_service_et_dao/creation_service/</loc>
+         <loc>https://ipandragoni.github.io/authserver/sequences/s3/entites_repositories_service_et_dto/creation_mapper/</loc>
          <lastmod>2025-12-27</lastmod>
     </url>
     <url>
-         <loc>https://ipandragoni.github.io/authserver/sequences/s3/entites_repositories_service_et_dao/preface_entites/</loc>
+         <loc>https://ipandragoni.github.io/authserver/sequences/s3/entites_repositories_service_et_dto/creation_repositories/</loc>
          <lastmod>2025-12-27</lastmod>
     </url>
     <url>
-         <loc>https://ipandragoni.github.io/authserver/sequences/s3/entites_repositories_service_et_dao/preface_repositories/</loc>
+         <loc>https://ipandragoni.github.io/authserver/sequences/s3/entites_repositories_service_et_dto/creation_service/</loc>
          <lastmod>2025-12-27</lastmod>
     </url>
     <url>
-         <loc>https://ipandragoni.github.io/authserver/sequences/s3/entites_repositories_service_et_dao/preface_services/</loc>
+         <loc>https://ipandragoni.github.io/authserver/sequences/s3/entites_repositories_service_et_dto/preface_dto/</loc>
+         <lastmod>2025-12-27</lastmod>
+    </url>
+    <url>
+         <loc>https://ipandragoni.github.io/authserver/sequences/s3/entites_repositories_service_et_dto/preface_entites/</loc>
+         <lastmod>2025-12-27</lastmod>
+    </url>
+    <url>
+         <loc>https://ipandragoni.github.io/authserver/sequences/s3/entites_repositories_service_et_dto/preface_mapper/</loc>
+         <lastmod>2025-12-27</lastmod>
+    </url>
+    <url>
+         <loc>https://ipandragoni.github.io/authserver/sequences/s3/entites_repositories_service_et_dto/preface_repositories/</loc>
+         <lastmod>2025-12-27</lastmod>
+    </url>
+    <url>
+         <loc>https://ipandragoni.github.io/authserver/sequences/s3/entites_repositories_service_et_dto/preface_services/</loc>
          <lastmod>2025-12-27</lastmod>
     </url>
     <url>
