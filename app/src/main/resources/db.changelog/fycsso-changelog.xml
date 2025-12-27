@@ -5,8 +5,6 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
     https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
 
-    <changeSet id="initial-import" author="mathys">
-        <sqlFile path="/static/bdd_initialization.sql"/>
-    </changeSet>
+    <include file="db.changelog/1.0/001.xml"/>
 
 </databaseChangeLog>

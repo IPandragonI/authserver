@@ -1,3 +1,14 @@
+CREATE TABLE IF NOT EXISTS client
+(
+    id          INT AUTO_INCREMENT,
+    name        VARCHAR(255),
+    realm_id    INT,
+    company_id  INT,
+    created_at  DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at  DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    PRIMARY KEY (id)
+);
+
 CREATE TABLE IF NOT EXISTS role
 (
     id          INT AUTO_INCREMENT,
