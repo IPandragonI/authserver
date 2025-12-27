@@ -34,4 +34,4 @@ src/main/java/esgi.fyc.sso.authserver/
 │   └── UserSessionService
 ...
 ```
-Nous pouvons ensuite passer à la création des DAO.
+Nous pouvons ensuite passer à la création des DTO.

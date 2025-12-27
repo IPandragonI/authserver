@@ -22,7 +22,7 @@ Création d’un projet Spring Boot
 
 [Introduction à Hibernate & Liquibase](sequences/s3/hibernate_liquibase/hibernate.md)
 
-Création de la couche DAO & Service
+[Création de la couche DTO & Service](sequences/s3/entites_repositories_service_et_dto/preface_entites.md) : entités, repositories, services, DTO, mappers
 
 Mise en place de Spring Security
 

@@ -53,7 +53,17 @@ nav:
           - Introduction à Hibernate: sequences/s3/hibernate_liquibase/hibernate.md
           - Introduction à Liquibase: sequences/s3/hibernate_liquibase/liquibase.md
           - Intégration dans le projet: sequences/s3/hibernate_liquibase/integration.md
-#      - Création de la couche DAO & Service:Mise en place de Spring Security
+      - Création de la couche DTO & Service:
+          - Créer les entités - avant de commencer: sequences/s3/entites_repositories_service_et_dto/preface_entites.md
+          - Créer les entités: sequences/s3/entites_repositories_service_et_dto/creation_entites.md
+          - Créer les repositories - avant de commencer: sequences/s3/entites_repositories_service_et_dto/preface_repositories.md
+          - Créer les repositories: sequences/s3/entites_repositories_service_et_dto/creation_repositories.md
+          - Créer les services - avant de commencer:  sequences/s3/entites_repositories_service_et_dto/preface_services.md
+          - Créer les services:  sequences/s3/entites_repositories_service_et_dto/creation_service.md
+          - Créer les DTO - avant de commencer: sequences/s3/entites_repositories_service_et_dto/preface_dto.md
+          - Créer les DTO: sequences/s3/entites_repositories_service_et_dto/creation_dto.md
+          - Créer les mappers - avant de commencer: sequences/s3/entites_repositories_service_et_dto/preface_mapper.md
+          - Créer les mappers: sequences/s3/entites_repositories_service_et_dto/creation_mapper.md
       - Mise en place de Spring Security & de JWT:
           - Configuration des tokens JWT: sequences/s3/security/jwt.md
           - Configuration de Spring Security: sequences/s3/security/configuration.md
