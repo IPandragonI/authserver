@@ -1,7 +1,7 @@
 # Création des DAO
 
 ## Vidéo explicative
-(à ajouter)
+<iframe width="640" height="360" src="https://youtu.be/ViZ8PwXG5FM" frameborder="0" allowfullscreen></iframe>
 
 ## 1. Créer les DTO
 
