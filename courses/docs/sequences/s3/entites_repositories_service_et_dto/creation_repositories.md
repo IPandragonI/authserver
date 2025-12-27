@@ -1,7 +1,7 @@
 # Créer les repositories
 
 ## Vidéo explicative
-(à ajouter)
+<iframe width="640" height="360" src="https://youtu.be/FQdlTMZqhTo" frameborder="0" allowfullscreen></iframe>
 
 ## 1. Créer les repositories
 
