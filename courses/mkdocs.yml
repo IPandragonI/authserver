@@ -64,6 +64,8 @@ nav:
           - Créer les DTO: sequences/s3/entites_repositories_service_et_dto/creation_dto.md
           - Créer les mappers - avant de commencer: sequences/s3/entites_repositories_service_et_dto/preface_mapper.md
           - Créer les mappers: sequences/s3/entites_repositories_service_et_dto/creation_mapper.md
+          - Créer les controllers - avant de commencer: sequences/s3/entites_repositories_service_et_dto/preface_controller.md
+          - Créer les controllers: sequences/s3/entites_repositories_service_et_dto/creation_controller.md
       - Mise en place de Spring Security & de JWT:
           - Configuration des tokens JWT: sequences/s3/security/jwt.md
           - Configuration de Spring Security: sequences/s3/security/configuration.md
