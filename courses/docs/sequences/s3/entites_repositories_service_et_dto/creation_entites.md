@@ -16,7 +16,7 @@ Rappel du schéma de base de données :
 
 2. Si vous avez des difficultés pour créer ces entités, consultez le dépôt Github fourni.
 
-3. Une fois vos entités crées, vous devriez avoir l'arborescence suivante :
+3. Une fois vos entités crées, vous devez avoir l'arborescence suivante :
 
 ```
 src/main/java/esgi.fyc.sso.authserver/

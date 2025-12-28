@@ -6,7 +6,7 @@ La prochaine étape, maintenant, est de créer les services, qui vont pouvoir ef
 
 - pour chaque entité (et donc repository) on doit avoir un service qui lui est lié.
 - un service doit avoir comme attribut le repository auquel il est lié, afin de pouvoir effectuer des manipulations dessus.
-- ce service permettra d'effectuer des actions CRUD sur notre repository, et donc de pouvoir interagir avec les données.
+- ce service permettra d'effectuer des actions REST sur notre repository, et donc de pouvoir interagir avec les données.
 - chaque service doit être déclaré avec l'annotation ```@Service```.
 
 exemple :
@@ -21,7 +21,7 @@ public class TestService {
 
 ## Méthodes
 
-- chaque méthode doit permettre d'effectuer une action vis à vis du repository, dans la logique du système CRUD.
+- chaque méthode doit permettre d'effectuer une action vis à vis du repository, dans la logique du système REST.
 - toute action qui devra être possible de faire dans l'application vis à vis de cette table **doit obligatoirement être définie dans le service**.
 - la gestion d'exception et le contrôle d'intégrité des données doit se faire depuis le service, afin de garantir une bonne gestion des donneés, et éviter d'effectuer des requêtes sql avec de mauvais paramètres (entre autres).
 

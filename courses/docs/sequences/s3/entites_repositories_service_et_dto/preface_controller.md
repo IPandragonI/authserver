@@ -1,11 +1,11 @@
 # Création des controllers - Avant de commencer
 
-Nous allons dans cette partie créer des **controllers**. Ces controllers vont nous servir à définir des routes pour effectuer diverses actions depuis notre API. Chaque route doit être unique, et effectuer une action qui lui est propre.
+Dans cette partie, nous allons créer des **controllers**. Ces controllers vont nous servir à définir des routes pour effectuer diverses actions depuis notre API. Chaque route doit être unique, et effectuer une action qui lui est propre.
 
 ## Classe
 
-- un controller est une classe qui utilise un service. Elle doit donc avoir un attribut correspondant au service de l'entité.
-- un controller, quand déclaré, doit être précédé de l'annotation **"RestController"**, pour signaler qu'on va fournir des requêtes de type CRUD.
+- un controller est une classe qui utilise un service. Il doit donc avoir un attribut correspondant au service de l'entité.
+- un controller, quand déclaré, doit être précédé de l'annotation **"RestController"**, pour signaler qu'on va fournir des requêtes de type REST.
 - un controller doit avoir un/plusieurs constructeurs, qui lui permettront de construire un objet utilisable.
 - un controller doit avoir une route définie avec l'annotation **'RequestMapping("/api/[route]")'**
 
@@ -26,7 +26,7 @@ public class RoleController {
 
 ## Méthodes
 
-- Chaque controller doit fournir des routes permettant d'effectuer des actions liées à l'entité à laquelle elles correspondent.
+- Chaque controller doit fournir des routes permettant d'effectuer des actions liées à l'entité à laquelle il correspond.
 - Chaque action définie doit être disponible via une route **unique** et effectuer une action précise.
 - C'est également dans ces routes qu'il faut effectuer la **gestion des erreurs**.
 

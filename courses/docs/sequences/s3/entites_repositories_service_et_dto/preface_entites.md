@@ -1,6 +1,6 @@
 # Créer les entités - Avant de commencer
 
-Pour chaque table de la base de données, il faut créer une entité qui lui correspond. Cette entité nous permettra **d'interagir avec la table et ses données**, afin de pouvoir les manipuler. Avant de créer ces entité, voici quelques explications sur les normes & syntaxes :
+Pour chaque table de la base de données, il faut créer une entité qui lui correspond. Cette entité nous permettra **d'interagir avec la table et ses données**, afin de pouvoir les manipuler. Avant de créer ces entités, voici quelques explications sur les normes & syntaxes :
 
 ### Champs
 
