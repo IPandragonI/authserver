@@ -5,7 +5,7 @@ Nous allons dans cette partie créer des classes **DTO (Data Transfert Object)**
 ## Classe
 
 - un DTO est une classe qui utilise un repository. Elle doit donc avoir un attribut correspondant au repository de l'entité.
-- un DTO, quand déclaré, doit être précédé de l'annoatation "Repository", pour signaler qu'on va interagir avec un regroupement de données.
+- un DTO, quand déclaré, doit être précédé de l'annotation "Repository", pour signaler qu'on va interagir avec un regroupement de données.
 - un DTO doit avoir un/plusieurs constructeurs, qui lui permettront de construire un objet utilisable :
 
 exemple :
