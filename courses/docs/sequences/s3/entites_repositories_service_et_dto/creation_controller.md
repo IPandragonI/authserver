@@ -2,7 +2,7 @@
 
 ## Vidéo explicative
 
-(à ajouter)
+<iframe width="640" height="360" src="https://www.youtube.com/embed/jbgNC5potuo" frameborder="0" allowfullscreen></iframe>
 
 ## 1. Créer les controllers
 
