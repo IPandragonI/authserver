@@ -1647,6 +1647,62 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preface_controller/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Créer les controllers - avant de commencer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creation_controller/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Créer les controllers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1996,11 +2052,11 @@
 
 
 <h1 id="creation-des-dto-avant-de-commencer">Création des DTO - Avant de commencer</h1>
-<p>Nous allons dans cette partie créer des classes <strong>DTO (Data Transfert Object)</strong>. Ces objets DTO ont pour utilité de communiquer directement avec la base de données pour effectuer diverses actions. Ces objets sont des "clones" de nos entités, à la différence près qu'elles représentent la communication directe entre notre entité et sa table dans la base de données. Avant de créer ces DTO, quelques explications :</p>
+<p>Dans cette partie, nous allons créer des classes <strong>DTO (Data Transfert Object)</strong>. Ces objets DTO ont pour utilité de communiquer directement avec la base de données pour effectuer diverses actions. Ces objets sont des "clones" de nos entités, à la différence près qu'elles représentent la communication directe entre notre entité et sa table dans la base de données. Avant de créer ces DTO, quelques explications :</p>
 <h2 id="classe">Classe</h2>
 <ul>
 <li>un DTO est une classe qui utilise un repository. Elle doit donc avoir un attribut correspondant au repository de l'entité.</li>
-<li>un DTO, quand déclaré, doit être précédé de l'annotation "Repository", pour signaler qu'on va interagir avec un regroupement de données.</li>
+<li>un DTO, quand déclaré, doit être précédé de l'annotation <strong>"Repository"</strong>, pour signaler qu'on va interagir avec un regroupement de données.</li>
 <li>un DTO doit avoir un/plusieurs constructeurs, qui lui permettront de construire un objet utilisable :</li>
 </ul>
 <p>exemple :</p>
@@ -2015,13 +2071,17 @@ public class TestDTO(){
 </code></pre>
 <h2 id="methodes">Méthodes</h2>
 <ul>
-<li>Chaque classe DTO doit permettre d'interagir avec des données, et par conséquent doit fournir des méthodes permettant de modifier/consulter ces données.</li>
-<li>On peut se servir des méthodes écrites dans le repository dans le DTO.</li>
+<li>Chaque classe DTO doit permettre d'interagir avec les champs de la table à laquelle il correspond et par conséquent doit fournir des méthodes permettant de modifier/consulter ces données.</li>
+<li>On peut se servir de getters et de setters pour le faire :</li>
 </ul>
 <p>exemple :</p>
-<pre><code class="language-java">    public Optional&lt;Test&gt; getTestById(Id test) {
-        return testRepository.findByTest(test)
-    }
+<pre><code class="language-java">public Integer getId() {
+    return id;
+}
+
+public void setId(Integer id) {
+    this.id = id;
+}
 </code></pre>
 <p>Nous pouvons ensuite passer à la création des DTO.</p>
 

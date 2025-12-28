@@ -1647,6 +1647,62 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preface_controller/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Créer les controllers - avant de commencer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creation_controller/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Créer les controllers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2001,7 +2057,7 @@
 <ul>
 <li>pour chaque entité (et donc repository) on doit avoir un service qui lui est lié.</li>
 <li>un service doit avoir comme attribut le repository auquel il est lié, afin de pouvoir effectuer des manipulations dessus.</li>
-<li>ce service permettra d'effectuer des actions CRUD sur notre repository, et donc de pouvoir interagir avec les données.</li>
+<li>ce service permettra d'effectuer des actions REST sur notre repository, et donc de pouvoir interagir avec les données.</li>
 <li>chaque service doit être déclaré avec l'annotation <code>@Service</code>.</li>
 </ul>
 <p>exemple :</p>
@@ -2014,7 +2070,7 @@ public class TestService {
 </code></pre>
 <h2 id="methodes">Méthodes</h2>
 <ul>
-<li>chaque méthode doit permettre d'effectuer une action vis à vis du repository, dans la logique du système CRUD.</li>
+<li>chaque méthode doit permettre d'effectuer une action vis à vis du repository, dans la logique du système REST.</li>
 <li>toute action qui devra être possible de faire dans l'application vis à vis de cette table <strong>doit obligatoirement être définie dans le service</strong>.</li>
 <li>la gestion d'exception et le contrôle d'intégrité des données doit se faire depuis le service, afin de garantir une bonne gestion des donneés, et éviter d'effectuer des requêtes sql avec de mauvais paramètres (entre autres).</li>
 </ul>
