@@ -12,13 +12,13 @@
         <meta name="author" content="Léo Deroin | Mathys Farineau | Alan Sapet">
       
       
-        <link rel="canonical" href="https://ipandragoni.github.io/authserver/sequences/s3/security/configuration/">
+        <link rel="canonical" href="https://ipandragoni.github.io/authserver/sequences/s3/security/creation_jwt/">
       
       
-        <link rel="prev" href="../jwt/">
+        <link rel="prev" href="../preface_jwt/">
       
       
-        <link rel="next" href="../../../s4/clients/">
+        <link rel="next" href="../preface_configuration/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>Configuration de Spring Security - SSO & Spring  : créez une authentification centralisée de A à Z</title>
+        <title>Configuration des tokens JWT - SSO & Spring  : créez une authentification centralisée de A à Z</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#configuration-de-spring-security" class="md-skip">
+        <a href="#configuration-des-token-jwt" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Configuration de Spring Security
+              Configuration des tokens JWT
             
           </span>
         </div>
@@ -1310,7 +1310,7 @@
   <span class="md-ellipsis">
     
   
-    Créer les entités - avant de commencer
+    Créer les entités - Avant de commencer
   
 
     
@@ -1366,7 +1366,7 @@
   <span class="md-ellipsis">
     
   
-    Créer les repositories - avant de commencer
+    Créer les repositories - Avant de commencer
   
 
     
@@ -1422,7 +1422,7 @@
   <span class="md-ellipsis">
     
   
-    Créer les services - avant de commencer
+    Créer les services - Avant de commencer
   
 
     
@@ -1478,7 +1478,7 @@
   <span class="md-ellipsis">
     
   
-    Créer les DTO - avant de commencer
+    Créer les DTO - Avant de commencer
   
 
     
@@ -1534,7 +1534,7 @@
   <span class="md-ellipsis">
     
   
-    Créer les mappers - avant de commencer
+    Créer les mappers - Avant de commencer
   
 
     
@@ -1590,7 +1590,7 @@
   <span class="md-ellipsis">
     
   
-    Créer les controllers - avant de commencer
+    Créer les controllers - Avant de commencer
   
 
     
@@ -1699,14 +1699,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../jwt/" class="md-nav__link">
+      <a href="../preface_jwt/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Configuration des tokens JWT
+    Configuration des tokens JWT - Avant de commencer
   
 
     
@@ -1743,7 +1743,7 @@
   <span class="md-ellipsis">
     
   
-    Configuration de Spring Security
+    Configuration des tokens JWT
   
 
     
@@ -1761,7 +1761,7 @@
   <span class="md-ellipsis">
     
   
-    Configuration de Spring Security
+    Configuration des tokens JWT
   
 
     
@@ -1787,10 +1787,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#etat-du-code" class="md-nav__link">
+  <a href="#attributs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        État du code
+        Attributs
       
     </span>
   </a>
@@ -1798,75 +1798,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gestion-de-la-securite-avec-spring-security" class="md-nav__link">
+  <a href="#methodes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Gestion de la sécurité avec Spring Security
+        Méthodes
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Gestion de la sécurité avec Spring Security">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#configuration-de-spring-security_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Configuration de Spring Security
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Configuration de Spring Security">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#springsecurityconfigjava" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        SpringSecurityConfig.java
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#filtre-dauthentification-jwt" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Filtre d'authentification JWT
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Filtre d&#39;authentification JWT">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#jwtauthenticationfilterjava" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        JwtAuthenticationFilter.java
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1874,6 +1812,344 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preface_configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration de Spring Security - Avant de commencer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creation_configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration de Spring Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestion de l’authentification
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Gestion de l’authentification
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../auth/preface_dto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Création des DTO d’authentification - Avant de commencer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../auth/creation_dto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Création des DTO d’authentification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../auth/preface_service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Création du service d’authentification - Avant de commencer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../auth/creation_service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Création du service d’authentification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../auth/preface_form/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Création des forms d’authentification - Avant de commencer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../auth/creation_form/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Création des forms d’authentification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../auth/preface_controller/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Création du controller d’authentification - Avant de commencer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../auth/creation_controller/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Création du controller d’authentification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -2113,196 +2389,125 @@
   
 
 
-<h1 id="configuration-de-spring-security">Configuration de Spring Security</h1>
-<h2 id="etat-du-code">État du code</h2>
-<p>Arborescence</p>
-<pre><code>src/main/
-├── java
-│   └── com.authserver
-|       └── config
-|          └── JwtAuthenticationFilter.java
-│       └── controller
-│       └── dto
-│       └── mapper
-│       └── model
-│       └── repository
-│       └── service
-|    └── resources
-│       └── db.changelog
-|           └── 1.0
-│               └── 001.xml
-│           └── fycsso-changelog.xml
-|       └── static
-|          └── bdd_initialization.sql
-│       └── templates
-│       └── application.properties
+<h1 id="configuration-des-token-jwt">Configuration des token JWT</h1>
+<p>Nous allons créer un service dédié à la gestion des tokens JWT. Ce service sera responsable de la génération, de la validation et de l'extraction des informations contenues dans les tokens.</p>
+<p>Dans le dossier <code>service</code>, créez une nouvelle classe <code>JwtService.java</code> :</p>
+<h2 id="attributs">Attributs</h2>
+<p>Premièrement, nous allons définir les attributs nécessaires pour la gestion des tokens JWT, tels que le secret de signature et les durées d'expiration.</p>
+<pre><code class="language-java">@Value(&quot;${jwt.secret}&quot;)
+private String secret;
+
+@Value(&quot;${jwt.expiration}&quot;)
+private Long expiration;
+
+@Value(&quot;${jwt.refresh.expiration:604800000}&quot;)
+private Long refreshExpiration;
 </code></pre>
-<h2 id="gestion-de-la-securite-avec-spring-security">Gestion de la sécurité avec Spring Security</h2>
-<p>Nous avons pu voir précédemment comment configurer une base de données avec Hibernate et Liquibase, puis comment structurer notre application selon le modèle MVC avec la mise en place des entités, des repositories, des services et des contrôleurs.</p>
-<p>Maintenant, nous allons aborder la configuration de la sécurité de notre application en utilisant Spring Security.</p>
-<h3 id="configuration-de-spring-security_1">Configuration de Spring Security</h3>
-<p>Afin de sécuriser notre application, nous allons créer une classe de configuration dédiée à Spring Security.</p>
-<p>À la même hauteur que le dossier <code>controller</code>, créez un nouveau dossier <code>config</code> et à l'intérieur, créez une classe <code>SpringSecurityConfig.java</code> :</p>
-<p>Notre application repose sur une authentification stateless via JWT, autrement dit, il n'y a aucune session côté serveur. 
-Ainsi, chaque requête doit fournir un token valide.</p>
-<p>Voici l’implémentation complète de notre classe de configuration :</p>
-<h4 id="springsecurityconfigjava">SpringSecurityConfig.java</h4>
-<pre><code class="language-java">@Configuration
-@EnableWebSecurity
-public class SpringSecurityConfig {
+<p>L'annotation <code>@Value</code> permet d'injecter les valeurs définies dans le fichier <code>application.properties</code>.
+Ainsi, pour modifier facilement les paramètres des tokens, vous pouvez ajouter les lignes suivantes dans <code>application.properties</code> :</p>
+<pre><code class="language-properties">jwt.secret=VotreCléSecrèteIciBase64Encodée
+jwt.expiration=3600000  # 1 heure en millisecondes
+jwt.refresh.expiration=604800000  # 7 jours en millisecondes
+</code></pre>
+<h2 id="methodes">Méthodes</h2>
+<p>Nous allons maintenant implémenter les méthodes nécessaires pour générer, valider et extraire les informations des tokens JWT.</p>
+<pre><code class="language-java">private SecretKey getSigningKey() {
+    byte[] keyBytes = Decoders.BASE64.decode(secret);
+    return Keys.hmacShaKeyFor(keyBytes);
+}
 
-    @Autowired
-    private JwtAuthenticationFilter jwtAuthenticationFilter;
+public String generateToken(UserDetails userDetails) {
+    Map&lt;String, Object&gt; claims = new HashMap&lt;&gt;();
+    claims.put(&quot;roles&quot;, userDetails.getAuthorities());
+    return createToken(claims, userDetails.getUsername(), expiration);
+}
 
-    @Autowired
-    private UserDetailsService userDetailsService;
+public String generateRefreshToken(UserDetails userDetails) {
+    Map&lt;String, Object&gt; claims = new HashMap&lt;&gt;();
+    claims.put(&quot;type&quot;, &quot;refresh&quot;);
+    return createToken(claims, userDetails.getUsername(), refreshExpiration);
+}
 
-    @Autowired
-    private CorsConfigurationSource corsConfigurationSource;
+private String createToken(Map&lt;String, Object&gt; claims, String subject, Long expirationTime) {
+    Date now = new Date();
+    Date expiryDate = new Date(now.getTime() + expirationTime);
 
-    @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http
-                .csrf(AbstractHttpConfigurer::disable)
-                .cors(cors -&gt; cors.configurationSource(corsConfigurationSource))
-                .authorizeHttpRequests(auth -&gt; auth
-                        .requestMatchers(
-                                &quot;/&quot;,
-                                &quot;/api/auth/**&quot;,
-                                &quot;/swagger-ui.html&quot;,
-                                &quot;/swagger-ui/**&quot;,
-                                &quot;/v3/api-docs/**&quot;,
-                                &quot;/error&quot;
-                        ).permitAll()
-                        .anyRequest().authenticated()
-                )
-                .sessionManagement(session -&gt; session
-                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                )
-                .authenticationProvider(authenticationProvider())
-                .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
+    return Jwts.builder()
+            .claims(claims)
+            .subject(subject)
+            .issuedAt(now)
+            .expiration(expiryDate)
+            .signWith(getSigningKey())
+            .compact();
+}
 
-        return http.build();
-    }
-
-    @Bean
-    public AuthenticationProvider authenticationProvider() {
-        DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
-        authProvider.setUserDetailsService(userDetailsService);
-        authProvider.setPasswordEncoder(passwordEncoder());
-        return authProvider;
-    }
-
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
-
-    @Bean
-    public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
-        return config.getAuthenticationManager();
+public Boolean validateToken(String token, UserDetails userDetails) {
+    try {
+        final String username = extractUsername(token);
+        return (username.equals(userDetails.getUsername()) &amp;&amp; !isTokenExpired(token));
+    } catch (Exception e) {
+        return false;
     }
 }
-</code></pre>
-<p>Maintenant, passons en revue les différentes parties de cette configuration.</p>
-<p><code>@Configuration</code> : Indique que cette classe contient des configurations Spring.</p>
-<p><code>@EnableWebSecurity</code> : Active la sécurité web dans l'application.</p>
-<p><code>JwtAuthenticationFilter</code> : Filtre personnalisé pour gérer l'authentification via JWT.</p>
-<p><code>UserDetailsService</code> : Service pour charger les détails de l'utilisateur.</p>
-<p><code>CorsConfigurationSource</code> : Source de configuration CORS pour gérer les requêtes cross-origin.</p>
-<hr />
-<p><strong>Méthode <code>filterChain</code></strong> :</p>
-<pre><code class="language-java">csrf(AbstractHttpConfigurer::disable)
-</code></pre>
-<ul>
-<li>Désactive la protection CSRF car nous utilisons des tokens JWT.</li>
-</ul>
-<pre><code class="language-java">cors(cors -&gt; cors.configurationSource(corsConfigurationSource))
-</code></pre>
-<ul>
-<li>Configure CORS avec la source de configuration injectée.</li>
-</ul>
-<pre><code class="language-java">authorizeHttpRequests(auth -&gt; auth
-        .requestMatchers(
-                &quot;/&quot;,
-                &quot;/api/auth/**&quot;,
-                &quot;/swagger-ui.html&quot;,
-                &quot;/swagger-ui/**&quot;,
-                &quot;/v3/api-docs/**&quot;,
-                &quot;/error&quot;
-        ).permitAll()
-        .anyRequest().authenticated()
-)
-</code></pre>
-<ul>
-<li>Définit les règles d'autorisation des requêtes HTTP :<ul>
-<li>Permet l'accès libre aux endpoints d'authentification, à la documentation Swagger et à la page d'erreur.</li>
-<li>Exige une authentification pour toutes les autres requêtes.</li>
-</ul>
-</li>
-</ul>
-<pre><code class="language-java">sessionManagement(session -&gt; session
-        .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-)
-</code></pre>
-<ul>
-<li>Configure la gestion des sessions pour être stateless.</li>
-</ul>
-<pre><code class="language-java">.authenticationProvider(authenticationProvider())
-</code></pre>
-<ul>
-<li>Définit le fournisseur d'authentification.</li>
-</ul>
-<pre><code class="language-java">.addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
-</code></pre>
-<ul>
-<li>Ajoute le filtre JWT avant le filtre d'authentification standard de Spring Security.</li>
-</ul>
-<h3 id="filtre-dauthentification-jwt">Filtre d'authentification JWT</h3>
-<p>Le <code>JwtAuthenticationFilter</code> intercepte les requêtes entrantes, extrait le token JWT, le valide et configure le contexte de sécurité si le token est valide.</p>
-<h4 id="jwtauthenticationfilterjava">JwtAuthenticationFilter.java</h4>
-<pre><code class="language-java">@Component
-public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
-    @Autowired
-    private JwtService jwtService;
-
-    @Autowired
-    private UserDetailsService userDetailsService;
-
-    @Override
-    protected void doFilterInternal(HttpServletRequest request,
-                                    HttpServletResponse response,
-                                    FilterChain filterChain) throws ServletException, IOException {
-
-        final String authHeader = request.getHeader(&quot;Authorization&quot;);
-        final String jwt;
-        final String username;
-
-        if (authHeader == null || !authHeader.startsWith(&quot;Bearer &quot;)) {
-            filterChain.doFilter(request, response);
-            return;
-        }
-
-        jwt = authHeader.substring(7);
-        username = jwtService.extractUsername(jwt);
-
-        if (username != null &amp;&amp; SecurityContextHolder.getContext().getAuthentication() == null) {
-            UserDetails userDetails = this.userDetailsService.loadUserByUsername(username);
-
-            if (jwtService.validateToken(jwt, userDetails)) {
-                UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(
-                        userDetails,
-                        null,
-                        userDetails.getAuthorities()
-                );
-                authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
-                SecurityContextHolder.getContext().setAuthentication(authToken);
-            }
-        }
-        filterChain.doFilter(request, response);
+public Boolean validateRefreshToken(String token) {
+    try {
+        Claims claims = extractAllClaims(token);
+        String type = claims.get(&quot;type&quot;, String.class);
+        return &quot;refresh&quot;.equals(type) &amp;&amp; !isTokenExpired(token);
+    } catch (Exception e) {
+        return false;
     }
 }
+
+
+public String extractUsername(String token) {
+    return extractClaim(token, Claims::getSubject);
+}
+
+public Date extractExpiration(String token) {
+    return extractClaim(token, Claims::getExpiration);
+}
+
+public &lt;T&gt; T extractClaim(String token, Function&lt;Claims, T&gt; claimsResolver) {
+    final Claims claims = extractAllClaims(token);
+    return claimsResolver.apply(claims);
+}
+
+private Claims extractAllClaims(String token) {
+    return Jwts.parser()
+            .verifyWith(getSigningKey())
+            .build()
+            .parseSignedClaims(token)
+            .getPayload();
+}
+
+private Boolean isTokenExpired(String token) {
+    return extractExpiration(token).before(new Date());
+}
+
+public Long getExpirationTime() {
+    return expiration;
+}
+
+public Long getRefreshExpirationTime() {
+    return refreshExpiration;
+}
+</code></pre>
+<p>Ici, nous utilisons la bibliothèque <code>jjwt</code> dans sa version 13.0 pour manipuler les tokens JWT. Assurez-vous d'ajouter la dépendance suivante dans votre fichier <code>pom.xml</code> si ce n'est pas déjà fait :</p>
+<pre><code class="language-xml">
+&lt;dependency&gt;
+    &lt;groupId&gt;io.jsonwebtoken&lt;/groupId&gt;
+    &lt;artifactId&gt;jjwt-api&lt;/artifactId&gt;
+    &lt;version&gt;0.13.0&lt;/version&gt;
+&lt;/dependency&gt;
+
+&lt;dependency&gt;
+    &lt;groupId&gt;io.jsonwebtoken&lt;/groupId&gt;
+    &lt;artifactId&gt;jjwt-impl&lt;/artifactId&gt;
+    &lt;version&gt;0.13.0&lt;/version&gt;
+    &lt;scope&gt;runtime&lt;/scope&gt;
+&lt;/dependency&gt;
 </code></pre>
 
 
@@ -2339,7 +2544,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../jwt/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Configuration des tokens JWT">
+          <a href="../preface_jwt/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Configuration des tokens JWT - Avant de commencer">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2349,20 +2554,20 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                 Previous
               </span>
               <div class="md-ellipsis">
-                Configuration des tokens JWT
+                Configuration des tokens JWT - Avant de commencer
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../../s4/clients/" class="md-footer__link md-footer__link--next" aria-label="Next: Introduction">
+          <a href="../preface_configuration/" class="md-footer__link md-footer__link--next" aria-label="Next: Configuration de Spring Security - Avant de commencer">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Introduction
+                Configuration de Spring Security - Avant de commencer
               </div>
             </div>
             <div class="md-footer__button md-icon">
