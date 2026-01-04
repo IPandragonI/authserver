@@ -1,8 +1,8 @@
-package esgi.fyc.sso.authserver.web;
+package esgi.fyc.sso.authserver.form;
 
 import jakarta.validation.constraints.NotBlank;
 
-public class LoginRequest {
+public class LoginForm {
 
     @NotBlank(message = "Le nom d'utilisateur est obligatoire")
     private String username;
@@ -10,9 +10,9 @@ public class LoginRequest {
     @NotBlank(message = "Le mot de passe est obligatoire")
     private String password;
 
-    public LoginRequest() {}
+    public LoginForm() {}
 
-    public LoginRequest(String username, String password) {
+    public LoginForm(String username, String password) {
         this.username = username;
         this.password = password;
     }

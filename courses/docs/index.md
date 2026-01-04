@@ -24,7 +24,9 @@ Création d’un projet Spring Boot
 
 [Création de la couche DTO & Service](sequences/s3/entites_repositories_service_et_dto/preface_entites.md) : entités, repositories, services, DTO, mappers
 
-Mise en place de Spring Security
+[Mise en place de Spring Security & de JWT](sequences/s3/security/preface_jwt.md)
+
+[Création du service et du controller d’authentification](sequences/s3/auth/preface_dto.md)
 
 Création du serveur d’authentification SSO (OAuth2)
 

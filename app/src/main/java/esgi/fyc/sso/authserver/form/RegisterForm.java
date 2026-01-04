@@ -1,11 +1,11 @@
-package esgi.fyc.sso.authserver.web;
+package esgi.fyc.sso.authserver.form;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
-public class RegisterRequest {
+public class RegisterForm {
 
     @NotBlank(message = "Le nom d'utilisateur est obligatoire")
     @Size(min = 3, max = 20, message = "Le nom d'utilisateur doit contenir entre 3 et 20 caractères")
@@ -23,9 +23,9 @@ public class RegisterRequest {
     )
     private String password;
 
-    public RegisterRequest() {}
+    public RegisterForm() {}
 
-    public RegisterRequest(String username, String email, String password) {
+    public RegisterForm(String username, String email, String password) {
         this.username = username;
         this.email = email;
         this.password = password;

@@ -1,5 +1,6 @@
 package esgi.fyc.sso.authserver.config;
 
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.cors.CorsConfiguration;
@@ -9,7 +10,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import java.util.Arrays;
 
 @Configuration
-public class CorsConfig {
+public class CorsConfig implements CorsConfigurationSource {
 
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
@@ -48,5 +49,11 @@ public class CorsConfig {
         source.registerCorsConfiguration("/**", configuration);
 
         return source;
+    }
+
+    @Override
+    @SuppressWarnings("NullableProblems")
+    public CorsConfiguration getCorsConfiguration(HttpServletRequest request) {
+        return corsConfigurationSource().getCorsConfiguration(request);
     }
 }

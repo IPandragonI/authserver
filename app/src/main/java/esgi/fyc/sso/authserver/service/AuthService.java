@@ -4,8 +4,8 @@ import esgi.fyc.sso.authserver.dto.AuthResponseDTO;
 import esgi.fyc.sso.authserver.dto.MessageDTO;
 import esgi.fyc.sso.authserver.model.*;
 import esgi.fyc.sso.authserver.repository.*;
-import esgi.fyc.sso.authserver.web.LoginRequest;
-import esgi.fyc.sso.authserver.web.RegisterRequest;
+import esgi.fyc.sso.authserver.form.LoginForm;
+import esgi.fyc.sso.authserver.form.RegisterForm;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -40,7 +40,7 @@ public class AuthService {
     private JwtService jwtService;
 
 
-    public MessageDTO registerUser(@Valid RegisterRequest registerRequest) {
+    public MessageDTO registerUser(@Valid RegisterForm registerRequest) {
         if (userRepository.existsByUsername(registerRequest.getUsername())) {
             throw new RuntimeException("Le nom d'utilisateur existe déjà!");
         }
@@ -66,7 +66,7 @@ public class AuthService {
         return new MessageDTO("Utilisateur enregistré avec succès!");
     }
 
-    public AuthResponseDTO authenticateUser(LoginRequest loginRequest) {
+    public AuthResponseDTO authenticateUser(LoginForm loginRequest) {
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
                         loginRequest.getUsername(),
@@ -130,7 +130,8 @@ public class AuthService {
         );
     }
 
-    public void logout(String token) {
+    public void logout() {
+        SecurityContextHolder.clearContext();
     }
 
     public boolean validateToken(String token) {

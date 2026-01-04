@@ -1,15 +1,15 @@
-package esgi.fyc.sso.authserver.web;
+package esgi.fyc.sso.authserver.form;
 
 import jakarta.validation.constraints.NotBlank;
 
-public class RefreshTokenRequest {
+public class RefreshTokenForm {
 
     @NotBlank(message = "Le refresh token est obligatoire")
     private String refreshToken;
 
-    public RefreshTokenRequest() {}
+    public RefreshTokenForm() {}
 
-    public RefreshTokenRequest(String refreshToken) {
+    public RefreshTokenForm(String refreshToken) {
         this.refreshToken = refreshToken;
     }
 

@@ -1,32 +1,22 @@
-package esgi.fyc.sso.authserver.controller;
+# Création du controller d'authentification
 
-import esgi.fyc.sso.authserver.dto.AuthResponseDTO;
-import esgi.fyc.sso.authserver.dto.MessageDTO;
-import esgi.fyc.sso.authserver.service.AuthService;
-import esgi.fyc.sso.authserver.form.LoginForm;
-import esgi.fyc.sso.authserver.form.RefreshTokenForm;
-import esgi.fyc.sso.authserver.form.RegisterForm;
-import jakarta.validation.Valid;
-import jakarta.servlet.http.HttpServletRequest;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+Dans le dossier `controller`, créer une nouvelle classe `AuthController` avec l'annotation `@RestController` et le mapping de base `/api/auth`.
+De plus, ajouter l'annotation `@CrossOrigin` pour permettre les requêtes cross-origin avec pour valeur `origins = "*", maxAge = 3600`.
 
-@RestController
-@RequestMapping("/api/auth")
-@CrossOrigin(origins = "*", maxAge = 3600)
-public class AuthController {
+## Attributs
 
-    private static final Logger logger = LoggerFactory.getLogger(AuthController.class);
+```java
+@Autowired
+private AuthService authService;
+```
 
-    @Autowired
-    private AuthService authService;
+De toute évidence, nous avons besoin d'injecter le service d'authentification que nous avons créé précédemment.
 
-    @PostMapping("/register")
-    public ResponseEntity<?> registerUser(@Valid @RequestBody RegisterForm registerRequest) {
+## Endpoints
+
+```java
+@PostMapping("/register")
+    public ResponseEntity<?> registerUser(@Valid @RequestBody RegisterRequest registerRequest) {
         try {
             MessageDTO response = authService.registerUser(registerRequest);
             return ResponseEntity.ok(response);
@@ -41,7 +31,7 @@ public class AuthController {
     public ResponseEntity<?> loginPost(
             @PathVariable String realm,
             @RequestParam(value = "client_id", required = false) String clientId,
-            @Valid @RequestBody LoginForm loginRequest,
+            @Valid @RequestBody LoginRequest loginRequest,
             HttpServletRequest request) {
 
         logger.info("POST /api/auth/login/{} from {} - client_id='{}' - username='{}'",
@@ -75,7 +65,7 @@ public class AuthController {
     }
 
     @PostMapping("/refresh-token")
-    public ResponseEntity<?> refreshToken(@Valid @RequestBody RefreshTokenForm request) {
+    public ResponseEntity<?> refreshToken(@Valid @RequestBody RefreshTokenRequest request) {
         try {
             AuthResponseDTO response = authService.refreshToken(request.getRefreshToken());
             return ResponseEntity.ok(response);
@@ -116,4 +106,27 @@ public class AuthController {
                     .body(new MessageDTO("Token invalide"));
         }
     }
-}
+```
+
+### Explications
+
+#### registerUser
+Gère les requêtes POST à `/api/auth/register` pour l'enregistrement des utilisateurs. Il utilise le service d'authentification pour créer un nouvel utilisateur et retourne un message de succès ou d'erreur.
+
+#### loginPost
+Gère les requêtes POST à `/api/auth/login/{realm}` pour l'authentification des utilisateurs. Il prend en compte le `realm` et un `client_id` optionnel. Après authentification, il retourne les tokens JWT et de rafraîchissement, ou un message d'erreur.
+
+#### refreshToken
+Gère les requêtes POST à `/api/auth/refresh-token` pour rafraîchir le token JWT en utilisant un token de rafraîchissement valide. Il retourne les nouveaux tokens ou un message d'erreur.
+
+#### logout
+Gère les requêtes POST à `/api/auth/logout` pour déconnecter l'utilisateur en effaçant le contexte de sécurité. Il retourne un message de succès ou d'erreur.
+
+#### validateToken
+Gère les requêtes GET à `/api/auth/validate-token` pour valider un token JWT. Il extrait le token de l'en-tête `Authorization`, vérifie sa validité et retourne un message indiquant si le token est valide ou non.
+
+## Conclusion
+
+Si vous avez bien suivi toutes les étapes de ce cours, vous devriez maintenant avoir un controller d'authentification complet qui gère l'enregistrement, la connexion, le rafraîchissement des tokens, la déconnexion et la validation des tokens JWT. 
+
+Vous pouvez maintenant tester ces endpoints avec des outils comme Postman ou curl pour vous assurer qu'ils fonctionnent correctement.
