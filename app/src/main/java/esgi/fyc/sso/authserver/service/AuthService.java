@@ -2,12 +2,15 @@ package esgi.fyc.sso.authserver.service;
 
 import esgi.fyc.sso.authserver.dto.AuthResponseDTO;
 import esgi.fyc.sso.authserver.dto.MessageDTO;
+import esgi.fyc.sso.authserver.dto.UserRealmDTO;
 import esgi.fyc.sso.authserver.model.*;
 import esgi.fyc.sso.authserver.repository.*;
 import esgi.fyc.sso.authserver.form.LoginForm;
 import esgi.fyc.sso.authserver.form.RegisterForm;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -38,6 +41,12 @@ public class AuthService {
 
     @Autowired
     private JwtService jwtService;
+
+    @Autowired
+    private RealmService realmService;
+
+    @Autowired
+    private UserRealmService userRealmService;
 
 
     public MessageDTO registerUser(@Valid RegisterForm registerRequest) {
@@ -166,7 +175,29 @@ public class AuthService {
         System.out.println("Testing user '" + username + "' for realm '" + realm + "' and clientId '" + clientId + "'");
 
         if (!"security-admin-console".equals(clientId)) {
-            return userRepository.existsByUsername(username);
+
+            Realm foundRealm = realmService.getRealmByName(realm);
+
+            if (foundRealm == null) {
+                System.out.println("Realm '" + realm + "' not found");
+                return false;
+            }
+
+            List<UserRealmDTO> userRealms = userRealmService.getUserRealm(foundRealm.getId());
+            Set<Integer> allowedUserIds = userRealms.stream()
+                    .map(UserRealmDTO::getUserId)
+                    .collect(Collectors.toSet());
+            System.out.println("Allowed user IDs for realm '" + realm + "': " + allowedUserIds);
+            Optional<User> optUser = userRepository.findByUsername(username);
+            if (optUser.isEmpty()) {
+                System.out.println("User '" + username + "' not found");
+                return false;
+            }
+            User user = optUser.get();
+            if (!allowedUserIds.contains(user.getId())) {
+                System.out.println("User '" + username + "' is not allowed in realm '" + realm + "'");
+                return false;
+            }
         }
 
         Optional<User> opt = userRepository.findByUsername(username);

@@ -11,4 +11,6 @@ public interface RealmRepository extends JpaRepository<Realm, Integer> {
 
     List<Realm> findByCompanyId(Integer companyId);
 
+    Realm findByName(String name);
+
 }

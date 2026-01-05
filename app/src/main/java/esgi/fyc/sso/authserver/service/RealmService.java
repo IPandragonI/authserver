@@ -97,4 +97,15 @@ public class RealmService {
             return false;
         }
     }
+
+    // Get realm by name
+    public Realm getRealmByName(String name) {
+        try {
+            Optional<Realm> realmOpt = Optional.ofNullable(realmRepository.findByName(name));
+            return realmOpt.orElse(null);
+        } catch (Exception e) {
+            System.err.println("Failed to retrieve realm with name " + name + ": " + e.getMessage());
+            return null;
+        }
+    }
 }

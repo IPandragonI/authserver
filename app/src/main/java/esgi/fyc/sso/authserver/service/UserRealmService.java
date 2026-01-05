@@ -48,6 +48,18 @@ public class UserRealmService {
         }
     }
 
+    public List<UserRealmDTO> getUserRealm(Integer realmId) {
+        try {
+            return userRealmRepository.findByRealmId(realmId)
+                    .stream()
+                    .map(userRealmMapper::toDto)
+                    .collect(Collectors.toList());
+        } catch (Exception e) {
+            System.err.println("Failed to retrieve UserRealms for realmId=" + realmId + ": " + e.getMessage());
+            return Collections.emptyList();
+        }
+    }
+
     public UserRealmDTO createUserRealm(UserRealmDTO dto) {
         try {
             UserRealm userRealm = userRealmMapper.toEntity(dto);

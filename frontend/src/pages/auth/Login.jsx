@@ -46,7 +46,7 @@ const Login = () => {
         }
 
         try {
-            const response = await api.post(`${Urls.auth.login}?${searchParams.toString().replace('{realm}', realmUsed)}`, {
+            const response = await api.post(`${Urls.auth.login.replace('{realm}', realmUsed)}?${searchParams.toString()}`, {
                 username: username.trim(),
                 password: password.trim()
             });

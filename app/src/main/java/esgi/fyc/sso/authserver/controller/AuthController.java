@@ -2,10 +2,14 @@ package esgi.fyc.sso.authserver.controller;
 
 import esgi.fyc.sso.authserver.dto.AuthResponseDTO;
 import esgi.fyc.sso.authserver.dto.MessageDTO;
+import esgi.fyc.sso.authserver.dto.UserRealmDTO;
+import esgi.fyc.sso.authserver.model.Realm;
 import esgi.fyc.sso.authserver.service.AuthService;
 import esgi.fyc.sso.authserver.form.LoginForm;
 import esgi.fyc.sso.authserver.form.RefreshTokenForm;
 import esgi.fyc.sso.authserver.form.RegisterForm;
+import esgi.fyc.sso.authserver.service.RealmService;
+import esgi.fyc.sso.authserver.service.UserRealmService;
 import jakarta.validation.Valid;
 import jakarta.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
@@ -14,6 +18,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/auth")
@@ -24,6 +30,10 @@ public class AuthController {
 
     @Autowired
     private AuthService authService;
+    @Autowired
+    private RealmService realmService;
+    @Autowired
+    private UserRealmService userRealmService;
 
     @PostMapping("/register")
     public ResponseEntity<?> registerUser(@Valid @RequestBody RegisterForm registerRequest) {
@@ -53,13 +63,11 @@ public class AuthController {
         try {
             AuthResponseDTO authResponse = authService.authenticateUser(loginRequest);
 
-            if ("security-admin-console".equals(clientId)) {
-                boolean allowed = authService.testUser(loginRequest.getUsername(), realm, clientId);
-                if (!allowed) {
-                    return ResponseEntity
-                            .status(HttpStatus.FORBIDDEN)
-                            .body(new MessageDTO("Utilisateur non autorisé pour ce realm/client"));
-                }
+            boolean allowed = authService.testUser(loginRequest.getUsername(), realm, clientId);
+            if (!allowed) {
+                return ResponseEntity
+                        .status(HttpStatus.FORBIDDEN)
+                        .body(new MessageDTO("Utilisateur non autorisé pour ce realm/client"));
             }
 
             return ResponseEntity.ok(authResponse);
