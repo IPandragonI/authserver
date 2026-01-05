@@ -8,6 +8,7 @@ import {useAuth} from "../../AuthProvider.jsx";
 const menuItems = [
     {path: '/realm/{realm}/dashboard', label: 'Dashboard', icon: <FaHome/>, roles: [ 'SUPER_ADMIN', 'ADMIN', 'REALM_ADMIN']},
     {path: '/realm/{realm}/realms', label: 'Realms', icon: <FaKey/>, roles: [ 'SUPER_ADMIN', 'ADMIN']},
+    {path: '/realm/{realm}/clients', label: 'Clients', icon: <FaUserShield/>, roles: [ 'SUPER_ADMIN', 'ADMIN', 'REALM_ADMIN']},
     {path: '/realm/{realm}/users', label: 'Users', icon: <FaUsers/>, roles: [ 'SUPER_ADMIN', 'ADMIN', 'REALM_ADMIN']},
     {path: '/realm/{realm}/roles', label: 'Roles', icon: <FaUserShield/>, roles: [ 'SUPER_ADMIN', 'ADMIN']},
     {path: '/realm/{realm}/plans', label: 'Plans', icon: <FaCreditCard/>, roles: [ 'SUPER_ADMIN', 'ADMIN']},

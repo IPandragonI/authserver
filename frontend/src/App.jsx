@@ -19,6 +19,7 @@ import NotFound from './pages/NotFound.jsx';
 import Home from "./pages/home/Home.jsx";
 import Contact from "./pages/contact/Contact.jsx";
 import RealmSettings from "./pages/settings/realm/RealmSettings.jsx";
+import Clients from "./pages/clients/Clients.jsx";
 
 const App = () => {
     return (
@@ -29,6 +30,7 @@ const App = () => {
                     <Route index element={<Dashboard/>}/>
                     <Route path="dashboard" element={<Dashboard/>}/>
                     <Route path="realms" element={<Realms/>}/>
+                    <Route path="clients" element={<Clients/>}/>
                     <Route path="users" element={<Users/>}/>
                     <Route path="roles" element={<Roles/>}/>
                     <Route path="plans" element={<Plans/>}/>
