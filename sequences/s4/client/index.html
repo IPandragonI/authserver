@@ -12,31 +12,29 @@
         <meta name="author" content="Léo Deroin | Mathys Farineau | Alan Sapet">
       
       
-        <link rel="canonical" href="https://ipandragoni.github.io/authserver/sequences/s1/fondamentaux/java/">
+        <link rel="canonical" href="https://ipandragoni.github.io/authserver/sequences/s4/client/">
       
       
-        <link rel="prev" href="../../positionnement/">
+        <link rel="prev" href="../admin/">
       
-      
-        <link rel="next" href="../poo/">
       
       
         
       
       
-      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>Introduction - SSO & Spring  : créez une authentification centralisée de A à Z</title>
+        <title>Application Client - SSO & Spring  : créez une authentification centralisée de A à Z</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -55,7 +53,7 @@
       
     
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -79,11 +77,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#introduction-a-java" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -94,7 +87,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../.." title="SSO &amp; Spring  : créez une authentification centralisée de A à Z" class="md-header__button md-logo" aria-label="SSO & Spring  : créez une authentification centralisée de A à Z" data-md-component="logo">
+    <a href="../../.." title="SSO &amp; Spring  : créez une authentification centralisée de A à Z" class="md-header__button md-logo" aria-label="SSO & Spring  : créez une authentification centralisée de A à Z" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -114,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Introduction
+              Application Client
             
           </span>
         </div>
@@ -213,7 +206,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
   
@@ -234,7 +227,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../s0/" class="md-tabs__link">
+        <a href="../../s0/" class="md-tabs__link">
           
   
   
@@ -250,13 +243,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../positionnement/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../s1/positionnement/" class="md-tabs__link">
           
   
   
@@ -276,7 +267,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../s2/docker/installation/" class="md-tabs__link">
+        <a href="../../s2/docker/installation/" class="md-tabs__link">
           
   
   
@@ -303,7 +294,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../s3/mvc/rappels/" class="md-tabs__link">
+        <a href="../../s3/mvc/rappels/" class="md-tabs__link">
           
   
   
@@ -322,11 +313,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../s4/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
   
@@ -362,7 +355,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="SSO &amp; Spring  : créez une authentification centralisée de A à Z" class="md-nav__button md-logo" aria-label="SSO & Spring  : créez une authentification centralisée de A à Z" data-md-component="logo">
+    <a href="../../.." title="SSO &amp; Spring  : créez une authentification centralisée de A à Z" class="md-nav__button md-logo" aria-label="SSO & Spring  : créez une authentification centralisée de A à Z" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -392,7 +385,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -469,7 +462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../s0/" class="md-nav__link">
+      <a href="../../s0/" class="md-nav__link">
         
   
   
@@ -501,29 +494,24 @@
       
   
   
-    
   
   
-  
     
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   
@@ -541,7 +529,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -559,7 +547,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../positionnement/" class="md-nav__link">
+      <a href="../../s1/positionnement/" class="md-nav__link">
         
   
   
@@ -584,8 +572,6 @@
                 
   
   
-    
-  
   
   
     
@@ -596,11 +582,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
         
           
           <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
@@ -621,7 +607,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -636,37 +622,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Introduction
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../s1/fondamentaux/java/" class="md-nav__link">
         
   
   
@@ -682,98 +641,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#syntaxe-de-base-en-java" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Syntaxe de base en Java
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Syntaxe de base en Java">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#structure-minimale-dun-programme-java" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Structure minimale d’un programme Java
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#detail-de-la-methode-main" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Détail de la méthode main
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#variables-et-types" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Variables et types
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#conditions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Conditions
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#boucles" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Boucles
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -786,7 +653,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../poo/" class="md-nav__link">
+      <a href="../../s1/fondamentaux/poo/" class="md-nav__link">
         
   
   
@@ -879,7 +746,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../s2/docker/installation/" class="md-nav__link">
+      <a href="../../s2/docker/installation/" class="md-nav__link">
         
   
   
@@ -907,7 +774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../s2/docker/" class="md-nav__link">
+      <a href="../../s2/docker/" class="md-nav__link">
         
   
   
@@ -985,7 +852,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../s2/init_projet/creation_projet/" class="md-nav__link">
+      <a href="../../s2/init_projet/creation_projet/" class="md-nav__link">
         
   
   
@@ -1013,7 +880,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../s2/init_projet/creation_archi/" class="md-nav__link">
+      <a href="../../s2/init_projet/creation_archi/" class="md-nav__link">
         
   
   
@@ -1041,7 +908,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../s2/init_projet/dockerisation/" class="md-nav__link">
+      <a href="../../s2/init_projet/dockerisation/" class="md-nav__link">
         
   
   
@@ -1184,7 +1051,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../s3/mvc/rappels/" class="md-nav__link">
+      <a href="../../s3/mvc/rappels/" class="md-nav__link">
         
   
   
@@ -1270,7 +1137,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../s3/hibernate_liquibase/hibernate/" class="md-nav__link">
+      <a href="../../s3/hibernate_liquibase/hibernate/" class="md-nav__link">
         
   
   
@@ -1298,7 +1165,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../s3/hibernate_liquibase/liquibase/" class="md-nav__link">
+      <a href="../../s3/hibernate_liquibase/liquibase/" class="md-nav__link">
         
   
   
@@ -1326,7 +1193,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../s3/hibernate_liquibase/integration/" class="md-nav__link">
+      <a href="../../s3/hibernate_liquibase/integration/" class="md-nav__link">
         
   
   
@@ -1412,7 +1279,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../s3/entites_repositories_service_et_dto/preface_entites/" class="md-nav__link">
+      <a href="../../s3/entites_repositories_service_et_dto/preface_entites/" class="md-nav__link">
         
   
   
@@ -1440,7 +1307,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../s3/entites_repositories_service_et_dto/creation_entites/" class="md-nav__link">
+      <a href="../../s3/entites_repositories_service_et_dto/creation_entites/" class="md-nav__link">
         
   
   
@@ -1468,7 +1335,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../s3/entites_repositories_service_et_dto/preface_repositories/" class="md-nav__link">
+      <a href="../../s3/entites_repositories_service_et_dto/preface_repositories/" class="md-nav__link">
         
   
   
@@ -1496,7 +1363,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../s3/entites_repositories_service_et_dto/creation_repositories/" class="md-nav__link">
+      <a href="../../s3/entites_repositories_service_et_dto/creation_repositories/" class="md-nav__link">
         
   
   
@@ -1524,7 +1391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../s3/entites_repositories_service_et_dto/preface_services/" class="md-nav__link">
+      <a href="../../s3/entites_repositories_service_et_dto/preface_services/" class="md-nav__link">
         
   
   
@@ -1552,7 +1419,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../s3/entites_repositories_service_et_dto/creation_service/" class="md-nav__link">
+      <a href="../../s3/entites_repositories_service_et_dto/creation_service/" class="md-nav__link">
         
   
   
@@ -1580,7 +1447,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../s3/entites_repositories_service_et_dto/preface_dto/" class="md-nav__link">
+      <a href="../../s3/entites_repositories_service_et_dto/preface_dto/" class="md-nav__link">
         
   
   
@@ -1608,7 +1475,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../s3/entites_repositories_service_et_dto/creation_dto/" class="md-nav__link">
+      <a href="../../s3/entites_repositories_service_et_dto/creation_dto/" class="md-nav__link">
         
   
   
@@ -1636,7 +1503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../s3/entites_repositories_service_et_dto/preface_mapper/" class="md-nav__link">
+      <a href="../../s3/entites_repositories_service_et_dto/preface_mapper/" class="md-nav__link">
         
   
   
@@ -1664,7 +1531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../s3/entites_repositories_service_et_dto/creation_mapper/" class="md-nav__link">
+      <a href="../../s3/entites_repositories_service_et_dto/creation_mapper/" class="md-nav__link">
         
   
   
@@ -1692,7 +1559,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../s3/entites_repositories_service_et_dto/preface_controller/" class="md-nav__link">
+      <a href="../../s3/entites_repositories_service_et_dto/preface_controller/" class="md-nav__link">
         
   
   
@@ -1720,7 +1587,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../s3/entites_repositories_service_et_dto/creation_controller/" class="md-nav__link">
+      <a href="../../s3/entites_repositories_service_et_dto/creation_controller/" class="md-nav__link">
         
   
   
@@ -1806,7 +1673,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../s3/security/preface_jwt/" class="md-nav__link">
+      <a href="../../s3/security/preface_jwt/" class="md-nav__link">
         
   
   
@@ -1834,7 +1701,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../s3/security/creation_jwt/" class="md-nav__link">
+      <a href="../../s3/security/creation_jwt/" class="md-nav__link">
         
   
   
@@ -1862,7 +1729,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../s3/security/preface_configuration/" class="md-nav__link">
+      <a href="../../s3/security/preface_configuration/" class="md-nav__link">
         
   
   
@@ -1890,7 +1757,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../s3/security/creation_configuration/" class="md-nav__link">
+      <a href="../../s3/security/creation_configuration/" class="md-nav__link">
         
   
   
@@ -1976,7 +1843,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../s3/auth/preface_dto/" class="md-nav__link">
+      <a href="../../s3/auth/preface_dto/" class="md-nav__link">
         
   
   
@@ -2004,7 +1871,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../s3/auth/creation_dto/" class="md-nav__link">
+      <a href="../../s3/auth/creation_dto/" class="md-nav__link">
         
   
   
@@ -2032,7 +1899,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../s3/auth/preface_service/" class="md-nav__link">
+      <a href="../../s3/auth/preface_service/" class="md-nav__link">
         
   
   
@@ -2060,7 +1927,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../s3/auth/creation_service/" class="md-nav__link">
+      <a href="../../s3/auth/creation_service/" class="md-nav__link">
         
   
   
@@ -2088,7 +1955,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../s3/auth/preface_form/" class="md-nav__link">
+      <a href="../../s3/auth/preface_form/" class="md-nav__link">
         
   
   
@@ -2116,7 +1983,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../s3/auth/creation_form/" class="md-nav__link">
+      <a href="../../s3/auth/creation_form/" class="md-nav__link">
         
   
   
@@ -2144,7 +2011,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../s3/auth/preface_controller/" class="md-nav__link">
+      <a href="../../s3/auth/preface_controller/" class="md-nav__link">
         
   
   
@@ -2172,7 +2039,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../s3/auth/creation_controller/" class="md-nav__link">
+      <a href="../../s3/auth/creation_controller/" class="md-nav__link">
         
   
   
@@ -2212,24 +2079,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
             
   
   
@@ -2247,7 +2119,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2265,7 +2137,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../s4/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -2293,7 +2165,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../s4/admin/modification/" class="md-nav__link">
+      <a href="../admin/modification/" class="md-nav__link">
         
   
   
@@ -2321,7 +2193,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../s4/admin/" class="md-nav__link">
+      <a href="../admin/" class="md-nav__link">
         
   
   
@@ -2346,10 +2218,17 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../s4/client/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2365,6 +2244,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -2397,141 +2277,9 @@
   
 
 
-<h1 id="introduction-a-java">Introduction à Java</h1>
-<p>Java est un <strong>langage de programmation orienté objet</strong>, créé en <strong>1995</strong> par <em>James Gosling</em> chez <strong>Sun Microsystems</strong> (aujourd’hui propriété d’Oracle).<br />
-Son slogan est <strong>"Write once, run anywhere"</strong> (Écris une fois, exécute partout).</p>
-<p>Aujourd’hui, Java est surtout utilisé dans :</p>
-<ul>
-<li>Les <strong>applications d’entreprise</strong> (banques, assurances, e-commerce…)</li>
-<li>Le <strong>développement web</strong> (via Spring, Jakarta EE…)</li>
-<li>Les <strong>applications mobiles Android</strong></li>
-<li>Certains <strong>systèmes embarqués</strong> et logiciels bureautiques</li>
-</ul>
-<p>Contrairement à des langages compilés directement en langage machine (comme le C ou le C++), Java passe par une étape intermédiaire :</p>
-<ol>
-<li>Le code source est <strong>compilé en bytecode</strong></li>
-<li>Ce bytecode est ensuite exécuté par la <strong>JVM (Java Virtual Machine)</strong></li>
-</ol>
-<p>Ainsi programme écrit une fois peut tourner sur <strong>Windows, Linux, macOS, Android…</strong> sans modification.</p>
-<hr />
-<h2 id="syntaxe-de-base-en-java">Syntaxe de base en Java</h2>
-<h3 id="structure-minimale-dun-programme-java">Structure minimale d’un programme Java</h3>
-<pre><code class="language-java">public class Main {
-    public static void main(String[] args) {
-        System.out.println(&quot;Hello, world!&quot;);
-    }
-}
-</code></pre>
-<ul>
-<li><code>public class Main</code> -&gt; Déclaration d’une classe (ici, la classe <code>Main</code>)</li>
-<li><code>public static void main(String[] args)</code> -&gt; Point d’entrée du programme Java</li>
-<li><code>System.out.println()</code> -&gt; Affiche du texte dans la console</li>
-</ul>
-<h3 id="detail-de-la-methode-main">Détail de la méthode <code>main</code></h3>
-<p>Explication de la ligne :</p>
-<pre><code class="language-java">public static void main(String[] args)
-</code></pre>
-<ul>
-<li>
-<p><strong><code>public</code></strong> : c’est un <strong>modificateur d’accès</strong>.<br />
-  Cela signifie que la méthode <code>main</code> est <strong>accessible partout</strong> (y compris par la JVM lorsqu’elle démarre le programme).</p>
-</li>
-<li>
-<p><strong><code>static</code></strong> : cela indique que la méthode appartient à la <strong>classe</strong> et non à un objet spécifique.<br />
-  Autrement dit, on peut exécuter <code>main</code> <strong>sans créer d’instance</strong> de la classe <code>Main</code>.</p>
-</li>
-<li>
-<p><strong><code>void</code></strong> : c’est le <strong>type de retour</strong> de la méthode.<br />
-  Ici, <code>void</code> signifie que la méthode ne <strong>retourne rien</strong>.</p>
-</li>
-<li>
-<p><strong><code>String[] args</code></strong> : paramètre de la méthode, qui correspond à un <strong>tableau de chaînes de caractères</strong>.<br />
-  Il permet de <strong>passer des arguments</strong> au programme depuis la ligne de commande.</p>
-</li>
-</ul>
-<hr />
-<h3 id="variables-et-types">Variables et types</h3>
-<p>Java est un langage <strong>fortement typé et statiquement typé</strong>, cela signifie que chaque variable doit avoir un <strong>type défini à la compilation</strong>, et ce type ne peut pas changer ensuite.</p>
-<p>Voici quelques exemples de déclaration de variables en Java :</p>
-<pre><code class="language-java">int age = 21;          // entier
-double poids = 75.5;   // nombre à virgule flottante
-boolean isActive = true; // booléen
-String nom = &quot;Jean&quot;;   // chaîne de caractères
-</code></pre>
-<p>Java fournit des <strong>types primitifs</strong> intégrés au langage, qui représentent les valeurs les plus simples.</p>
-<p>Exemples :</p>
-<ul>
-<li><code>int</code> -&gt; nombre entier (ex : 42)</li>
-<li><code>double</code> -&gt; nombre décimal (ex : 3.14)</li>
-<li><code>boolean</code> -&gt; valeur logique (true / false)</li>
-<li><code>char</code> -&gt; un seul caractère (ex : <code>'A'</code>)</li>
-</ul>
-<p>À côté des primitifs, Java propose aussi des <strong>classes</strong> qui servent de types.<br />
-Exemple :</p>
-<ul>
-<li><code>String</code> -&gt; représente une chaîne de caractères (ex : <code>"Bonjour"</code>)</li>
-</ul>
-<h3 id="conditions">Conditions</h3>
-<pre><code class="language-java">int age = 18;
+  <h1>Application Client</h1>
 
-if (age &gt;= 18) {
-    System.out.println(&quot;Majeur&quot;);
-} else {
-    System.out.println(&quot;Mineur&quot;);
-}
-</code></pre>
-<hr />
-<p>On peut tester plusieurs cas différents grâce à <code>else if</code> :</p>
-<pre><code class="language-java">int note = 15;
 
-if (note &gt;= 16) {
-    System.out.println(&quot;Très bien&quot;);
-} else if (note &gt;= 12) {
-    System.out.println(&quot;Assez bien&quot;);
-} else if (note &gt;= 10) {
-    System.out.println(&quot;Passable&quot;);
-} else {
-    System.out.println(&quot;Échec&quot;);
-}
-</code></pre>
-<hr />
-<p>Pour les cas simples, on peut utiliser l’opérateur ternaire <code>? :</code> :</p>
-<pre><code class="language-java">int age = 20;
-String statut = (age &gt;= 18) ? &quot;Majeur&quot; : &quot;Mineur&quot;;
-System.out.println(statut);
-</code></pre>
-<hr />
-<h3 id="boucles">Boucles</h3>
-<p>La boucle <code>for</code> est utilisée lorsqu’on sait <strong>à l’avance</strong> combien de fois on veut répéter une action.</p>
-<pre><code class="language-java">for (int i = 0; i &lt; 5; i++) {
-    System.out.println(&quot;i = &quot; + i);
-}
-</code></pre>
-<p>Décomposition :</p>
-<ul>
-<li><code>int i = 0</code> -&gt; initialisation (variable de départ)</li>
-<li><code>i &lt; 5</code> -&gt; condition de poursuite</li>
-<li><code>i++</code> -&gt; incrémentation à chaque tour</li>
-</ul>
-<p>Ici, le programme affiche <code>i</code> de 0 à 4.</p>
-<hr />
-<p>La boucle <code>while</code> s’exécute <strong>tant que</strong> la condition est vraie.</p>
-<pre><code class="language-java">int j = 0;
-while (j &lt; 5) {
-    System.out.println(&quot;j = &quot; + j);
-    j++;
-}
-</code></pre>
-<p>Ici, la boucle continue tant que <code>j &lt; 5</code>.</p>
-<hr />
-<p>Le parcours de collection</p>
-<pre><code class="language-java">String[] fruits = {&quot;Pomme&quot;, &quot;Banane&quot;, &quot;Orange&quot;};
-
-for (String fruit : fruits) {
-    System.out.println(fruit);
-}
-</code></pre>
-<p>Ici, la boucle parcourt chaque élément du tableau sans se soucier de l’index.</p>
 
 
 
@@ -2567,7 +2315,7 @@ for (String fruit : fruits) {
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../positionnement/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Test de positionnement">
+          <a href="../admin/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Application Administrative">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2577,27 +2325,11 @@ for (String fruit : fruits) {
                 Previous
               </span>
               <div class="md-ellipsis">
-                Test de positionnement
+                Application Administrative
               </div>
             </div>
           </a>
         
-        
-          
-          <a href="../poo/" class="md-footer__link md-footer__link--next" aria-label="Next: POO">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                POO
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
         
       </nav>
     
@@ -2628,12 +2360,12 @@ for (String fruit : fruits) {
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "navigation.top", "navigation.footer", "navigation.instant", "navigation.instant.progress", "navigation.tabs", "search.suggest", "search.highlight", "toc.integrate"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.footer", "navigation.instant", "navigation.instant.progress", "navigation.tabs", "search.suggest", "search.highlight", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
-        <script src="../../../../assets/javascripts/links-target.js"></script>
+        <script src="../../../assets/javascripts/links-target.js"></script>
       
     
   </body>
