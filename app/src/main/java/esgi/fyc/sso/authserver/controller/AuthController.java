@@ -61,14 +61,13 @@ public class AuthController {
                 loginRequest.getUsername());
 
         try {
-            AuthResponseDTO authResponse = authService.authenticateUser(loginRequest);
-
             boolean allowed = authService.testUser(loginRequest.getUsername(), realm, clientId);
             if (!allowed) {
                 return ResponseEntity
                         .status(HttpStatus.FORBIDDEN)
                         .body(new MessageDTO("Utilisateur non autorisé pour ce realm/client"));
             }
+            AuthResponseDTO authResponse = authService.authenticateUser(loginRequest);
 
             return ResponseEntity.ok(authResponse);
         } catch (RuntimeException e) {

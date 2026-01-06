@@ -38,6 +38,6 @@ Mise en place de l'interface administrateur
 
 [Application Administrative](sequences/s4/admin/index.md) : Création d'une application web connectée au SSO
 
-[Application Client](sequences/s4/clients/react.md) : Création d’un client web React consommant le SSO
+[Application Client](sequences/s4/client/index.md) : Création d’un client web React consommant le SSO
 
 Conclusion et perspectives

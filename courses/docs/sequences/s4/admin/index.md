@@ -1,4 +1,4 @@
-# Création d'une application React consommant le SSO
+# Création d'une application React liée au SSO
 
 ## Structure du projet
 
