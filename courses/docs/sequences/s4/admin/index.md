@@ -3,9 +3,7 @@
 ## Structure du projet
 
 Pour initialiser le projet React, nous allons utiliser Vite, un outil de build rapide et moderne pour les applications
-web. La structure du projet sera la suivante :
-
-Pour se faire, exécutez la commande suivante dans votre terminal :
+web. Pour se faire, exécutez la commande suivante dans votre terminal :
 
 ```bash
 npm create vite@latest
@@ -14,7 +12,6 @@ npm create vite@latest
 Choisissez le nom du projet (par exemple, `frontend`) et sélectionnez `React` comme framework.
 Pour le language, vous pouvez choisir entre JavaScript et TypeScript selon vos préférences.
 Ici, nous utiliserons JavaScript.
-
 
 ## Structure des dossiers
 
@@ -139,3 +136,9 @@ appropriés selon les rôles.
 3. Implémentez les routes dans le fichier `App.jsx`.
 4. Créez les différentes pages dans le dossier `pages` en respectant la structure donnée.
 5. Adaptez l'affichage des pages en fonction des rôles de l'utilisateur connecté
+
+## Correction de l'exercice
+
+Voici une correction possible pour l'exercice proposé :
+
+- [Code source de l'application React](https://github.com/IPandragonI/authserver/tree/main/frontend)
