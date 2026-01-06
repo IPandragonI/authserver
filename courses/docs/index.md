@@ -32,10 +32,12 @@ Création du serveur d’authentification SSO (OAuth2)
 
 Mise en place de l'interface administrateur
 
-## [Séquence 4](sequences/s4/clients/index.md)
+## [Séquence 4](sequences/s4/index.md)
 
-[Client JavaScript](sequences/s4/clients/js.md) : Création d’un client web JS consommant le SSO
+[Modification de l'authentication](sequences/s4/admin/modification.md) : Modification du service d'authentification pour gérer les connexions clients.
 
-[Client React](sequences/s4/clients/react.md) : Création d’un client web React consommant le SSO
+[Application Administrative](sequences/s4/admin/index.md) : Création d'une application web connectée au SSO
+
+[Application Client](sequences/s4/clients/react.md) : Création d’un client web React consommant le SSO
 
 Conclusion et perspectives

@@ -81,10 +81,10 @@ nav:
           - Création du controller d’authentification - Avant de commencer: sequences/s3/auth/preface_controller.md
           - Création du controller d’authentification: sequences/s3/auth/creation_controller.md
   - Séquence 4:
-      - Création d’applicatifs clients:
-          - Introduction: sequences/s4/clients/index.md
-          - Client Js simple: sequences/s4/clients/js.md
-          - Client React: sequences/s4/clients/react.md
+        - Introduction: sequences/s4/index.md
+        - Modification de l'authentication: sequences/s4/admin/modification.md
+        - Application Administrative: sequences/s4/admin/index.md
+        - Application Client: sequences/s4/client/index.md
 
 extra:
   generator: false
