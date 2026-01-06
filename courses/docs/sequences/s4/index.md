@@ -21,7 +21,7 @@ https://sso.example.com/authorize?client_id=mon-client&redirect_uri=https://mona
 ---
 Voici donc ce que nous allons mettre en place.
 
-<iframe width="640" height="360" src="https://youtu.be/fw_QzFXff7M" frameborder="0" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://youtube.com/embed/fw_QzFXff7M" frameborder="0" allowfullscreen></iframe>
 
 
 ---

@@ -4,7 +4,7 @@ Dans cette section, nous allons modifier le service d'authentification pour perm
 Actuellement, notre système d'authentification est configuré de façon a permettre la connexion à une application peu
 importe le rôle de l'utilisateur.
 
-<iframe width="640" height="360" src="https://youtu.be/RNa5kdnFPe4" frameborder="0" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://youtube.com/embed/RNa5kdnFPe4" frameborder="0" allowfullscreen></iframe>
 
 Voici donc les fichiers que nous allons modifier pour implémenter cette fonctionnalité :
 
