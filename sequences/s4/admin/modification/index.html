@@ -79,6 +79,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#modification-du-systeme-dauthentification" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -2173,6 +2178,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -2279,9 +2286,19 @@
   
 
 
-  <h1>Modification de l'authentication</h1>
+<h1 id="modification-du-systeme-dauthentification">Modification du système d'authentification</h1>
+<p>Dans cette section, nous allons modifier le service d'authentification pour permettre la gestion des connexions clients.
+Actuellement, notre système d'authentification est configuré de façon a permettre la connexion à une application peu
+importe le rôle de l'utilisateur.</p>
+<iframe width="640" height="360" src="https://youtu.be/RNa5kdnFPe4" frameborder="0" allowfullscreen></iframe>
 
-
+<p>Voici donc les fichiers que nous allons modifier pour implémenter cette fonctionnalité :</p>
+<ul>
+<li><a href="https://github.com/IPandragonI/authserver/blob/main/app/src/main/java/esgi/fyc/sso/authserver/controller/AuthController.java#L51"><code>AuthController.java</code></a> : Nous allons modifier légèrement la méthode <code>login</code> pour vérifier les permissions d'un utilisateur lors de la connexion à un client à travers son realm.</li>
+<li><a href="https://github.com/IPandragonI/authserver/blob/main/app/src/main/java/esgi/fyc/sso/authserver/service/AuthService.java#L173"><code>AuthService.java</code></a> : Nous allons rajouter une méthode <code>testUser</code> pour vérifier si l'utilisateur a le droit de se connecter au client.</li>
+</ul>
+<hr />
+<p>Maintenant que nous avons modifié notre service d'authentification, nous allons pouvoir créer nos applications.</p>
 
 
 
