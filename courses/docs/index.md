@@ -14,7 +14,7 @@ le sujet du cours, le déroulé général et les objectifs pédagogiques
 
 [Docker](sequences/s2/docker/index.md) : Installation et configuration de Docker
 
-Création d’un projet Spring Boot
+[Création d’un projet Spring Boot](sequences/s2/init_projet/creation_projet.md)
 
 ## [Séquence 3](sequences/s3/mvc/rappels.md)
 
@@ -22,15 +22,13 @@ Création d’un projet Spring Boot
 
 [Introduction à Hibernate & Liquibase](sequences/s3/hibernate_liquibase/hibernate.md)
 
+[Évalutation de mi-parcours](sequences/s3/evaluation_mi_parcours/index.md)
+
 [Création de la couche DTO & Service](sequences/s3/entites_repositories_service_et_dto/preface_entites.md) : entités, repositories, services, DTO, mappers
 
 [Mise en place de Spring Security & de JWT](sequences/s3/security/preface_jwt.md)
 
 [Création du service et du controller d’authentification](sequences/s3/auth/preface_dto.md)
-
-Création du serveur d’authentification SSO (OAuth2)
-
-Mise en place de l'interface administrateur
 
 ## [Séquence 4](sequences/s4/index.md)
 
