@@ -53,6 +53,7 @@ nav:
           - Introduction à Hibernate: sequences/s3/hibernate_liquibase/hibernate.md
           - Introduction à Liquibase: sequences/s3/hibernate_liquibase/liquibase.md
           - Intégration dans le projet: sequences/s3/hibernate_liquibase/integration.md
+      - Evaluation de mis parcours: sequences/s3/evaluation_mis_parcours/index.md
       - Création de la couche DTO & Service:
           - Créer les entités - Avant de commencer: sequences/s3/entites_repositories_service_et_dto/preface_entites.md
           - Créer les entités: sequences/s3/entites_repositories_service_et_dto/creation_entites.md
