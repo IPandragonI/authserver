@@ -1,4 +1,4 @@
-# Création des DTO d’authentification
+# Création des forms d’authentification
 
 Ici, nous allons créer les formulaires (forms) nécessaires pour les requêtes d’authentification.
 
