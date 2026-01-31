@@ -86,6 +86,7 @@ nav:
         - Modification de l'authentication: sequences/s4/admin/modification.md
         - Application Administrative: sequences/s4/admin/index.md
         - Application Client: sequences/s4/client/index.md
+        - Examen final: sequences/s4/examen_final/index.md
 
 extra:
   generator: false
